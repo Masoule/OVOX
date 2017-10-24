@@ -14,7 +14,6 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then( () =>
@@ -30,7 +29,6 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     let errors = [];
-    // debugger
     this.props.errors.forEach( (err, idx) => {
       errors.push(<li key={`${idx}`}>{err}</li>);
     });

@@ -26,8 +26,3 @@ export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
 )(SessionForm));
-
-// export const Buttons =  connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(SessionButtons);
