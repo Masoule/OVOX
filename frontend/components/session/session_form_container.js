@@ -1,6 +1,6 @@
 import SessionForm from './session_form';
 import { connect } from 'react-redux';
-import {login , signUp} from '../../actions/session_actions';
+import {login , signup} from '../../actions/session_actions';
 import { withRouter } from 'react-router-dom';
 
 
@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const action = ownProps.match.path === "/login" ? login : signUp;
+  const action = ownProps.match.path === "/login" ? login : signup;
   return {
     processForm: (user) => dispatch(action(user))
   };
