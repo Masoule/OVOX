@@ -22,6 +22,7 @@ class SessionButtons extends React.Component {
             (this.props.currentUser) ?  (
               <UserNav
                 currentUser={this.props.currentUser}
+                logout={this.props.logout}
                 />
             ):(
               <GeneralNav />
