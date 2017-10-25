@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.hideModal = this.hideModal.bind(this);
   }
 
   handleSubmit(e) {
@@ -25,6 +26,11 @@ class SessionForm extends React.Component {
     return (e) => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  hideModal(e) {
+    if (e.currentTarget.class === "modal-background"){
+    this.props.history.push('/');}
   }
 
   renderErrors() {
@@ -46,7 +52,8 @@ class SessionForm extends React.Component {
     const formHeader = this.props.formType === "Login" ? 'Create your OVOX account' : 'Login';
 
     return (
-      <div className="modal-background">
+      <div className="modal-background"
+        onClick={this.hideModal}>
         <div className='auth-modal'>
           <div className='auth-modal-content'>
 
@@ -59,14 +66,13 @@ class SessionForm extends React.Component {
               </h1>
 
               <div className='form-input'>
-                <label>
-                  <input
-                    className='textfield'
-                    type="text"
-                    value={this.state.username}
-                    onChange={this.update('username')}
-                    />
-                </label>
+                <label></label>
+                <input
+                  className='textfield'
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  />
               </div>
 
               <div className='form-input'>
@@ -79,11 +85,13 @@ class SessionForm extends React.Component {
                   />
               </div>
 
-              <input
-                className='button auth-submit'
-                type="submit"
-                value={this.props.formType}
-                />
+              <div className='form-button'>
+                <input
+                  className='button'
+                  type="submit"
+                  value={this.props.formType}
+                  />
+              </div>
 
               <div className='errors'>
                 {this.renderErrors()}

@@ -14,8 +14,12 @@ h1, h2, p, strong, em, a, div {
   text-align: inherit;
   color: inherit;
   background: transparent;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+
+  font-weight: normal;
 }
+
+
 
 div {
   display: block;
@@ -23,6 +27,11 @@ div {
 
 body {
 
+}
+
+ul li {
+  text-decoration: none;
+  list-style: none;
 }
 
 h1 {
@@ -40,48 +49,36 @@ p {
 
 }
 
-// .modal-background {
-//   background-color: rgba(0, 0, 0, 0.7);
-//   z-index: 1;
-// }
-
-.auth-modal {
-  background-color: rgba(0, 0, 0, 0.1) ;
-  z-index: 2;
-  width: 50%;
-  display: flex;
-  padding: 20px;
-  align-items: center;
-}
-
-.auth-modal-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.auth-form {
-
-}
-
-.form-title {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.form-input {
-  // display: flex;
-  position: relative;
-  margin: 10px;
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.textfield {
-  width: 100%;
-  position: relative;
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  // width: 100%;
+  // height: 100%;
+  background-color: rgba(242,242,242,.9);
   z-index: 1;
-  border-radius: 5px;
+}
+
+.header {
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid #f50;
+  background-color: #666;
+  height: 450px;
+  // background: url(https://a-v2.sndcdn.com/assets/images/home/hp_image-6155d6b.jpg)
+  background: linear-gradient(rgba(242,242,242,.2),rgba(242,242,242,.2)), url(http://www.teliostutors.com/wp-content/uploads/2016/12/music-1.jpg);
+}
+
+.logo {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  display: block;
+  width: 184px;
+  height: 46px;
 }
 
 .button {
@@ -100,12 +97,105 @@ p {
   text-align: center;
 }
 
-.auth-submit {
+.session-buttons {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  flex-direction: row;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 100;
+  height: 30px;
+}
+
+.login-btn {
+  background: 0 0;
+  color: #fff;
+  border: 1px solid #e5e5e5;
+  border-color: #ccc;
+  padding: 0 15px;
+  width: auto;
+  margin: 0 5px;
+  // vertical-align: baseline;
+  // width: 40%;
+  // transition: opacify($color, $amount);
+}
+
+.signup-btn {
+  padding: 0 16px;
+  margin: 0 5px;
+  width: auto;
+  align-content: center;
+}
+
+.link-btn {
+  padding: 5px;
+  // background-color: grey;
+  position: relative;
+  height: 100%;
+  top: 27%;
+  font-weight: 100;
+  // margin: auto 0;
+}
+
+.auth-modal {
+  background-color: white;
+  margin-top: 20%;
+  z-index: 2;
+  width: 40%;
+  padding: 30px;
+  align-items: center;
+  margin-left: 25%
+}
+
+.auth-modal-content {
+  // display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.auth-form {
 
 }
+
+.form-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-input {
+  // display: flex;
+  position: relative;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.textfield {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  border-radius: 5px;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 5px;
+  // border: 1px solid grey;
+}
+
+.form-button {
+  position: relative;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+
 
 .errors {
   position: relative;
   color: #f50;
   padding: 6px 0 5px;
+  text-align: center
 }

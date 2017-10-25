@@ -9,35 +9,48 @@ class SessionButtons extends React.Component {
 
   render (){
     return(
-      <div>
-        {
-          (this.props.currentUser) ?  (
-            <div>
-              <h2>
-                welcome {this.props.currentUser.username}
-              </h2>
-              <button
-                className='button logout-btn'
-                onClick={this.props.logout}>
-                Logout
-              </button>
-            </div>)
-            :(
-              <div>
-                <div>
-                  <Link to={`/signup`}>
-                    Signup
-                  </Link>
-                </div>
+      <div className='header'>
 
-                <div>
-                  <Link to={`/login`}>
-                    Login
-                  </Link>
+        <div className='logo'>
+          <h1>OVOX</h1>
+        </div>
+
+        <div className='buttons'>
+          {
+            (this.props.currentUser) ?  (
+              <div>
+                <h2>
+                  welcome {this.props.currentUser.username}
+                </h2>
+                <button
+                  className='button logout-btn'
+                  onClick={this.props.logout}>
+                  Logout
+                </button>
+              </div>)
+              :(
+                <div className='session-buttons'>
+
+                  <div className='button login-btn'>
+                    <Link
+                      className='link-btn'
+                      to={`/login`}>
+                      Sign in
+                    </Link>
+                  </div>
+
+                  <div className='button signup-btn'>
+                    <Link
+                      className='link-btn' 
+                      to={`/signup`}>
+                      Create account
+                    </Link>
+                  </div>
+
                 </div>
-              </div>
-          )
-        }
+            )
+          }
+        </div>
       </div>
     );
   }

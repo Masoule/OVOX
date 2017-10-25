@@ -8,7 +8,6 @@ const App = () => (
   <div>
 
     <header>
-      <h1>OVOX</h1>
       <SessionButtonsContainer />
     </header>
 
