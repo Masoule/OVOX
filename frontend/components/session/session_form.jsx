@@ -28,8 +28,25 @@ class SessionForm extends React.Component {
     });
   }
 
+  // componentDidMount(){
+  //   this.clearErrors();
+  // }
+
+  // componentWillReceiveProps(newProps){
+  //   // debugger
+  //   if (newProps.location.pathname !== this.props.location.pathname) {
+  //     this.clearErrors();
+  //     // this.renderErrors();
+  //   }
+  //
+  // }
+
+  // clearErrors() {
+  //   this.props.errors = [];
+  // }
+
   hideModal(e) {
-    if (e.currentTarget.class === "modal-background"){
+    if (e.currentTarget.className === "modal-background"){
     this.props.history.push('/');}
   }
 
@@ -54,7 +71,12 @@ class SessionForm extends React.Component {
     return (
       <div className="modal-background"
         onClick={this.hideModal}>
-        <div className='auth-modal'>
+
+        <div
+          className='auth-modal'
+          onClick={ (e)=> e.stopPropagation() }
+          >
+
           <div className='auth-modal-content'>
 
             <form
