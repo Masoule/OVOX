@@ -20,12 +20,16 @@ class SessionButtons extends React.Component {
         <div className='buttons'>
           {
             (this.props.currentUser) ?  (
-              <UserNav
-                currentUser={this.props.currentUser}
-                logout={this.props.logout}
-                />
+              <div className='user-nav'>
+                <UserNav
+                  currentUser={this.props.currentUser}
+                  logout={this.props.logout}
+                  />
+              </div>
             ):(
-              <GeneralNav />
+              <div className='general-nav'>
+                <GeneralNav />
+              </div>
             )
           }
         </div>

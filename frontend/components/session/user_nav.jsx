@@ -6,11 +6,22 @@ class UserNav extends React.Component {
 
   render (){
     return(
-      <div className='user-header'>
-        <div className='user-header'>
-          <h2>
-            welcome {this.props.currentUser.username}
-          </h2>
+      <div className='user-actions'>
+
+        <div className='upload'>
+          <Link
+            className=''
+            to={`/`}>
+            Upload
+          </Link>
+        </div>
+
+        <div className='user-thumb'>
+          <Link
+            className='link'
+            to={`/`}>
+            {this.props.currentUser.username}
+          </Link>
         </div>
 
         <div className='logout'>
@@ -20,7 +31,7 @@ class UserNav extends React.Component {
             Sign out
           </button>
         </div>
-      </div>    
+      </div>
     );
   }
 }

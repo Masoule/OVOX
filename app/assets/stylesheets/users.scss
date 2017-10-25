@@ -49,6 +49,18 @@ p {
 
 }
 
+
+.logo {
+  position: absolute;
+  // top: 15px;
+  top: 4%;
+  left: 20px;
+  display: block;
+  width: 184px;
+  height: 46px;
+  z-index: 100;
+}
+
 .modal-background {
   position: fixed;
   top: 0;
@@ -66,19 +78,29 @@ p {
   position: relative;
   overflow: hidden;
   border-top: 4px solid #f50;
+}
+
+.user-nav {
+  // position: fixed;
+  // top: 0;
+  // color: #fff;
+  position: relative;
+  overflow: hidden;
+  // border-top: 4px solid #f50;
+  background-color: #333;
+  height: 46px;
+  width: 100%;
+}
+
+.general-nav {
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid #f50;
   background-color: #666;
   height: 450px;
   // background: url(https://a-v2.sndcdn.com/assets/images/home/hp_image-6155d6b.jpg)
   background: linear-gradient(rgba(242,242,242,.2),rgba(242,242,242,.2)), url(http://www.teliostutors.com/wp-content/uploads/2016/12/music-1.jpg);
-}
-
-.logo {
-  position: absolute;
-  top: 15px;
-  left: 20px;
-  display: block;
-  width: 184px;
-  height: 46px;
 }
 
 .button {
@@ -109,6 +131,17 @@ p {
   // height: 30px;
 }
 
+.user-actions {
+  position: absolute;
+  top: 0px;
+  right: 30px;
+  display: flex;
+  flex-direction: row;
+  line-height: 20px;
+  font-size: 14px;
+  // height: 30px;
+}
+
 .login-btn {
   background: 0 0;
   color: #fff;
@@ -131,9 +164,35 @@ p {
   height: 30px;
 }
 
-.logout-btn {
-  
+.upload {
+  width: auto;
+  color: #ccc;
+  display: block;
+  padding: 12px 10px 12px;
 }
+
+.user-thumb {
+  width: auto;
+  color: #ccc;
+  display: block;
+  padding: 12px 10px 12px;
+}
+
+.logout {
+  width: auto;
+  color: #ccc;
+  display: block;
+  padding: 12px 10px 12px;
+}
+
+.logout-btn {
+  width: auto;
+  // height: 26px;
+  bottom: 20%;
+  font-size: 14px;
+}
+
+
 
 .link-btn {
   padding: 5px;
