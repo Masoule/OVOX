@@ -13,20 +13,28 @@ class SessionButtons extends React.Component {
         {
           (this.props.currentUser) ?  (
             <div>
-              welcome {this.props.currentUser.username}
-              <button onClick={this.props.logout}>
+              <h2>
+                welcome {this.props.currentUser.username}
+              </h2>
+              <button
+                className='button logout-btn'
+                onClick={this.props.logout}>
                 Logout
               </button>
             </div>)
             :(
               <div>
-                <Link to={`/signup`}>
-                  Signup
-                </Link>
-                <br></br>
-                <Link to={`/login`}>
-                  Login
-                </Link>
+                <div>
+                  <Link to={`/signup`}>
+                    Signup
+                  </Link>
+                </div>
+
+                <div>
+                  <Link to={`/login`}>
+                    Login
+                  </Link>
+                </div>
               </div>
           )
         }

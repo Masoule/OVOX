@@ -43,40 +43,55 @@ class SessionForm extends React.Component {
   render (){
     const linkPath = this.props.formType === "Login" ? '/signup' : '/login';
     const linkName = this.props.formType === "Login" ? 'Sign Up' : 'Login';
+    const formHeader = this.props.formType === "Login" ? 'Create your OVOX account' : 'Login';
 
     return (
-      <div>
-        {this.renderErrors()}
+      <div className="modal-background">
+        <div className='auth-modal'>
+          <div className='auth-modal-content'>
 
-        <form onSubmit={this.handleSubmit}>
+            <form
+              className='auth-form'
+              onSubmit={this.handleSubmit}>
 
-          <h2>
-            {this.props.formType}
-          </h2>
+              <h1 className='form-title'>
+                {formHeader}
+              </h1>
 
-          <label>Username
-            <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              />
-          </label>
+              <div className='form-input'>
+                <label>
+                  <input
+                    className='textfield'
+                    type="text"
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    />
+                </label>
+              </div>
 
-          <label>Password
-            <input type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              />
-          </label>
+              <div className='form-input'>
+                <label>Choose a password</label>
+                <input
+                  className='textfield'
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  />
+              </div>
 
-          <input type="submit"
-            value={this.props.formType}
-            />
+              <input
+                className='button auth-submit'
+                type="submit"
+                value={this.props.formType}
+                />
 
-        </form>
+              <div className='errors'>
+                {this.renderErrors()}
+              </div>
+            </form>
 
-        <Link to={linkPath}>
-          {linkName}
-        </Link>
+          </div>
+        </div>
       </div>
     );
   }
