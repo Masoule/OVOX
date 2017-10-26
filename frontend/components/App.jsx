@@ -7,10 +7,12 @@ import SessionButtonsContainer from './session/session_buttons_container';
 const App = () => (
   <div>
 
-    <header>
+    <header className='header'>
       <SessionButtonsContainer />
     </header>
+    <section className='main'>
 
+    </section>
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
 

@@ -11,7 +11,7 @@ class SessionButtons extends React.Component {
 
   render (){
     return(
-      <div className='header'>
+      <div>
 
         <div className='logo'>
           <h1>OVOX</h1>

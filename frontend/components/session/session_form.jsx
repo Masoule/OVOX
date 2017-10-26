@@ -88,7 +88,7 @@ class SessionForm extends React.Component {
               </h1>
 
               <div className='form-input'>
-                <label></label>
+                <label class='form-label'></label>
                 <input
                   className='textfield'
                   type="text"
@@ -98,7 +98,9 @@ class SessionForm extends React.Component {
               </div>
 
               <div className='form-input'>
-                <label>Choose a password</label>
+                <label class='form-label'>
+                  Choose a password
+                </label>
                 <input
                   className='textfield'
                   type="password"
