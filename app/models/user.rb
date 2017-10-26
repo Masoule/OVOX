@@ -5,16 +5,15 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
-  has_attached_file :image, default_url: "user.png"
+  has_attached_file :image, default_url: "../assets/images/user.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   after_initialize :ensure_session_token
+  after_initialize :ensure_name
 
   has_many :tracks,
   foreign_key: :owner_id,
   class_name: 'Track'
-
-
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
@@ -41,6 +40,14 @@ class User < ApplicationRecord
 
   def ensure_session_token
     self.session_token ||= generate_session_token
+  end
+
+  def ensure_name
+    if !self.first_name
+      self.first_name = self.username
+    end
+
+    self.save!
   end
 
   def generate_session_token
