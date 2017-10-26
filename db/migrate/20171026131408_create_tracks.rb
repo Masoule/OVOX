@@ -1,0 +1,15 @@
+class CreateTracks < ActiveRecord::Migration[5.1]
+  def change
+    create_table :tracks do |t|
+      t.string :title, null:false
+      t.string :artist, null:false, default: username
+      # t.attachment :image, null:false, default: username
+      t.text :description
+      t.string :genre
+      t.integer :owner_id, null:false
+
+      t.timestamps
+    end
+    add_index :tracks, :owner_id, unique: true
+  end
+end

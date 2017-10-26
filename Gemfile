@@ -39,6 +39,9 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem "paperclip", '~> 5.0.0'
+  gem 'figaro'
+  gem 'aws-sdk', '~> 2.3.0'
 end
 
 group :development do
