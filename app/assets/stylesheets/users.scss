@@ -49,9 +49,12 @@ p {
 
 }
 
-
+.logo-img {
+  https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwigm77XwY3XAhUBQSYKHQojDhEQjBwIBA&url=http%3A%2F%2Fwww.iconsdb.com%2Ficons%2Fpreview%2Fwhite%2Fsoundcloud-xxl.png&psig=AOvVaw1f5nFDuGK8WbOFagvJALVI&ust=1509080659984007
+}
 .logo {
   position: absolute;
+  background-color: #f50;
   // top: 15px;
   top: 4%;
   left: 20px;
@@ -226,7 +229,8 @@ p {
   width: 40%;
   padding: 30px;
   align-items: center;
-  margin-left: 25%
+  margin-left: 25%;
+  color: #333;
 }
 
 .auth-modal-content {
@@ -236,7 +240,6 @@ p {
 }
 
 .auth-form {
-
 }
 
 .form-title {
@@ -277,6 +280,22 @@ p {
   padding: 10px;
 }
 
+.small-link {
+  color: #38d;
+  text-align: center;
+  // width: 100%;
+  // text-decoration: none;
+  font-size: 14px;
+}
+
+.small-text {
+  color: #999;
+  text-align: center;
+  margin-right: 5px;
+  // width: 100%;
+  // text-decoration: none;
+  font-size: 14px;
+}
 
 
 .errors {

@@ -64,9 +64,20 @@ class SessionForm extends React.Component {
   }
 
   render (){
-    const linkPath = this.props.formType === "Login" ? '/signup' : '/login';
-    const linkName = this.props.formType === "Login" ? 'Sign Up' : 'Login';
-    const formHeader = this.props.formType === "Login" ? 'Create your OVOX account' : 'Login';
+    let formHeader, linkPath, linkName, passwordText, redirectText
+    if (this.props.formType === "Login") {
+      formHeader = 'Welcome back!'
+      linkPath = '/signup';
+      linkName = 'Sign Up';
+      passwordText = 'Password';
+      redirectText="Don't have an account?";
+    } else {
+      formHeader = 'Create your OVOX account';
+      linkPath = '/login';
+      linkName = 'Sign In';
+      passwordText = 'Choose a password';
+      redirectText="Already have an account?";
+    }
 
     return (
       <div className="modal-background"
@@ -99,7 +110,7 @@ class SessionForm extends React.Component {
 
               <div className='form-input'>
                 <label class='form-label'>
-                  Choose a password
+                  {passwordText}
                 </label>
                 <input
                   className='textfield'
@@ -121,6 +132,13 @@ class SessionForm extends React.Component {
                 {this.renderErrors()}
               </div>
             </form>
+
+            <div className='small-link'>
+              <span className='small-text'>{redirectText}</span>
+              <Link to={linkPath}>
+                {linkName}
+              </Link>
+            </div>
 
           </div>
         </div>
