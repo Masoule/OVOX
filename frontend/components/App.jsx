@@ -10,9 +10,10 @@ const App = () => (
     <header className='header'>
       <SessionButtonsContainer />
     </header>
-    <section className='main'>
 
+    <section className='main'>
     </section>
+
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
 
@@ -20,3 +21,13 @@ const App = () => (
 );
 
 export default App;
+
+
+
+
+
+
+
+
+// <AuthRoute path="/" component={TracksIndexGeneralContainer} />
+// <AuthRoute path="/stream" component={TracksIndexContainer} />
