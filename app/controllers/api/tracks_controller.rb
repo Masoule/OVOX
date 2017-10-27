@@ -1,5 +1,5 @@
 class Api::TracksController < ApplicationController
-  before_action: :require_logged_in, only: [:create, :destroy, :edit, :update]
+  before_action :require_logged_in, only: [:create, :destroy, :edit, :update]
 
   def index
     @tracks = Track.all

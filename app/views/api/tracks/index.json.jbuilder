@@ -1,13 +1,9 @@
-@tracks.each do |track|
-  json.set! track.id do
-    json.extract! track, :id, :title, :artist_name, :description, :genre, :owner_id,
+@tracks.each do |tr|
+  json.set! tr.id do
+    json.extract! tr, :id, :title, :artist_name, :description, :genre, :owner_id
 
-    json.track track.track.url
-    json.image track.image.url
+    json.track tr.track.url
+    json.image tr.image.url
+
   end
 end
-
-
-
-
-#     json.image_url image_path(poke.image_url)
