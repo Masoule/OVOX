@@ -1,4 +1,4 @@
-import SessionButtons from './session_buttons';
+import Header from './header';
 import { logout } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SessionButtons);
+)(Header);

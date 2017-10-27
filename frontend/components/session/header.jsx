@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import UserNav from './user_nav';
 import GeneralNav from './general_nav';
 
-class SessionButtons extends React.Component {
+class Header extends React.Component {
 
   constructor(props){
     super(props);
@@ -42,4 +42,4 @@ class SessionButtons extends React.Component {
 }
 
 
-export default SessionButtons;
+export default Header;

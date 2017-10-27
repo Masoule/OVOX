@@ -18,7 +18,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then( () =>
-      this.props.history.push('/')
+      this.props.history.push('/stream')
     );
   }
 
@@ -47,7 +47,7 @@ class SessionForm extends React.Component {
 
   hideModal(e) {
     if (e.currentTarget.className === "modal-background"){
-    this.props.history.push('/');}
+    this.props.history.goBack();}
   }
 
   renderErrors() {
@@ -99,7 +99,7 @@ class SessionForm extends React.Component {
               </h1>
 
               <div className='form-input'>
-                <label class='form-label'></label>
+                <label className='form-label'></label>
                 <input
                   className='textfield'
                   type="text"
@@ -109,7 +109,7 @@ class SessionForm extends React.Component {
               </div>
 
               <div className='form-input'>
-                <label class='form-label'>
+                <label className='form-label'>
                   {passwordText}
                 </label>
                 <input

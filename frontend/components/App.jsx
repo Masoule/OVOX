@@ -2,14 +2,14 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import SessionFormContainer from './session/session_form_container';
-import SessionButtonsContainer from './session/session_buttons_container';
+import HeaderContainer from './session/header_container';
 import TracksIndexGeneralContainer from './tracks/tracks_index_general_container';
 
 const App = () => (
   <div>
 
     <header className='header'>
-      <SessionButtonsContainer />
+      <HeaderContainer />
     </header>
 
     <section className='main'>
