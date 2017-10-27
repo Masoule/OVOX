@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {fetchTracks , fetchTrack, createTrack, receiveErrors, clearErrors} from '../../actions/track_actions';
 
 const mapStateToProps = (state, ownProps) => {
-
+  // debugger
   return {
     errors: state.errors.tracks,
     tracks: Object.keys(state.tracks).map(id => state.tracks[id])
@@ -14,8 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   // const action = ownProps.match.path === "/login" ? login : signup;
   return {
-    fetchTracks: (tracks) => dispatch(fetchTracks(tracks)),
-    fetchTrack: (track) => dispatch(fetchTrack(track)),
+    fetchTracks: () => dispatch(fetchTracks()),
+    fetchTrack: (id) => dispatch(fetchTrack(id)),
     clearErrors: ()=> dispatch(clearErrors()),
   };
 };

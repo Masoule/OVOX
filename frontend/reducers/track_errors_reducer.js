@@ -1,9 +1,10 @@
-import { RECEIVE_TRACK_ERRORS, RECEIVE_TRACK, RECEIVE_TRACKS, CLEAR_TRACK_ERRORS} from '../actions/track_actions';
+import { RECEIVE_TRACK_ERRORS,
+         RECEIVE_TRACK,
+         RECEIVE_TRACKS,
+         CLEAR_TRACK_ERRORS} from '../actions/track_actions';
 
 const TrackErrorsReducer = (state = [], action) => {
   Object.freeze(state);
-  let newState;
-  let errors;
   switch (action.type) {
     case RECEIVE_TRACK_ERRORS:
       return action.errors.responseJSON;

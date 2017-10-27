@@ -2,7 +2,7 @@ export const fetchTracks = () => {
   return (
     $.ajax({
       method: 'get',
-      url: '/api/users',
+      url: '/api/tracks',
     })
   );
 };
@@ -11,7 +11,7 @@ export const fetchTrack = (id) => {
   return (
     $.ajax({
       method: 'get',
-      url: `/api/users/${id}`,
+      url: `/api/tracks/${id}`,
     })
   );
 };
