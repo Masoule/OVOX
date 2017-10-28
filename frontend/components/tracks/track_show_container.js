@@ -7,14 +7,13 @@ import { fetchUser } from '../../actions/user_actions';
 const mapStateToProps = (state, ownProps) => {
   const userId = ownProps.match.params.userId;
   const trackId = ownProps.match.params.trackId;
-  const track = state.tracks[trackId];
-  // debugger
+  const track = state.entities.tracks[trackId];
+
   return {
     userId,
     trackId,
     track,
   };
-
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

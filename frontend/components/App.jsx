@@ -2,15 +2,14 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import SessionFormContainer from './session/session_form_container';
-import HeaderContainer from './session/header_container';
+import HeaderContainer from './headers/header_container';
 import TracksIndexGeneralContainer from './tracks/tracks_index_general_container';
 import TrackShowContainer from './tracks/track_show_container';
 import TracksIndexContainer from './tracks/tracks_index_container';
 
 const App = () => (
 
-  <div>
-
+  <div className='page'>
 
     <header className='header'>
       <HeaderContainer />

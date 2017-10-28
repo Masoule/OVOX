@@ -11,7 +11,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   after_initialize :ensure_name
 
-  has_many :tracks,
+  has_many :tracks, dependent: :destroy,
   foreign_key: :owner_id,
   class_name: 'Track'
 

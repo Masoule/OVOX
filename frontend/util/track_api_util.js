@@ -25,3 +25,22 @@ export const createTrack = (track) => {
     })
   );
 };
+
+export const updateTrack = (track) => {
+  return (
+    $.ajax({
+      method: 'patch',
+      url: `/api/tracks/${track.id}`,
+      data: {track}
+    })
+  );
+};
+
+export const deleteTrack = (id) => {
+  return (
+    $.ajax({
+      method: 'delete',
+      url: `/api/tracks/${id}`,
+    })
+  );
+};
