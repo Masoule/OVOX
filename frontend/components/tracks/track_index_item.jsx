@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 const TrackIndexItem = ({ track, router, history }) => {
   return (
-    <li>
+    <li className='track-item'>
       <div className='track-box'>
         <div className='track-thumb-box'>
           <img className="track-thumb"

@@ -5,18 +5,34 @@
 .logo {
   position: absolute;
   background-color: #f50;
-  top: 4%;
   left: 20px;
-  display: block;
+  display: flex;
   width: 184px;
   height: 46px;
   z-index: 100;
 }
 
+.logo-img {
+  width: 69px;
+  height: 46px;
+  background: url('soundcloud.png');
+  z-index: 100;
+  display: block;
+  background-color: #e8b09d;
+  // background-image: url('https://cdn2.iconfinder.com/data/icons/minimalism/512/soundcloud.png');
+}
+
+.logo-text {
+  line-height: 30px;
+  margin: 8px 0 8px 10px;
+}
+
 .main {
   // background-color: grey;
-  width: 100%;
-  height: 100%;
+  // width: 100%;
+  // height: 100%;
+  padding: 5%;
+  padding-top: 0;
 }
 
 .modal-background {
@@ -62,19 +78,15 @@ img {
 
 .button {
   display: inline-block;
-  // position: relative;
   width: 100%;
   background-color: #f50;
   border-color: #f50;
   color: #fff;
   font-size: 16px;
   line-height: 18px;
-  // padding: 10px 15px;
   height: 40px;
   border-radius: 3px;
-  // cursor: pointer;
   text-align: center;
-  // font-weight: 100;
 }
 
 .session-buttons {
@@ -88,17 +100,6 @@ img {
   // height: 30px;
 }
 
-.user-actions {
-  position: absolute;
-  top: 0px;
-  right: 30px;
-  display: flex;
-  flex-direction: row;
-  line-height: 20px;
-  font-size: 14px;
-  width: auto;
-  // height: 30px;
-}
 
 .login-btn {
   background: 0 0;
@@ -122,35 +123,61 @@ img {
   height: 30px;
 }
 
+.user-actions {
+  position: absolute;
+  top: 0px;
+  right: 30px;
+  display: flex;
+  flex-direction: row;
+  line-height: 20px;
+  font-size: 14px;
+  width: auto;
+  height: 100%;
+}
+
 .upload {
   width: auto;
   color: #ccc;
   display: block;
-  padding: 12px 15px 12px;
+  padding: 13px 10px 10px 13px;
+}
+
+.user {
+  display: block;
+  color: #ccc;
+  width: auto;
+  display: flex;
+  // padding: 12px 15px 12px;
 }
 
 .user-thumb {
+  margin: 10px 10px 10px 10px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  overflow: hidden;
+  // margin-right: 10px;
+}
+
+.username {
   width: auto;
   color: #ccc;
   display: block;
-  padding: 12px 15px 12px;
+  margin: 13px 10px 0px 0px;
 }
 
 .logout {
   width: auto;
   color: #ccc;
   display: block;
-  padding: 2px 15px 2px;
+  padding: 0 15px 0 0;
 }
 
 .logout-btn {
-  // width: auto;
-  // height: 26px;
-  // bottom: 20%;
+  height: 26px;
   font-size: 14px;
   line-height: auto;
-  padding: 0 15px;
-  height: 30px;
+  margin: 10px 15px 10px 10px;
   top: 6px;
 }
 

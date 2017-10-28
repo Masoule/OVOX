@@ -5,6 +5,7 @@ class UserNav extends React.Component {
 
 
   render (){
+    const currentUser = this.props.currentUser.user;
     return(
       <div className='user-actions'>
 
@@ -16,11 +17,15 @@ class UserNav extends React.Component {
           </Link>
         </div>
 
-        <div className='user-thumb'>
+        <div className='user'>
+          <div className='user-thumb'>
+            <img src={currentUser.image}></img>
+          </div>
+
           <Link
-            className='link'
+            className='username'
             to={`/`}>
-            {this.props.currentUser.username}
+            {currentUser.username}
           </Link>
         </div>
 

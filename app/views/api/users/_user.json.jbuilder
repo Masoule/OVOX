@@ -3,6 +3,6 @@ json.user do
   json.image user.image.url
 end
 
-json.tracks do
-  json.array! user.tracks, partial: 'api/tracks/track', as: :track
-end
+# json.tracks do
+#   json.array! user.tracks, partial: 'api/tracks/track', as: :track
+# end

@@ -14,7 +14,12 @@ class Header extends React.Component {
       <div>
 
         <div className='logo'>
-          <h1>OVOX</h1>
+          <div className='logo-img'>
+            
+          </div>
+          <h1 className='logo-text'>
+            OVOX
+          </h1>
         </div>
 
         <div className='buttons'>
