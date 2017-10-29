@@ -10,8 +10,11 @@ class TrackShow extends React.Component {
   }
 
   render (){
-    const content = this.props.track ? <TrackShowItem
-      track={this.props.track} /> : null
+    const content = this.props.track ?
+    <TrackShowItem
+      track={this.props.track}
+      currentUser={this.props.currentUser}/> : null
+      
     return (
       <div className='track-show'>
         { content }

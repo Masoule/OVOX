@@ -8,11 +8,13 @@ const mapStateToProps = (state, ownProps) => {
   const userId = ownProps.match.params.userId;
   const trackId = ownProps.match.params.trackId;
   const track = state.entities.tracks[trackId];
+  const currentUser = state.currentUser;
 
   return {
     userId,
     trackId,
     track,
+    currentUser,
   };
 };
 

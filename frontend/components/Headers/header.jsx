@@ -24,7 +24,6 @@ class Header extends React.Component {
   }
 
   render (){
-    debugger
     switch (this.props.headerType) {
 
       case 'general':

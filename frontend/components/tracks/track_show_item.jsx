@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 
-const TrackShowItem = ({ track, router, history }) => {
+const TrackShowItem = ({ track, router, history, currentUser }) => {
   return (
     <li>
       <div className='track-show-box'>
@@ -23,9 +23,13 @@ const TrackShowItem = ({ track, router, history }) => {
               </div>
 
               <div className='track-show-title'>
-                <span className='track-show-title'>
-                  {track.title}
-                </span>
+                  <Link
+                    className=''
+                    to={`/${track.owner_id}/${track.id}`}>
+                    <span className='track-show-title'>
+                      {track.title}
+                    </span>
+                  </Link>
               </div>
             </div>
 

@@ -1,15 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-class UserNav extends React.Component {
+// class UserNav extends React.Component {
 
-  signout () {
-    this.props.logout()
-    .then(() => this.props.history.push('/'));
-  }
-
-  render (){
-    const currentUser = this.props.currentUser.user;
+const UserNav = ({ router, history, currentUser, logout }) => {
+  // signout () {
+  //   logout().then(() => this.props.history.push('/'));
+  // }
     return(
       <div className='user-actions'>
 
@@ -23,26 +20,26 @@ class UserNav extends React.Component {
 
         <div className='user'>
           <div className='user-thumb'>
-            <img src={currentUser.image}></img>
+            <img src={currentUser.user.image}></img>
           </div>
 
           <Link
             className='username'
             to={`/stream`}>
-            {currentUser.username}
+            {currentUser.user.username}
           </Link>
         </div>
 
         <div className='logout'>
           <button
             className='button logout-btn'
-            onClick={this.signout()}>
+            onClick={logout}>
             Sign out
           </button>
         </div>
       </div>
     );
   }
-}
 
-export default UserNav;
+
+export default withRouter(UserNav);
