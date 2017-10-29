@@ -41,7 +41,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem "paperclip", '~> 5.0.0'
   gem 'figaro'
-  gem 'aws-sdk', '~> 2.3.0'
+  # gem 'aws-sdk', '~> 2.3.0'
+  gem 'aws-sdk', '< 3.0'
 end
 
 group :development do
