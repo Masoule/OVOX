@@ -1,0 +1,105 @@
+// .track-form-page {
+//
+// }
+
+.track-form-content {
+  margin: 5%;
+  margin-top: 0;
+  background: white;
+}
+
+.track-form {
+  margin: -30px auto 0;
+  padding: 30px 0;
+  width: 800px;
+}
+
+
+.form-title {
+  position: relative;
+  margin: 0 0 5px 0;
+  border-radius: 2px;
+  background-color: #fff;
+  text-align: center;
+  padding: 36px 0 0;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.track-upload {
+  margin: 35px 0 0 0;
+  display: block;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.upload-track-button {
+  // background-color: #f50;
+  // border-color: #f50;
+  // color: #fff;
+  padding-left: 20%;
+}
+
+
+.form-fields {
+  display: flex;
+  padding: 20px;
+  border: 1px solid #f2f2f2;
+}
+
+.image-upload {
+  display: block;
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin-top: 5px;
+}
+
+.image-box {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 260px;
+  height: 260px;
+  background-image: linear-gradient(135deg,#846170,#70929c);
+}
+
+.upload-button {
+  position: absolute;
+  bottom: 20px;
+  left: 35px;
+}
+
+.fields {
+  display: block;
+  position: relative;
+  margin-left: 30px;
+  padding: 30px;
+  padding-top: 0;
+}
+
+.form-submit {
+  display: flex;
+  position: relative;
+  // margin-top: 20px;
+  padding: 30px;
+  right: 0;
+  height: 90px
+}
+
+.cancel {
+  height: 30px;
+  padding: 8px 0px 8px 0px;
+}
+
+.or {
+  margin: 0px 30px 0px 30px;
+  color: #999;
+  text-align: center;
+  font-size: 14px;
+}
+
+.save-button {
+  width: 100px;
+  height: 30px;
+}

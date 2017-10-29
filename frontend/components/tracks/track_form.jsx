@@ -45,129 +45,122 @@ class TrackForm extends React.Component {
             />
         </div>
 
-        <label>Update image
           <input
             className='upload-button'
             type="file"
             accept="image/jpeg,image/pjpeg,image/gif,image/png"
             onChange={this.handleUpload("image")} />
-        </label>
       </div>
     )
   }
 
   uploadTrack (){
     return (
-      <div className='track-upload'>
-
-        <label>Choose a file to Uplod
+        <label>
           <input
-            className='upload-button'
+            className='upload-track-button'
             type="file"
             accept="track/mp3"
             onChange={this.handleUpload("track")} />
         </label>
-      </div>
     )
   }
 
   render () {
-
     return (
-
-        <div
+      <div className='track-form-content'>
+        <form
           className='track-form'
-          onClick={ (e)=> e.stopPropagation() }
-          >
+          onSubmit={this.handleSubmit}>
 
-          <div className='track-form-content'>
+          <h1 className='form-title'>
+            Upload to OVOX
+          </h1>
 
-            <form
-              className='track-form'
-              onSubmit={this.handleSubmit}>
+          <div className='track-upload'>
+            {this.uploadTrack()}
+          </div>
 
-              <h1 className='form-title'>
-                Upload to OVOX
-              </h1>
+          <div className='form-fields'>
+            {this.uploadImage()}
 
-              {this.uploadTrack()}
-
+            <div className='fields'>
               <div className='form-input'>
-
-                {this.uploadImage()}
-
-                <label className='form-label'>Title</label>
-                <input
-                  className='textfield'
-                  type="text"
-                  value={this.state.title}
-                  onChange={this.update('title')}
-                  placeholder='Title'
-                  />
+                <label className='form-label'>Title
+                  <input
+                    className='textfield'
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.update('title')}
+                    placeholder='Title'
+                    />
+                </label>
               </div>
 
-              <label>
-                <select
-                  onChange={this.update('genre')}
-                  defaultValue={this.state.genre}
-                  >
-                  <option >Genre</option>
-                  <option value="Audiobooks">Audiobooks</option>
-                  <option value="Ambient">Ambient</option>
-                  <option value="Avant Garde">Avant Garde</option>
-                  <option value="Classical">Classical</option>
-                  <option value="Country">Country</option>
-                  <option value="Dance">Dance</option>
-                  <option value="Deep House">Deep House</option>
-                  <option value="Electronic">Electronic</option>
-                  <option value="Folk">Folk</option>
-                  <option value="Jazz">Jazz</option>
-                  <option value="Metal">Metal</option>
-                  <option value="Metal">Metal</option>
-                  <option value="Pop">Pop</option>
-                  <option value="Reggae">Reggae</option>
-                  <option value="Rock">Rock</option>
-                  <option value="SoundTrack">SoundTrack</option>
-                  <option value="World">World</option>
-                </select>
-              </label>
+              <div className='form-input'>
+                <label className='form-label'>
+                  <select
+                    onChange={this.update('genre')}
+                    defaultValue={this.state.genre}
+                    >
+                    <option >Genre</option>
+                    <option value="Audiobooks">Audiobooks</option>
+                    <option value="Ambient">Ambient</option>
+                    <option value="Avant Garde">Avant Garde</option>
+                    <option value="Classical">Classical</option>
+                    <option value="Country">Country</option>
+                    <option value="Dance">Dance</option>
+                    <option value="Deep House">Deep House</option>
+                    <option value="Electronic">Electronic</option>
+                    <option value="Folk">Folk</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Metal">Metal</option>
+                    <option value="Metal">Metal</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Reggae">Reggae</option>
+                    <option value="Rock">Rock</option>
+                    <option value="SoundTrack">SoundTrack</option>
+                    <option value="World">World</option>
+                  </select>
+                </label>
+              </div>
 
               <div className='form-input'>
                 <label className='form-label'>
                   Description
+                  <textarea className='textArea textfield' rows="10" cols="47"
+                    style={{resize: 'none'}}
+                    value={this.state.description}
+                    onChange={this.update('description')}
+                    placeholder='Describe your track'>
+                  </textarea>
                 </label>
-                <textarea className='textArea' rows="10" cols="47"
-                  style={{resize: 'none'}}
-                  value={this.state.description}
-                  onChange={this.update('description')}
-                  placeholder='Describe your track'>
-                </textarea>
-
               </div>
 
-              <label>
-              </label>
-
-              <div className='small-link'>
-                <span className='small-text'>Cancel</span>
-                <Link to='/upload'>
-                  Cancel
-                </Link>
+              <div className='form-submit'>
+                <div className='cancel'>
+                  <Link to='/upload'>
+                    <span className='small-link'>Cancel</span>
+                  </Link>
+                  <span className='or'>or</span>
+                </div>
+                <div className='save-button'>
+                  <input
+                    className='button'
+                    type="submit"
+                    value='Save'
+                    />
+                </div>
               </div>
 
-              <div className='form-button'>
-                <input
-                  className='button'
-                  type="submit"
-                  value='Save'
-                  />
-              </div>
-
-            </form>
-
+            </div>
 
           </div>
-        </div>
+
+        </form>
+
+
+      </div>
       // </div>
     )
   }
