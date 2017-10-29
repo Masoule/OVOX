@@ -16,7 +16,7 @@ const App = () => (
   <div className='page'>
 
     <header className='header'>
-      <HeaderContainer />
+      <Route path="/" component={HeaderContainer} />
     </header>
 
     <section className='main'>
@@ -37,3 +37,7 @@ const App = () => (
 );
 
 export default App;
+
+
+
+// <HeaderContainer />

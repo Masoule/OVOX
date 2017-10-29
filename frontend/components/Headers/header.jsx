@@ -62,16 +62,10 @@ class Header extends React.Component {
         return (
           <h1>track</h1>
         )
-
-      default:
-
-
+        default:
+        return ("other header")
     }
-
   }
-
-
-
 }
 
 

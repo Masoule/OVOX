@@ -13,20 +13,20 @@ user1 = User.create(
 username: 'Zukey',
 password: '123456',
 first_name: "Zuki", country: "Japan",
-image: open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQelwvV-gbQZnKT6_hKCviOzzZYNgErpMeKu_DFS9ahSAb6yXSd")
+image: open("")
 )
 
 user2 = User.create(
 username: 'Lukey',
 password: '123456',
 first_name: "Luke", country: "USA",
-image: open("https://lh6.googleusercontent.com/-FW4mELlfTjc/AAAAAAAAAAI/AAAAAAAAAMA/uyZnz9tauUY/photo.jpg")
+image: open("")
 )
 
 track1 = Track.create(title: "zuke's track",  owner_id: user1.id,
-image: open("https://timedotcom.files.wordpress.com/2017/08/170801-burning-man-art.jpg?w=560")
+image: open("")
 )
 
 track2 = Track.create(title: "luke's track",  owner_id: user2.id,
-image: open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiTRy7I8EXZmJyUdHX8No6Nd6UmfZQipohXLlGf5d5kimpqf1abw")
+image: open("")
 )

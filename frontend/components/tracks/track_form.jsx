@@ -7,6 +7,7 @@ class TrackForm extends React.Component {
     super(props);
     this.state = this.props.track;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
   }
 
   componentDidMount() {
@@ -25,8 +26,17 @@ class TrackForm extends React.Component {
     this.props.processForm(this.state).then(() => this.props.history.push('/stream'));
   }
 
-  handleUpload(){
+  handleUpload(e){
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0];
+    reader.onloadend = () =>
+    this.setState({ imageUrl: reader.result, imageFile: file});
 
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({ imageUrl: "", imageFile: null });
+    }
   }
 
   update(field) {
