@@ -1,11 +1,12 @@
 import TrackIndex from './track_index';
 import { connect } from 'react-redux';
-import {fetchTracks , fetchTrack, createTrack, receiveTrackErrors, clearTrackErrors} from '../../actions/track_actions';
+import {fetchTracks , fetchTrack, receiveTrackErrors, clearTrackErrors} from '../../actions/track_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
     errors: state.errors.tracks,
-    tracks: Object.keys(state.entities.tracks).map(id => state.entities.tracks[id])
+    currentUser: state.currentUser,
+    tracks: Object.keys(state.entities.tracks).map(id => state.entities.tracks[id]),
   };
 
 };

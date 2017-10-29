@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 
 class UserNav extends React.Component {
 
+  signout () {
+    this.props.logout()
+    .then(() => this.props.history.push('/'));
+  }
 
   render (){
     const currentUser = this.props.currentUser.user;
@@ -12,7 +16,7 @@ class UserNav extends React.Component {
         <div className='upload'>
           <Link
             className=''
-            to={`/`}>
+            to={`/upload`}>
             Upload
           </Link>
         </div>
@@ -24,7 +28,7 @@ class UserNav extends React.Component {
 
           <Link
             className='username'
-            to={`/`}>
+            to={`/stream`}>
             {currentUser.username}
           </Link>
         </div>
@@ -32,7 +36,7 @@ class UserNav extends React.Component {
         <div className='logout'>
           <button
             className='button logout-btn'
-            onClick={this.props.logout}>
+            onClick={this.signout()}>
             Sign out
           </button>
         </div>

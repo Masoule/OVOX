@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user)
+    this.props.processForm(user).then( () => this.props.history.push('/stream'))
   }
 
   update(field) {
@@ -29,19 +29,6 @@ class SessionForm extends React.Component {
   componentDidMount(){
     this.props.clearErrors();
   }
-
-  // componentWillReceiveProps(newProps){
-  //   // debugger
-  //   if (newProps.location.pathname !== this.props.location.pathname) {
-  //     this.clearErrors();
-  //     // this.renderErrors();
-  //   }
-  //
-  // }
-
-  // clearErrors() {
-  //   this.props.errors = [];
-  // }
 
   hideModal(e) {
     if (e.currentTarget.className === "modal-background"){

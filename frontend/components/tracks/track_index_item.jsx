@@ -2,7 +2,10 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 
-const TrackIndexItem = ({ track, router, history }) => {
+const TrackIndexItem = ({ track, router, history, currentUser }) => {
+  const footerClass = currentUser ? 'userFooter' : 'footer'
+  const commentFormClass = currentUser ? 'comment-form' : 'no--comment-form'
+
   return (
     <li className='track-item'>
       <div className='track-box'>
@@ -23,7 +26,11 @@ const TrackIndexItem = ({ track, router, history }) => {
               </div>
 
               <div className='track-title'>
-                {track.title}
+                <Link
+                  className='track-title'
+                  to={`/${track.owner_id}/${track.id}`}>
+                  {track.title}
+                </Link>
               </div>
             </div>
 
@@ -33,12 +40,12 @@ const TrackIndexItem = ({ track, router, history }) => {
             waveform
           </div>
 
-          <div className='track-comment-form'>
+          <div className={commentFormClass}>
             commentform
           </div>
 
-          <div className='track-footer'>
-            footer
+          <div className={footerClass}>
+            Footer
           </div>
 
         </div>

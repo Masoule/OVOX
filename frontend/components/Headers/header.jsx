@@ -9,20 +9,28 @@ class Header extends React.Component {
     super(props);
   }
 
+  logo () {
+    return (
+      <div className='logo-box'>
+        <div className='logo'>
+          <img className="logo-img"
+            src={window.logo}></img>
+        </div>
+        <h1 className='logo-text'>
+          OVOX
+        </h1>
+      </div>
+    )
+  }
+
   render (){
+    debugger
     switch (this.props.headerType) {
 
       case 'general':
         return (
           <div>
-            <div className='logo'>
-              <div className='logo-img'>
-
-              </div>
-              <h1 className='logo-text'>
-                OVOX
-              </h1>
-            </div>
+            {this.logo()}
             <div className='buttons'>
               <div className='general-nav'>
                 <GeneralNav />
@@ -34,15 +42,7 @@ class Header extends React.Component {
         case 'user':
         return (
           <div>
-            <div className='logo'>
-              <div className='logo-img'>
-
-              </div>
-              <h1 className='logo-text'>
-                OVOX
-              </h1>
-            </div>
-
+            {this.logo()}
             <div className='buttons'>
               <div className='user-nav'>
                 <UserNav

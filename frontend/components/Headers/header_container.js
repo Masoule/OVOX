@@ -7,10 +7,10 @@ import { withRouter } from 'react-router-dom';
 const mapStateToProps = (state, ownProps) => {
   let headerType;
   const path = ownProps.match.path
-  if (path === '/') {
-    headerType = 'general';
-  } else if ( path === '/stream' ) {
+  if (state.session.currentUser) {
     headerType = 'user';
+  } else if ( !state.session.currentUser) {
+    headerType = 'general';
   } else if ( path === '/:userId' ) {
     headerType = 'profile';
   } else if (path === '/:userId/:trackId') {

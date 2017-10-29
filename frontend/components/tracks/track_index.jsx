@@ -16,6 +16,7 @@ class TrackIndex extends React.Component {
             this.props.tracks.map( track => (
               <TrackIndexItem
                 key={track.id}
+                currentUser={this.props.currentUser}
                 track={track} />
             ))
           }
@@ -26,7 +27,6 @@ class TrackIndex extends React.Component {
 }
 
 export default TrackIndex;
-
 
 
 // const trackItem = this.props.indexType === general ? 'TrackThumbnailItem' : 'TrackIndexItem'

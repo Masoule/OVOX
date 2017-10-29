@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.logo {
+.logo-box {
   position: absolute;
   background-color: #f50;
   left: 5%;
@@ -12,14 +12,21 @@
   z-index: 100;
 }
 
-.logo-img {
+.logo {
   width: 69px;
   height: 46px;
-  background: url('soundcloud.png');
-  z-index: 100;
+  // background: image-url('soundcloud.png');
+  z-index: 101;
   display: block;
-  background-color: #e8b09d;
+  // background-color: #e8b09d;
   // background-image: url('https://cdn2.iconfinder.com/data/icons/minimalism/512/soundcloud.png');
+}
+
+.logo-img {
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+  z-index: 200;
 }
 
 .logo-text {
