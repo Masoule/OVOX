@@ -16,15 +16,19 @@ export const fetchTrack = (id) => {
   );
 };
 
-export const createTrack = (track) => {
+export const createTrack = (formData) => {
   return (
     $.ajax({
       method: 'post',
       url: `/api/tracks`,
-      data: {track}
+      processData: false,
+      contentType: false,
+      dataType: 'json',
+      data: formData,
     })
   );
 };
+
 
 export const updateTrack = (track) => {
   return (

@@ -8,6 +8,8 @@ class TrackForm extends React.Component {
     this.state = this.props.track;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
+    // this.onloadend = this.onloadend.bind(this);
   }
 
   componentDidMount() {
@@ -21,27 +23,55 @@ class TrackForm extends React.Component {
   }
 
   handleSubmit(e) {
+    // debugger
     e.preventDefault();
-    const track = Object.assign({}, this.state);
-    this.props.processForm(this.state).then(() => this.props.history.push('/stream'));
+    const image = this.state.image;
+    const track = this.state.track;
+    const formData = new FormData();
+    formData.append("track[title]", this.state.title);
+    formData.append("track[genre]", this.state.genre);
+    formData.append("track[description]", this.state.description);
+    if (image) formData.append("track[image]", image);
+    if (track) formData.append("track[track]", track);
+
+      // console.log(formData.entries().next());
+
+    this.props.processForm(formData).then((res) => this.props.history.push(`/${res.track.owner_id}/${res.track.title}`));
   }
 
-  handleUpload(e){
+  handleUpload(field){
+    let url = `${field}URL`
+    // let url = `${field}URL`
+    return (e) =>
     const reader = new FileReader();
     const file = e.currentTarget.files[0];
+
     reader.onloadend = () =>
-    this.setState({ imageUrl: reader.result, imageFile: file});
+    this.setState({ [url]: reader.result, [field]: file});
 
     if (file) {
       reader.readAsDataURL(file);
     } else {
-      this.setState({ imageUrl: "", imageFile: null });
+      this.setState({ [url]: "", [field]: null });
     }
   }
 
   update(field) {
     return (e) =>
-    this.setState({[field]: e.currentTarget.value});
+    this.setState({ [field]: e.currentTarget.value });
+  }
+
+  renderErrors() {
+    let errors = [];
+    this.props.errors.forEach( (err, idx) => {
+      errors.push(<li key={`${idx}`}>{err}</li>);
+    });
+
+    return (
+      <ul>
+        {errors}
+      </ul>
+    );
   }
 
 
@@ -49,17 +79,19 @@ class TrackForm extends React.Component {
     return (
       <div className='image-upload'>
         <div className="image-box">
-          <img
-            className="image"
-            src={this.props.track.image}
-            />
-        </div>
 
           <input
             className='upload-button'
             type="file"
             accept="image/jpeg,image/pjpeg,image/gif,image/png"
-            onChange={this.handleUpload("image")} />
+            onChange={this.handleUpload} />
+
+          <img
+            className="image"
+            src={this.state.imageUrl}
+            />
+
+        </div>
       </div>
     )
   }
@@ -71,7 +103,7 @@ class TrackForm extends React.Component {
             className='upload-track-button'
             type="file"
             accept="track/mp3"
-            onChange={this.handleUpload("track")} />
+            onChange={this.handleUpload} />
         </label>
     )
   }
@@ -103,6 +135,18 @@ class TrackForm extends React.Component {
                     value={this.state.title}
                     onChange={this.update('title')}
                     placeholder='Title'
+                    />
+                </label>
+              </div>
+
+              <div className='form-input'>
+                <label className='form-label'>Title
+                  <input
+                    className='textfield'
+                    type="text"
+                    value={this.state.artist_name}
+                    onChange={this.update('artist_name')}
+                    placeholder='Artist'
                     />
                 </label>
               </div>
@@ -165,6 +209,10 @@ class TrackForm extends React.Component {
 
             </div>
 
+          </div>
+
+          <div className='errors'>
+            {this.renderErrors()}
           </div>
 
         </form>

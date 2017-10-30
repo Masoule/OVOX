@@ -8,13 +8,11 @@ const mapStateToProps = (state, ownProps) => {
   const formType = ownProps.match.path === '/upload' ? 'new' : 'edit'
   const track = ownProps.match.path === '/upload' ?
   { title: "",
-    artistName: "",
+    artist_name: "",
     description: "",
     genre: "",
-    imageFile: null,
-    imageUrl: "",
-    trackFile: null,
-    trackUrl: "",
+    image: "",
+    track: "",
   } : state.tracks[ownProps.match.params.trackId];
 
   return {
