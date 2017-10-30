@@ -4,8 +4,8 @@ import { withRouter } from 'react-router-dom';
 import {createTrack, fetchTrack, updateTrack, receiveTrackErrors, clearTrackErrors} from '../../actions/track_actions';
 
 
-const mapStateToProps = (state={}, ownProps) => {
-  debugger
+const mapStateToProps = (state, ownProps) => {
+  // debugger
   let track = {
     title: "",
     artist_name: "",
@@ -16,12 +16,14 @@ const mapStateToProps = (state={}, ownProps) => {
     trackUrl: "",
     track: null,
   }
-  let formType = 'new'
+  let formType;
 
-  if (ownProps.match.path === '/upload')
-   formType = 'edit';
+  if (ownProps.match.path === '/upload'){
+   formType = 'new';
+ } else {
+   formType = 'edit'
    track = state.tracks[ownProps.match.params.trackId];
-  }
+ }
   return {
     formType,
     track,

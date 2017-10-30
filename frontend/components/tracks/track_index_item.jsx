@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 const TrackIndexItem = ({ track, router, history, currentUser }) => {
   const footerClass = currentUser ? 'userFooter' : 'footer'
-  const commentFormClass = currentUser ? 'comment-form' : 'no--comment-form'
+  const commentFormClass = currentUser ? 'comment-form' : 'no-comment-form'
 
   return (
     <li className='track-item'>

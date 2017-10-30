@@ -1,11 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {  RECEIVE_CURRENT_TRACK, PLAYING, RECEIVE_PLAY_STATUS } from '../../actions/player_actions'
+import {  receiveCurrentTrack, playing, receivePlayStatus } from '../../actions/player_actions'
 
 import Player from './player';
 
-const mapStateToProps = state => ({
-});
+const mapStateToProps = state => {
+  let currentTrack
+
+  return{
+    currentTrack: state.player.currentTrack,
+    playing: state.player.playing,
+    playStatus: state.player.playStatus
+  }
+};
 
 const mapDispatchToProps = dispatch => ({
 });
@@ -14,3 +21,4 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Player);
+//

@@ -8,6 +8,7 @@ class TrackForm extends React.Component {
     this.state = this.props.track;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
+    debugger
   }
 
   componentDidMount() {
@@ -22,7 +23,6 @@ class TrackForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger
     e.preventDefault();
     const image = this.state.image;
     const track = this.state.track;
@@ -32,10 +32,6 @@ class TrackForm extends React.Component {
     formData.append("track[description]", this.state.description);
     if (image) formData.append("track[image]", image);
     if (track) formData.append("track[track]", track);
-
-      // console.log(formData.entries().next());
-
-    // debugger
     this.props.processForm(formData).then((res) => this.props.history.push(`/${res.track.owner_id}/${res.track.title}`));
   }
 
@@ -45,7 +41,6 @@ class TrackForm extends React.Component {
       const reader = new FileReader();
       const file = e.currentTarget.files[0];
       reader.onloadend = () => {
-        // debugger
         this.setState({ [url]: reader.result, [field]: file});
       }
       if (file) {
