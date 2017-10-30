@@ -10,6 +10,7 @@ class Header extends React.Component {
   }
 
   logo () {
+
     return (
       <div className='logo-box'>
         <div className='logo'>
@@ -25,7 +26,6 @@ class Header extends React.Component {
 
   render (){
     switch (this.props.headerType) {
-
       case 'general':
         return (
           <div>
@@ -53,17 +53,11 @@ class Header extends React.Component {
           </div>
         )
 
-        case 'profile':
-        return (
-          <h1>user profile</h1>
-        )
 
-        case 'track':
-        return (
-          <h1>track</h1>
-        )
-        default:
-        return ("other header")
+       <Route exact path="/" render={<h1>user profile</h1>} />
+       <Route exact path="/:userId" render={<h1>user profile</h1>} />
+       <Route exact path="/:userId/:trackId" render={<h1>Track</h1>} />
+
     }
   }
 }

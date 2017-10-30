@@ -8,7 +8,6 @@ class TrackForm extends React.Component {
     this.state = this.props.track;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
-    this.handleUpload = this.handleUpload.bind(this);
     // this.onloadend = this.onloadend.bind(this);
   }
 
@@ -36,24 +35,26 @@ class TrackForm extends React.Component {
 
       // console.log(formData.entries().next());
 
+    debugger
     this.props.processForm(formData).then((res) => this.props.history.push(`/${res.track.owner_id}/${res.track.title}`));
   }
 
   handleUpload(field){
     let url = `${field}URL`
-    // let url = `${field}URL`
-    return (e) =>
-    const reader = new FileReader();
-    const file = e.currentTarget.files[0];
-
-    reader.onloadend = () =>
-    this.setState({ [url]: reader.result, [field]: file});
-
-    if (file) {
-      reader.readAsDataURL(file);
-    } else {
-      this.setState({ [url]: "", [field]: null });
+    return (e) => {
+      const reader = new FileReader();
+      const file = e.currentTarget.files[0];
+      reader.onloadend = () => {
+        debugger
+        this.setState({ [url]: reader.result, [field]: file});
+      }
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        this.setState({ [url]: "", [field]: null });
+      }
     }
+
   }
 
   update(field) {
@@ -84,7 +85,7 @@ class TrackForm extends React.Component {
             className='upload-button'
             type="file"
             accept="image/jpeg,image/pjpeg,image/gif,image/png"
-            onChange={this.handleUpload} />
+            onChange={this.handleUpload('image')} />
 
           <img
             className="image"
@@ -102,13 +103,14 @@ class TrackForm extends React.Component {
           <input
             className='upload-track-button'
             type="file"
-            accept="track/mp3"
-            onChange={this.handleUpload} />
+            accept="audio/*"
+            onChange={this.handleUpload('track')} />
         </label>
     )
   }
 
   render () {
+    debugger
     return (
       <div className='track-form-content'>
         <form
@@ -140,7 +142,7 @@ class TrackForm extends React.Component {
               </div>
 
               <div className='form-input'>
-                <label className='form-label'>Title
+                <label className='form-label'>Artist
                   <input
                     className='textfield'
                     type="text"
@@ -193,7 +195,7 @@ class TrackForm extends React.Component {
 
               <div className='form-submit'>
                 <div className='cancel'>
-                  <Link to='/upload'>
+                  <Link to='/stream'>
                     <span className='small-link'>Cancel</span>
                   </Link>
                   <span className='or'>or</span>

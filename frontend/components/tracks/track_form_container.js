@@ -11,8 +11,10 @@ const mapStateToProps = (state, ownProps) => {
     artist_name: "",
     description: "",
     genre: "",
-    image: "",
-    track: "",
+    imageUrl: '',
+    image: null,
+    trackUrl: "",
+    track: null,
   } : state.tracks[ownProps.match.params.trackId];
 
   return {

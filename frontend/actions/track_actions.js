@@ -45,6 +45,7 @@ export const fetchTrack = (id) => dispatch => {
 };
 
 export const createTrack = (track) => dispatch => {
+  debugger
   return TrackAPIUtil.createTrack(track).then(
     (track) => (dispatch(receiveTrack(track))),
     errors => (dispatch(receiveTrackErrors(errors)))

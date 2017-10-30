@@ -17,13 +17,13 @@ export const fetchTrack = (id) => {
 };
 
 export const createTrack = (formData) => {
+  debugger
   return (
     $.ajax({
       method: 'post',
       url: `/api/tracks`,
       processData: false,
       contentType: false,
-      dataType: 'json',
       data: formData,
     })
   );

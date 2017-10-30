@@ -10,13 +10,14 @@ import TracksIndexGeneralContainer from './tracks/tracks_index_general_container
 import TrackShowContainer from './tracks/track_show_container';
 import TrackFormContainer from './tracks/track_form_container';
 import TracksIndexContainer from './tracks/tracks_index_container';
+import Player from './player/player_container'
 
 const App = () => (
 
   <div className='page'>
 
     <header className='header'>
-      <Route path="/" component={HeaderContainer} />
+      <HeaderContainer />
     </header>
 
     <section className='main'>
@@ -32,6 +33,7 @@ const App = () => (
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
 
+    <Route path="/" component={Player} />
 
   </div>
 );
@@ -39,5 +41,6 @@ const App = () => (
 export default App;
 
 
+// <Player />
 
 // <HeaderContainer />
