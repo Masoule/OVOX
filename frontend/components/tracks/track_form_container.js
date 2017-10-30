@@ -1,13 +1,14 @@
 import TrackForm from './track_form';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import {createTrack, updateTrack, receiveTrackErrors, clearTrackErrors} from '../../actions/track_actions';
+import {createTrack, fetchTrack, updateTrack, receiveTrackErrors, clearTrackErrors} from '../../actions/track_actions';
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state={}, ownProps) => {
+  debugger
   const formType = ownProps.match.path === '/upload' ? 'new' : 'edit'
-  const track = ownProps.match.path === '/upload' ?
-  { title: "",
+  const track = {
+    title: "",
     artist_name: "",
     description: "",
     genre: "",
@@ -15,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
     image: null,
     trackUrl: "",
     track: null,
-  } : state.tracks[ownProps.match.params.trackId];
+  }
 
   return {
     formType,
@@ -29,6 +30,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     processForm: (track) => dispatch(processForm(track)),
     fetchTrack: id => dispatch(fetchTrack(id)),
+    // fetchTracks: ()=> dispatch(fetchTracks()),
     receiveTrackErrors: (errors)=> dispatch(receiveTrackErrors(errors)),
     clearTrackErrors: ()=> dispatch(clearTrackErrors()),
   };

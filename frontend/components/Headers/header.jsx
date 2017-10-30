@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import UserNav from './user_nav';
-import GeneralNav from './general_nav';
+import VisitorNav from './visitor_nav';
+import WelcomeNav from './Welcome_nav';
 
 class Header extends React.Component {
 
@@ -10,7 +11,6 @@ class Header extends React.Component {
   }
 
   logo () {
-
     return (
       <div className='logo-box'>
         <div className='logo'>
@@ -24,44 +24,37 @@ class Header extends React.Component {
     )
   }
 
+  userHeader () {
+    return (
+      <div className='user-nav'>
+        <UserNav
+          currentUser={this.props.currentUser}
+          logout={this.props.logout}
+          />
+      </div>
+    )
+  }
+
+  visitorHeader (){
+    return (
+      <div className='small-nav'>
+        <VisitorNav />
+      </div>
+    )
+  }
+
   render (){
-    switch (this.props.headerType) {
-      case 'general':
-        return (
-          <div>
-            {this.logo()}
-            <div className='buttons'>
-              <div className='general-nav'>
-                <GeneralNav />
-              </div>
-            </div>
-          </div>
-        )
+    return (
 
-        case 'user':
-        return (
-          <div>
-            {this.logo()}
-            <div className='buttons'>
-              <div className='user-nav'>
-                <UserNav
-                  currentUser={this.props.currentUser}
-                  logout={this.props.logout}
-                  />
-              </div>
-            </div>
-          </div>
-        )
-
-
-       <Route exact path="/" render={<h1>user profile</h1>} />
-       <Route exact path="/:userId" render={<h1>user profile</h1>} />
-       <Route exact path="/:userId/:trackId" render={<h1>Track</h1>} />
-
-    }
+      <div>
+        {this.logo()}
+        <div className='buttons'>
+          {this.props.currentUser ? this.userHeader() : this.visitorHeader()}
+        </div>
+      </div>
+    )
   }
 }
-
 
 export default Header;
 

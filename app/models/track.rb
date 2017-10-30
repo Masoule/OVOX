@@ -21,16 +21,12 @@ class Track < ApplicationRecord
     if !self.image
       self.image = owner.image
     end
-
-    self.save!
   end
 
   def ensure_artist
     if !self.artist_name
       self.artist_name = self.owner.username
     end
-
-    self.save!
   end
 
 

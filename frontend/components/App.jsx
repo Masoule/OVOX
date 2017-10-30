@@ -27,13 +27,14 @@ const App = () => (
         <Route exact path="/upload" component={TrackFormContainer} />
 
         <Route exact path="/:userId/:trackId" component={TrackShowContainer} />
+        <Route exact path="/:userId/:trackId/edit" component={TrackFormContainer} />
 
     </section>
 
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
 
-    <Route path="/" component={Player} />
+    <Player />
 
   </div>
 );
@@ -41,6 +42,6 @@ const App = () => (
 export default App;
 
 
-// <Player />
 
+// <Route path="/" component={Player} />
 // <HeaderContainer />

@@ -5,6 +5,8 @@ import FileUploadProgress  from 'react-fileupload-progress';
 class TrackForm extends React.Component {
   constructor(props) {
     super(props);
+    // this.props.formType === 'edit' ?
+    // this.state = this.props.tracks[this.props.match.params.trackId] : this.props.track
     this.state = this.props.track;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
@@ -14,8 +16,10 @@ class TrackForm extends React.Component {
   componentDidMount() {
     if (this.props.match.params.trackId) {
       this.props.fetchTrack(this.props.match.params.trackId);
+      // this.props.fetchTracks();
     }
   }
+
 
   componentWillReceiveProps(newProps) {
     this.setState(newProps.track);
@@ -35,7 +39,7 @@ class TrackForm extends React.Component {
 
       // console.log(formData.entries().next());
 
-    debugger
+    // debugger
     this.props.processForm(formData).then((res) => this.props.history.push(`/${res.track.owner_id}/${res.track.title}`));
   }
 
@@ -45,7 +49,7 @@ class TrackForm extends React.Component {
       const reader = new FileReader();
       const file = e.currentTarget.files[0];
       reader.onloadend = () => {
-        debugger
+        // debugger
         this.setState({ [url]: reader.result, [field]: file});
       }
       if (file) {
@@ -74,7 +78,6 @@ class TrackForm extends React.Component {
       </ul>
     );
   }
-
 
   uploadImage (){
     return (
@@ -110,7 +113,7 @@ class TrackForm extends React.Component {
   }
 
   render () {
-    debugger
+    // debugger
     return (
       <div className='track-form-content'>
         <form

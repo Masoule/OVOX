@@ -58,6 +58,14 @@
   width: 100%;
 }
 
+.small-nav {
+  position: relative;
+  overflow: hidden;
+  background-color: #333;
+  height: 46px;
+  width: 100%;
+}
+
 .general-nav {
   border-top: 4px solid #f50;
   color: #fff;
@@ -97,6 +105,7 @@ img {
   line-height: 20px;
   font-size: 14px;
   // height: 30px;
+  z-index: 100;
 }
 
 
@@ -123,6 +132,18 @@ img {
 }
 
 .user-actions {
+  position: absolute;
+  top: 0px;
+  right: 5%;
+  display: flex;
+  flex-direction: row;
+  line-height: 20px;
+  font-size: 14px;
+  width: auto;
+  height: 100%;
+}
+
+.visitor-actions {
   position: absolute;
   top: 0px;
   right: 5%;

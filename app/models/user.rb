@@ -47,7 +47,6 @@ class User < ApplicationRecord
       self.first_name = self.username
     end
 
-    self.save!
   end
 
   def generate_session_token

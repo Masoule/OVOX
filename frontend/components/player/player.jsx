@@ -11,7 +11,6 @@ class Player extends React.Component {
       <div className='player-box'>
 
       </div>
-
     );
   }
 

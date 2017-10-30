@@ -17,7 +17,7 @@ export const fetchTrack = (id) => {
 };
 
 export const createTrack = (formData) => {
-  debugger
+  // debugger
   return (
     $.ajax({
       method: 'post',

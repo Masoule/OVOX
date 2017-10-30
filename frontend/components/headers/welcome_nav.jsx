@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class GeneralNav extends React.Component {
+class WelcomeNav extends React.Component {
 
   render(){
     return(
@@ -28,4 +28,4 @@ class GeneralNav extends React.Component {
   }
 }
 
-export default GeneralNav;
+export default WelcomeNav;

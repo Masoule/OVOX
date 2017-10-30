@@ -10,9 +10,7 @@ class Api::TracksController < ApplicationController
   end
 
   def create
-    debugger
-    @track = Track.new(track_params)
-    @track.owner_id = current_user.id
+    @track = current_user.tracks.new(track_params)
 
     if @track.save
       render 'api/tracks/show'
