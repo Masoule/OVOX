@@ -5,12 +5,9 @@ import FileUploadProgress  from 'react-fileupload-progress';
 class TrackForm extends React.Component {
   constructor(props) {
     super(props);
-    // this.props.formType === 'edit' ?
-    // this.state = this.props.tracks[this.props.match.params.trackId] : this.props.track
     this.state = this.props.track;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
-    // this.onloadend = this.onloadend.bind(this);
   }
 
   componentDidMount() {
@@ -19,7 +16,6 @@ class TrackForm extends React.Component {
       // this.props.fetchTracks();
     }
   }
-
 
   componentWillReceiveProps(newProps) {
     this.setState(newProps.track);

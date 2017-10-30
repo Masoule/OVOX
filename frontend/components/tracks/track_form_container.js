@@ -6,8 +6,7 @@ import {createTrack, fetchTrack, updateTrack, receiveTrackErrors, clearTrackErro
 
 const mapStateToProps = (state={}, ownProps) => {
   debugger
-  const formType = ownProps.match.path === '/upload' ? 'new' : 'edit'
-  const track = {
+  let track = {
     title: "",
     artist_name: "",
     description: "",
@@ -17,7 +16,12 @@ const mapStateToProps = (state={}, ownProps) => {
     trackUrl: "",
     track: null,
   }
+  let formType = 'new'
 
+  if (ownProps.match.path === '/upload')
+   formType = 'edit';
+   track = state.tracks[ownProps.match.params.trackId];
+  }
   return {
     formType,
     track,
