@@ -20,7 +20,7 @@ const App = () => (
 
     <header className='header'>
       <AuthRoute path="/" component={Welcome} />
-      
+
     </header>
 
     <section className='main'>
@@ -45,9 +45,3 @@ const App = () => (
 );
 
 export default App;
-
-// <HeaderContainer />
-
-
-// <Route path="/" component={Player} />
-// <HeaderContainer />

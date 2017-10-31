@@ -12,9 +12,13 @@ const UserNav = ({ router, history, currentUser, logout }) => {
             <img className="logo-img"
               src={window.logo}></img>
           </div>
-          <h1 className='logo-text'>
-            OVOX
-          </h1>
+          <Link
+            className=''
+            to={`/stream`}>
+            <h1 className='logo-text'>
+              OVOX
+            </h1>
+          </Link>
         </div>
 
         <div className='user-actions'>

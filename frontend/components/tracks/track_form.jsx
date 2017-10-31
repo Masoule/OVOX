@@ -1,20 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../nav/header_container'
 
 class TrackForm extends React.Component {
   constructor(props) {
-    // debugger
     super(props);
     this.state = this.props.track;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
-    // debugger
   }
 
   componentDidMount() {
     if (this.props.match.params.trackId) {
       this.props.fetchTrack(this.props.match.params.trackId);
-      // this.props.fetchTracks();
     }
   }
 
@@ -36,7 +34,7 @@ class TrackForm extends React.Component {
     formData.append("track[description]", this.state.description);
     if (imageUrl) formData.append("track[imageUrl]", imageUrl);
     if (trackUrl) formData.append("track[trackUrl]", trackUrl);
-    this.props.processForm(formData).then((res) => this.props.history.push(`/${this.props.currentUser.user.id}/${res.track.id}`));
+    this.props.processForm(formData).then((res) => this.props.history.push(`/${this.props.currentUser.id}/${res.track.id}`));
   }
 
   handleUpload(field){
@@ -108,119 +106,121 @@ class TrackForm extends React.Component {
   }
 
   render () {
-    // debugger
     return (
-      <div className='track-form-content'>
-        <form
-          className='track-form'
-          onSubmit={this.handleSubmit}>
+      <div>
+        <Header currentUser={this.props.currentUser}/>
 
-          <h1 className='form-title'>
-            Upload to OVOX
-          </h1>
+        <div className='track-form-content'>
+          <form
+            className='track-form'
+            onSubmit={this.handleSubmit}>
 
-          <div className='track-upload'>
-            {this.uploadTrack()}
-          </div>
+            <h1 className='form-title'>
+              Upload to OVOX
+            </h1>
 
-          <div className='form-fields'>
-            {this.uploadImage()}
+            <div className='track-upload'>
+              {this.uploadTrack()}
+            </div>
 
-            <div className='fields'>
-              <div className='form-input'>
-                <label className='form-label'>Title
-                  <input
-                    className='textfield'
-                    type="text"
-                    value={this.state.title}
-                    onChange={this.update('title')}
-                    placeholder='Title'
-                    />
-                </label>
-              </div>
+            <div className='form-fields'>
+              {this.uploadImage()}
 
-              <div className='form-input'>
-                <label className='form-label'>Artist
-                  <input
-                    className='textfield'
-                    type="text"
-                    value={this.state.artist_name}
-                    onChange={this.update('artist_name')}
-                    placeholder='Artist'
-                    />
-                </label>
-              </div>
-
-              <div className='form-input'>
-                <label className='form-label'>
-                  <select
-                    onChange={this.update('genre')}
-                    defaultValue={this.state.genre}
-                    >
-                    <option >Genre</option>
-                    <option value="Audiobooks">Audiobooks</option>
-                    <option value="Ambient">Ambient</option>
-                    <option value="Avant Garde">Avant Garde</option>
-                    <option value="Classical">Classical</option>
-                    <option value="Country">Country</option>
-                    <option value="Dance">Dance</option>
-                    <option value="Deep House">Deep House</option>
-                    <option value="Electronic">Electronic</option>
-                    <option value="Folk">Folk</option>
-                    <option value="Jazz">Jazz</option>
-                    <option value="Metal">Metal</option>
-                    <option value="Metal">Metal</option>
-                    <option value="Pop">Pop</option>
-                    <option value="Reggae">Reggae</option>
-                    <option value="Rock">Rock</option>
-                    <option value="SoundTrack">SoundTrack</option>
-                    <option value="World">World</option>
-                  </select>
-                </label>
-              </div>
-
-              <div className='form-input'>
-                <label className='form-label'>
-                  Description
-                  <textarea
-                    className='textArea textfield'
-                    rows="10" cols="47"
-                    style={{resize: 'none'}}
-                    value={this.state.description}
-                    onChange={this.update('description')}
-                    placeholder='Describe your track'>
-                  </textarea>
-                </label>
-              </div>
-
-              <div className='form-submit'>
-                <div className='cancel'>
-                  <Link to='/stream'>
-                    <span className='small-link'>Cancel</span>
-                  </Link>
-                  <span className='or'>or</span>
+              <div className='fields'>
+                <div className='form-input'>
+                  <label className='form-label'>Title
+                    <input
+                      className='textfield'
+                      type="text"
+                      value={this.state.title}
+                      onChange={this.update('title')}
+                      placeholder='Title'
+                      />
+                  </label>
                 </div>
-                <div className='save-button'>
-                  <input
-                    className='button'
-                    type="submit"
-                    value='Save'
-                    />
+
+                <div className='form-input'>
+                  <label className='form-label'>Artist
+                    <input
+                      className='textfield'
+                      type="text"
+                      value={this.state.artist_name}
+                      onChange={this.update('artist_name')}
+                      placeholder='Artist'
+                      />
+                  </label>
                 </div>
+
+                <div className='form-input'>
+                  <label className='form-label'>
+                    <select
+                      onChange={this.update('genre')}
+                      defaultValue={this.state.genre}
+                      >
+                      <option >Genre</option>
+                      <option value="Audiobooks">Audiobooks</option>
+                      <option value="Ambient">Ambient</option>
+                      <option value="Avant Garde">Avant Garde</option>
+                      <option value="Classical">Classical</option>
+                      <option value="Country">Country</option>
+                      <option value="Dance">Dance</option>
+                      <option value="Deep House">Deep House</option>
+                      <option value="Electronic">Electronic</option>
+                      <option value="Folk">Folk</option>
+                      <option value="Jazz">Jazz</option>
+                      <option value="Metal">Metal</option>
+                      <option value="Metal">Metal</option>
+                      <option value="Pop">Pop</option>
+                      <option value="Reggae">Reggae</option>
+                      <option value="Rock">Rock</option>
+                      <option value="SoundTrack">SoundTrack</option>
+                      <option value="World">World</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div className='form-input'>
+                  <label className='form-label'>
+                    Description
+                    <textarea
+                      className='textArea textfield'
+                      rows="10" cols="47"
+                      style={{resize: 'none'}}
+                      value={this.state.description}
+                      onChange={this.update('description')}
+                      placeholder='Describe your track'>
+                    </textarea>
+                  </label>
+                </div>
+
+                <div className='form-submit'>
+                  <div className='cancel'>
+                    <Link to='/stream'>
+                      <span className='small-link'>Cancel</span>
+                    </Link>
+                    <span className='or'>or</span>
+                  </div>
+                  <div className='save-button'>
+                    <input
+                      className='button'
+                      type="submit"
+                      value='Save'
+                      />
+                  </div>
+                </div>
+
               </div>
 
             </div>
 
-          </div>
+            <div className='errors'>
+              {this.renderErrors()}
+            </div>
 
-          <div className='errors'>
-            {this.renderErrors()}
-          </div>
+          </form>
 
-        </form>
-
+        </div>
       </div>
-      // </div>
     )
   }
 
