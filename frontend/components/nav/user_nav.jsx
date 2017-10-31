@@ -33,13 +33,13 @@ const UserNav = ({ router, history, currentUser, logout }) => {
 
           <div className='user'>
             <div className='user-thumb'>
-              <img src={currentUser.user.image}></img>
+              <img src={currentUser.image}></img>
             </div>
 
             <Link
               className='username'
               to={`/stream`}>
-              {currentUser.user.username}
+              {currentUser.username}
             </Link>
           </div>
 
