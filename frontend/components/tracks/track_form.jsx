@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FileUploadProgress  from 'react-fileupload-progress';
 
 class TrackForm extends React.Component {
   constructor(props) {
