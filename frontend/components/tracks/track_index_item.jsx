@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-
+import PlayButton from '../player/play_button'
+import {  receiveCurrentTrack, playing, receivePlayStatus } from '../../actions/player_actions'
 
 const TrackIndexItem = ({ track, router, history, currentUser }) => {
   const footerClass = currentUser ? 'userFooter' : 'footer'
@@ -17,7 +18,9 @@ const TrackIndexItem = ({ track, router, history, currentUser }) => {
           <div className='track-header'>
 
             <div className='play-button'>
-
+              <PlayButton
+                track={track}
+                />
             </div>
 
             <div className='track-info'>

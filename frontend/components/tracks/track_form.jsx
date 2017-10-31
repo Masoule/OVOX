@@ -8,7 +8,7 @@ class TrackForm extends React.Component {
     this.state = this.props.track;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
-    debugger
+    // debugger
   }
 
   componentDidMount() {
@@ -212,7 +212,6 @@ class TrackForm extends React.Component {
           </div>
 
         </form>
-
 
       </div>
       // </div>

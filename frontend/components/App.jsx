@@ -8,6 +8,7 @@ import SessionFormContainer from './session/session_form_container';
 
 import TracksIndexGeneralContainer from './tracks/tracks_index_general_container';
 import TrackShowContainer from './tracks/track_show_container';
+import UserShowContainer from './users/user_show_container';
 import TrackFormContainer from './tracks/track_form_container';
 import TracksIndexContainer from './tracks/tracks_index_container';
 import Player from './player/player_container'
@@ -27,6 +28,7 @@ const App = () => (
         <Route exact path="/upload" component={TrackFormContainer} />
 
         <Route exact path="/:userId/:trackId" component={TrackShowContainer} />
+        <Route exact path="/:userId" component={UserShowContainer} />
         <Route exact path="/:userId/:trackId/edit" component={TrackFormContainer} />
 
     </section>

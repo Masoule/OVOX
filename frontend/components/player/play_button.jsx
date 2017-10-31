@@ -1,14 +1,26 @@
 import React from 'react';
+import { receiveCurrentTrack, playing, receivePlayStatus } from '../../actions/player_actions'
 // import { Link } from 'react-router-dom';
 
-const PlayButton = ({ currentTrack }) => {
+class PlayButton extends React.Component  {
 
+  handleClick() {
+    dispatch(receiveCurrentTrack(this.props.track))
+    //setTimeout(() => {
+      // dispatch(playing(true))
+
+    //}, 10)
+  }
+  render() {
     return(
-      <div className='play-button'>
-
+      <div className='play-button'
+        onClick={this.handleClick.bind(this)}>
+        play
       </div>
     );
+
   }
+}
 
 
 export default PlayButton;

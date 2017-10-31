@@ -1,9 +1,18 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
+class UserShow extends React.Component {
 
-const TrackShowItem = ({ track, router, history, currentUser }) => {
-  return (
+  componentDidMount(){
+    this.props.fetchUser(this.props.userId);
+    this.props.fetchUsers();
+  }
+
+  header (){
+    let user=this.props.user
+    let currentUser=this.props.currentUser
+
+    return (
       <div className='track-show-box'>
 
         <div className='track-show-content'>
@@ -17,18 +26,18 @@ const TrackShowItem = ({ track, router, history, currentUser }) => {
             <div className='track-show-info'>
               <div className='track-show-artist-box'>
                 <span className='track-show-artist'>
-                  {track.artist_name}
+
                 </span>
               </div>
 
               <div className='track-show-title'>
-                  <Link
-                    className=''
-                    to={`/${track.owner_id}/${track.id}`}>
-                    <span className='track-show-title'>
-                      {track.title}
-                    </span>
-                  </Link>
+                <Link
+                  className=''
+                  to={''}>
+                  <span className='track-show-title'>
+                    {user.username}
+                  </span>
+                </Link>
               </div>
             </div>
 
@@ -37,47 +46,40 @@ const TrackShowItem = ({ track, router, history, currentUser }) => {
         </div>
 
         <div className='track-show-date'>
-          2 days ago
+
         </div>
 
         <div className='track-show-waveform'>
-          waveform
+
         </div>
 
         <div className='track-show-comment-form'>
-          commentform
+
         </div>
 
         <div className='track-show-thumb-box'>
           <img className="track-show-thumb"
-            src={track.image}></img>
+            src={user.image}></img>
         </div>
 
       </div>
-    );
-};
+    )
+  }
 
-export default withRouter(TrackShowItem);
+  comments (){
 
+  }
 
+  render (){
+    const content = this.props.user ? this.header() : null
+    { content }
 
+    return (
+      <div className='track-show'>
+        hi!!!!!!
+      </div>
+    )
+  }
+}
 
-
-
-// <Link to={track.image}>
-//   {track.title}
-// </Link>
-
-
-// <Link to={`/tracks/${track.id}/edit`}>
-//   Edit
-// </Link>
-// <button onClick={() => deleteTrack(track.id)}>Delete</button>
-
-
-
-
-//
-// <Link to={`/tracks/${track.id}`}>
-//   {track.title}
-// </Link>//&nbsp;
+export default UserShow;
