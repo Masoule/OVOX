@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 class TrackForm extends React.Component {
   constructor(props) {
+    // debugger
     super(props);
     this.state = this.props.track;
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,19 +24,24 @@ class TrackForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const image = this.state.image;
-    const track = this.state.track;
+    const imageUrl = this.state.imageUrl;
+    const trackUrl = this.state.trackUrl;
     const formData = new FormData();
+    if ( this.state.id ) {
+      formData.append("track[id]", this.state.id)
+    }
+    formData.append('track[owner_id]', this.state.owner.id)
     formData.append("track[title]", this.state.title);
     formData.append("track[genre]", this.state.genre);
     formData.append("track[description]", this.state.description);
-    if (image) formData.append("track[image]", image);
-    if (track) formData.append("track[track]", track);
-    this.props.processForm(formData).then((res) => this.props.history.push(`/${res.track.owner_id}/${res.track.title}`));
+    if (imageUrl) formData.append("track[imageUrl]", imageUrl);
+    if (trackUrl) formData.append("track[trackUrl]", trackUrl);
+    // debugger
+    this.props.processForm(formData).then((res) => this.props.history.push(`/${this.props.currentUser.user.id}/${res.track.id}`));
   }
 
   handleUpload(field){
-    let url = `${field}URL`
+    let url = `${field}Url`
     return (e) => {
       const reader = new FileReader();
       const file = e.currentTarget.files[0];
@@ -177,7 +183,9 @@ class TrackForm extends React.Component {
               <div className='form-input'>
                 <label className='form-label'>
                   Description
-                  <textarea className='textArea textfield' rows="10" cols="47"
+                  <textarea
+                    className='textArea textfield'
+                    rows="10" cols="47"
                     style={{resize: 'none'}}
                     value={this.state.description}
                     onChange={this.update('description')}

@@ -4,8 +4,20 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
   const mapStateToProps = (state, ownProps) => {
+    const currentUser = state.session.currentUser;
+
+    let headerType;
+    if (ownProps.match.path === '/') {
+      headerType = 'welcome';
+    } else if (currentUser) {
+      headerType = 'user';
+    } else {
+      headerType = 'visitor';
+    }
+
     return {
-      currentUser: state.session.currentUser
+      currentUser: state.session.currentUser,
+      headerType
     };
   };
 

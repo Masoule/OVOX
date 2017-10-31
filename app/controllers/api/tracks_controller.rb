@@ -20,7 +20,7 @@ class Api::TracksController < ApplicationController
   end
 
   def update
-
+  # debugger
   @track = current_user.tracks.find(params[:id])
 
   if @track.update_attributes(track_params)

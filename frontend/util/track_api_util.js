@@ -25,17 +25,21 @@ export const createTrack = (formData) => {
       processData: false,
       contentType: false,
       data: formData,
+      dataType: 'json',
     })
   );
 };
 
 
-export const updateTrack = (track) => {
+export const updateTrack = (formData) => {
   return (
     $.ajax({
       method: 'patch',
-      url: `/api/tracks/${track.id}`,
-      data: {track}
+      url: `/api/tracks/${formData.get("track[id]")}`,
+      processData: false,
+      contentType: false,
+      data: formData,
+      dataType: 'json',
     })
   );
 };

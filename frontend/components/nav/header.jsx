@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import UserNav from './user_nav';
 import VisitorNav from './visitor_nav';
-import WelcomeNav from './welcome_nav';
+// import WelcomeNav from './welcome_nav';
 
 class Header extends React.Component {
 

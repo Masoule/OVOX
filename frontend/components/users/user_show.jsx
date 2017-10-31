@@ -11,7 +11,7 @@ class UserShow extends React.Component {
   header (){
     let user=this.props.user
     let currentUser=this.props.currentUser
-
+    // debugger
     return (
       <div className='track-show-box'>
 
@@ -66,13 +66,13 @@ class UserShow extends React.Component {
     )
   }
 
-  comments (){
-
+  tracks (){
   }
 
   render (){
-    const content = this.props.user ? this.header() : null
-    { content }
+    // const content = this.props.user ? this.header() : null
+    // { content }
+    // { this.header() }
 
     return (
       <div className='track-show'>

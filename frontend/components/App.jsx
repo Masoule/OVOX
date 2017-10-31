@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 import HeaderContainer from './nav/header_container';
+import Welcome from './nav/welcome_nav';
 
 import SessionFormContainer from './session/session_form_container';
 
@@ -18,7 +19,8 @@ const App = () => (
   <div className='page'>
 
     <header className='header'>
-      <HeaderContainer />
+      <AuthRoute path="/" component={Welcome} />
+
     </header>
 
     <section className='main'>
@@ -43,6 +45,7 @@ const App = () => (
 
 export default App;
 
+// <HeaderContainer />
 
 
 // <Route path="/" component={Player} />

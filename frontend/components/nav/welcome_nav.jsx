@@ -3,28 +3,45 @@ import { Link } from 'react-router-dom';
 
 class WelcomeNav extends React.Component {
 
-  render(){
-    return(
-      <div className='session-buttons'>
-
-        <div className='button login-btn'>
-          <Link
-            className='link-btn'
-            to={`/login`}>
-            Sign in
-          </Link>
+  logo () {
+    return (
+      <div className='logo-box'>
+        <div className='logo'>
+          <img className="logo-img"
+            src={window.logo}></img>
         </div>
-
-        <div className='button signup-btn'>
-          <Link
-            className='link-btn'
-            to={`/signup`}>
-            Create account
-          </Link>
-        </div>
-
+        <h1 className='logo-text'>
+          OVOX
+        </h1>
       </div>
-    );
+    )
+  }
+
+
+  render(){
+    return (
+      <div className='general-nav'>
+        <div className='session-buttons'>
+
+          <div className='button login-btn'>
+            <Link
+              className='link-btn'
+              to={`/login`}>
+              Sign in
+            </Link>
+          </div>
+
+          <div className='button signup-btn'>
+            <Link
+              className='link-btn'
+              to={`/signup`}>
+              Create account
+            </Link>
+          </div>
+
+        </div>
+      </div>
+    )
   }
 }
 

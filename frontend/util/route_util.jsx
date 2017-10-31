@@ -4,7 +4,7 @@ import { Route, Redirect, withRouter } from 'react-router-dom';
 
 
 const Auth = ({component: Component, path, loggedIn}) => (
-  <Route path={path} render={(props) => (
+  <Route exact path={path} render={(props) => (
     loggedIn ? (
       <Redirect to="/stream" />
     ) : (
@@ -14,17 +14,30 @@ const Auth = ({component: Component, path, loggedIn}) => (
 );
 
 const Protected = ({component: Component, path, loggedIn}) => (
-  <Route path={path} render={(props) => (
+  <Route exact path={path} render={(props) => (
     loggedIn ? (
       <Component {...props} />
     ) : (
-      <Redirect to="/login" />
+      <Redirect to="/" />
+    )
+  )}/>
+);
+
+const Owner = ({component: Component, path, currentUser}) => (
+  <Route exact path={path} render={(props) => (
+    currentUser.id === props ? (
+      <Component {...props} />
+    ) : (
+      <Redirect to="/stream" />
     )
   )}/>
 );
 
 const mapStateToProps = state => {
-  return {loggedIn: Boolean(state.session.currentUser)};
+  return {
+    currentUser: state.session.currentUser,
+    loggedIn: Boolean(state.session.currentUser)
+  };
 };
 
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));

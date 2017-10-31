@@ -1,7 +1,7 @@
 import TrackForm from './track_form';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import {createTrack, fetchTrack, updateTrack, receiveTrackErrors, clearTrackErrors} from '../../actions/track_actions';
+import { createTrack, fetchTrack, updateTrack, receiveTrackErrors, clearTrackErrors } from '../../actions/track_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -22,9 +22,11 @@ const mapStateToProps = (state, ownProps) => {
    formType = 'new';
  } else {
    formType = 'edit'
-   track = state.tracks[ownProps.match.params.trackId];
+   track = state.entities.tracks[ownProps.match.params.trackId]  || track
+   if (track.description === null) { track.description = ''} ;
  }
   return {
+    currentUser: state.session.currentUser,
     formType,
     track,
     errors: state.errors.tracks,
