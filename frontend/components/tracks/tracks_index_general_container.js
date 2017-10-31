@@ -5,10 +5,9 @@ import {fetchTracks , fetchTrack, createTrack, receiveTrackErrors, clearTrackErr
 const mapStateToProps = (state, ownProps) => {
   return {
     errors: state.errors.tracks,
-    currentUser: state.currentUser,
+    currentUser: state.session.currentUser.user,
     tracks: Object.keys(state.entities.tracks).map(id => state.entities.tracks[id])
   };
-
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

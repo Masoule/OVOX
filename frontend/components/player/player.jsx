@@ -12,7 +12,7 @@ class Player extends React.Component {
 
   componentDidMount() {
     this.audioPlayer.addEventListener("loadedmetadata", () => {
-      console.log('loded meta', this)
+      // console.log('loded meta', this)
       if (this.props.playing) {
         this.audioPlayer.play()
       } else {
@@ -23,7 +23,7 @@ class Player extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if(this.props.playing !== nextProps.playing) {
-      console.log('now play', nextProps)
+      // console.log('now play', nextProps)
       if(nextProps.playing) {
         this.audioPlayer.play()
       }
@@ -35,7 +35,7 @@ class Player extends React.Component {
 
   render() {
     // let source = (this.props.currentTrack) ? this.props.currentTrack.track : '';
-    let source = (this.props.currentTrack) ? 'http://www.sample-videos.com/audio/mp3/crowd-cheering.mp3' : ''
+    let source = (this.props.currentTrack) ? this.props.currentTrack.trackUrl : ''
     return(
       <div className='player-box'>
         <audio

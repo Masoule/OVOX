@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import Header from '../nav/header_container'
 // import TrackShowItem from './track_show_item';
 
 class TrackShow extends React.Component {
@@ -14,6 +15,11 @@ class TrackShow extends React.Component {
     let currentUser=this.props.currentUser
 
     return (
+      <div>
+        <Header
+          currentuser={currentUser}
+          />
+        
       <div className='track-show-box'>
 
         <div className='track-show-content'>
@@ -64,6 +70,7 @@ class TrackShow extends React.Component {
         </div>
 
       </div>
+    </div>
     )
   }
 
