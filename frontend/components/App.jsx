@@ -20,7 +20,7 @@ const App = () => (
 
     <header className='header'>
       <AuthRoute path="/" component={Welcome} />
-
+      
     </header>
 
     <section className='main'>
@@ -30,6 +30,7 @@ const App = () => (
         <Route exact path="/upload" component={TrackFormContainer} />
 
         <Route exact path="/:userId/:trackId" component={TrackShowContainer} />
+
         <Route exact path="/:userId" component={UserShowContainer} />
         <Route exact path="/:userId/:trackId/edit" component={TrackFormContainer} />
 

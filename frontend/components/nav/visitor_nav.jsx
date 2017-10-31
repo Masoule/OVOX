@@ -1,10 +1,21 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
-const VisitorNav = ({ router, history, currentUser }) => {
+const VisitorNav = () => {
 
     return(
+    <div className='small-nav'>
+      <div className='logo-box'>
+        <div className='logo'>
+          <img className="logo-img"
+            src={window.logo}></img>
+        </div>
+        <h2 className='logo-text'>
+          OVOX
+        </h2>
+      </div>
+
       <div className='visitor-actions'>
         <div className='session-buttons'>
 
@@ -26,8 +37,9 @@ const VisitorNav = ({ router, history, currentUser }) => {
 
         </div>
       </div>
+    </div>
     );
   }
 
 
-export default withRouter(VisitorNav);
+export default VisitorNav;

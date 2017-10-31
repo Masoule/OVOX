@@ -36,7 +36,6 @@ class TrackForm extends React.Component {
     formData.append("track[description]", this.state.description);
     if (imageUrl) formData.append("track[imageUrl]", imageUrl);
     if (trackUrl) formData.append("track[trackUrl]", trackUrl);
-    // debugger
     this.props.processForm(formData).then((res) => this.props.history.push(`/${this.props.currentUser.user.id}/${res.track.id}`));
   }
 

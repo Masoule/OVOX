@@ -5,15 +5,7 @@ import { withRouter } from 'react-router-dom';
 
   const mapStateToProps = (state, ownProps) => {
     const currentUser = state.session.currentUser;
-
-    let headerType;
-    if (ownProps.match.path === '/') {
-      headerType = 'welcome';
-    } else if (currentUser) {
-      headerType = 'user';
-    } else {
-      headerType = 'visitor';
-    }
+    const headerType = currentUser ? 'user' : 'visitor'
 
     return {
       currentUser: state.session.currentUser,
@@ -22,8 +14,8 @@ import { withRouter } from 'react-router-dom';
   };
 
 
-const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(logout()),
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  logout: () => dispatch(logout()).then(()=>ownProps.history.push('/')),
 });
 
 export default withRouter(connect(
