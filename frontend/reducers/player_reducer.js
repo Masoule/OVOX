@@ -22,8 +22,10 @@ const PlayerReducer = (state= defaultState, action) => {
         playing = !state.playing
       }
       let newState = merge({}, state)
-      //const {entities} = action
       const entities = action.entities
+      if (state.currentTrack) {
+        entities.tracks[state.currentTrack.id].playing = false
+      }
       entities.tracks[currentTrack.id].playing = playing
       newState = Object.assign({}, newState, {playing}, {currentTrack}, {entities});
       return newState;

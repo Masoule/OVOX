@@ -20,10 +20,11 @@ const App = () => (
 
     <header className='header'>
       <AuthRoute path="/" component={Welcome} />
-
     </header>
 
       <Switch>
+        <AuthRoute path="/login" component={SessionFormContainer} />
+        <AuthRoute path="/signup" component={SessionFormContainer} />
         <Route exact path="/stream" component={TracksIndexContainer} />
         <Route exact path="/upload" component={TrackFormContainer} />
 
@@ -35,8 +36,6 @@ const App = () => (
       </Switch>
 
 
-    <AuthRoute path="/login" component={SessionFormContainer} />
-    <AuthRoute path="/signup" component={SessionFormContainer} />
 
     <Player />
 

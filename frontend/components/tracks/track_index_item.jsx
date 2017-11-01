@@ -6,7 +6,7 @@ import PlayButton from '../player/play_button'
 const TrackIndexItem = ({ track, router, history, currentUser }) => {
   const footerClass = currentUser ? 'userFooter' : 'footer'
   const commentFormClass = currentUser ? 'comment-form' : 'no-comment-form'
-  const editable = (currentUser && currentUseruser.id === track.owner_id) ? true : false
+  const editable = (currentUser && currentUser.user.id === track.owner_id) ? true : false
 
   return (
     <li className='track-item'>

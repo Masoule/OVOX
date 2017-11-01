@@ -23,7 +23,7 @@ class Player extends React.Component {
 
     this.audioPlayer.addEventListener("timeupdate", () => {
       // console.log('loded meta', this)
-      
+
     })
   }
 
@@ -100,3 +100,21 @@ class Player extends React.Component {
 }
 
 export default Player;
+
+
+
+
+// <div>
+//   <button onclick={document.getElementById('player').play()}>
+//     Play
+//   </button>
+//   <button onclick={document.getElementById('player').pause()}>
+//     Pause
+//   </button>
+//   <button onclick={document.getElementById('player').volume += 0.1}>
+//     Vol+
+//   </button>
+//   <button onclick={document.getElementById('player').volume -= 0.1}>
+//     Vol-
+//   </button>
+// </div>
