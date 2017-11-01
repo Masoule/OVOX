@@ -1,9 +1,59 @@
-.player-box {
+.player {
   position: fixed;
   bottom: 0;
   width: 100%;
   background-color: #f2f2f2;
   border-top: 1px solid #cecece;
-  z-index: 1000;
   height: 48px;
+  z-index: 1000;
+}
+
+.player-box {
+  margin: 0 5%;
+  display: flex;
+}
+
+.player-control {
+  width: 180px;  
+}
+
+.player-progress {
+  width: 632px;
+  margin-right: 11px;
+}
+
+.volume {
+  width: 24px;
+  margin-right: 11px;
+}
+
+.track-info-box {
+  box-sizing: border-box;
+  width: 360px;
+  height: 48px;
+  padding: 0 8px;
+  // z-index: 10001;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.track-info-thumb-box {
+  position: relative;
+  height: 30px;
+  width: 30px;
+  // margin-left: 15;
+  background-image: linear-gradient(135deg,#8e8485,#e6846e);
+  margin: 0 10px 0 0;
+}
+
+.track-info-thumb {
+  height: 30px;
+  width: 30px;
+  opacity: 1;
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+
 }

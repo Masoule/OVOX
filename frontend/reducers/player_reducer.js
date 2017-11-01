@@ -5,6 +5,7 @@ const defaultState = Object.freeze(
   { currentTrack: null,
     playing: false,
     play_status: 0,
+
   }
 );
 
@@ -15,12 +16,16 @@ const PlayerReducer = (state= defaultState, action) => {
     case RECEIVE_CURRENT_TRACK:
       let currentTrack = action.currentTrack
       let playing
-      if (!state.player || currentTrack !== state.player.currentTrack){
+      if (currentTrack !== state.currentTrack){
         playing = true
       } else {
-        playing = !state.player.playing
+        playing = !state.playing
       }
-      newState = Object.assign({}, state, {playing}, {currentTrack});
+      let newState = merge({}, state)
+      //const {entities} = action
+      const entities = action.entities
+      entities.tracks[currentTrack.id].playing = playing
+      newState = Object.assign({}, newState, {playing}, {currentTrack}, {entities});
       return newState;
     // case PLAYING:
     //   let playing = action.playing;

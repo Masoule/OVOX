@@ -23,15 +23,17 @@ const Protected = ({component: Component, path, loggedIn}) => (
   )}/>
 );
 
-const Owner = ({component: Component, path, currentUser}) => (
-  <Route exact path={path} render={(props) => (
-    currentUser.id === props ? (
-      <Component {...props} />
-    ) : (
-      <Redirect to="/stream" />
-    )
-  )}/>
-);
+// this.match.params
+
+// const Owner = ({component: Component, path, currentUser}) => (
+//   <Route exact path={path} render={(props) => (
+//     currentUser.id === props.track.owner_id ? (
+//       <Component {...props} />
+//     ) : (
+//       <Redirect to="/stream" />
+//     )
+//   )}/>
+// );
 
 const mapStateToProps = state => {
   return {

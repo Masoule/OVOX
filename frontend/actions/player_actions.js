@@ -9,10 +9,10 @@ export const RECEIVE_CURRENT_TRACK = 'RECEIVE_CURRENT_TRACK';
 export const PLAYING = 'PLAYING';
 export const RECEIVE_PLAY_STATUS = 'RECEIVE_PLAY_STATUS';
 
-export const receiveCurrentTrack = currentTrack => ({
-  type: RECEIVE_CURRENT_TRACK,
-  currentTrack
-});
+// export const receiveCurrentTrack = currentTrack => ({
+//   type: RECEIVE_CURRENT_TRACK,
+//   currentTrack
+// });
 
 export const playing = playing => ({
   type: PLAYING,
@@ -23,3 +23,12 @@ export const receivePlayStatus = playStatus => ({
   type: RECEIVE_PLAY_STATUS,
   playStatus
 });
+
+export const receiveCurrentTrack = currentTrack => (dispatch, getState) => {
+  const entities = getState().entities
+  dispatch({
+    type: RECEIVE_CURRENT_TRACK,
+    currentTrack,
+    entities
+  })  
+}

@@ -6,8 +6,8 @@ import { Link, withRouter } from 'react-router-dom';
 const UserNav = ({ router, history, currentUser, logout }) => {
 
     return(
-      <div className='user-nav'>
-        <div className='logo-box'>
+      <div className='small-nav'>
+        <div className='logo-box-small'>
           <div className='logo'>
             <img className="logo-img"
               src={window.logo}></img>
@@ -22,7 +22,6 @@ const UserNav = ({ router, history, currentUser, logout }) => {
         </div>
 
         <div className='user-actions'>
-
           <div className='upload'>
             <Link
               className=''

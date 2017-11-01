@@ -8,7 +8,7 @@ import { withRouter } from 'react-router-dom';
     const headerType = currentUser ? 'user' : 'visitor'
 
     return {
-      currentUser: state.session.currentUser.user,
+      currentUser: state.session.currentUser,
       headerType
     };
   };

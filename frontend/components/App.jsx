@@ -23,9 +23,7 @@ const App = () => (
 
     </header>
 
-    <section className='main'>
-        <AuthRoute path="/" component={TracksIndexGeneralContainer} />
-
+      <Switch>
         <Route exact path="/stream" component={TracksIndexContainer} />
         <Route exact path="/upload" component={TrackFormContainer} />
 
@@ -33,8 +31,9 @@ const App = () => (
 
         <Route exact path="/:userId" component={UserShowContainer} />
         <Route exact path="/:userId/:trackId/edit" component={TrackFormContainer} />
+        <AuthRoute path="/" component={TracksIndexGeneralContainer} />
+      </Switch>
 
-    </section>
 
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
@@ -45,3 +44,10 @@ const App = () => (
 );
 
 export default App;
+
+
+
+
+// <section className='main'>
+//
+// </section>

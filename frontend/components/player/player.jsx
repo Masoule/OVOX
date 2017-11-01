@@ -4,8 +4,9 @@ import React from 'react';
 class Player extends React.Component {
   constructor(props) {
     super(props);
+    }
     // let currentTrack = this.props.currentTrack || null;
-  }
+
 
 
   //The audio player was not resonding to the change of state when trying to change the play/pause status in componentWillReceiveProps. This turned out to be due to the fact that while the play function was called on the audioplayer instantaneously, the track metadata was not yet loaded. I fixed this by using the loadedmetadata event (which fires the assigned function when the metadata is loaded) in componentDidMount.
@@ -18,6 +19,11 @@ class Player extends React.Component {
       } else {
         this.audioPlayer.pause()
       }
+    })
+
+    this.audioPlayer.addEventListener("timeupdate", () => {
+      // console.log('loded meta', this)
+      
     })
   }
 
@@ -33,17 +39,60 @@ class Player extends React.Component {
     }
   }
 
+  trackInfo () {
+    let track = this.props.currentTrack
+    // debugger
+    if (track === null) {
+      return ''
+    } else {
+      return (
+        <div className='track-info-box'>
+          <div className='track-info-thumb-box'>
+            <img className="track-info-thumb"
+              src={track.imageUrl}></img>
+          </div>
+          <div className='track-content'>
+            <div className='track-header'>
+              <div className='track-info'>
+                <div className='track-artist'>
+                  {track.artist_name}
+                </div>
+
+                <div className='track-title'>
+                  {track.title}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
+
   render() {
     // let source = (this.props.currentTrack) ? this.props.currentTrack.track : '';
     let source = (this.props.currentTrack) ? this.props.currentTrack.trackUrl : ''
+    // debugger
     return(
-      <div className='player-box'>
-        <audio
-          controls="controls"
-          src={source}
-          ref={(audioPlayer) => { this.audioPlayer = audioPlayer}}
-          >
-        </audio>
+      <div className='player'>
+        <div className='player-box'>
+          <div className='player-control'>
+
+          </div>
+          <div className='player-progress'>
+            <audio
+              controls="controls"
+              src={source}
+              ref={(audioPlayer) => { this.audioPlayer = audioPlayer}}
+              >
+            </audio>
+          </div>
+          <div className='volume'>
+
+          </div>
+
+          {this.trackInfo()}
+        </div>
       </div>
     );
   }

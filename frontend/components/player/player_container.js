@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {  receiveCurrentTrack, playing, receivePlayStatus } from '../../actions/player_actions'
+import { receiveCurrentTrack, playing, receivePlayStatus } from '../../actions/player_actions'
 
 import Player from './player';
 
 const mapStateToProps = state => {
-
   return{
     currentTrack: state.player.currentTrack,
     playing: state.player.playing,
@@ -13,8 +12,12 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = dispatch => ({
-});
+const mapDispatchToProps = (dispatch) => {
+  return
+    { receiveCurrentTrack: (track) => dispatch(receiveCurrentTrack(track))
+    }
+
+};
 
 export default connect(
   mapStateToProps,

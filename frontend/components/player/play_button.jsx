@@ -15,7 +15,7 @@ class PlayButton extends React.Component  {
     return(
       <div className='play-button'
         onClick={this.handleClick.bind(this)}>
-        play
+        {this.props.track.playing ? '||' : '>'}
       </div>
     );
 

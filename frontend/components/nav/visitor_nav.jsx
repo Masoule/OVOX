@@ -6,7 +6,7 @@ const VisitorNav = () => {
 
     return(
     <div className='small-nav'>
-      <div className='logo-box'>
+      <div className='logo-box-small'>
         <div className='logo'>
           <img className="logo-img"
             src={window.logo}></img>
@@ -17,9 +17,7 @@ const VisitorNav = () => {
       </div>
 
       <div className='visitor-actions'>
-        <div className='session-buttons'>
-
-          <div className='button login-btn'>
+          <div className='login-btn-sm'>
             <Link
               className='link-btn'
               to={`/login`}>
@@ -27,7 +25,7 @@ const VisitorNav = () => {
             </Link>
           </div>
 
-          <div className='button signup-btn'>
+          <div className='signup-btn-sm'>
             <Link
               className='link-btn'
               to={`/signup`}>
@@ -35,7 +33,6 @@ const VisitorNav = () => {
             </Link>
           </div>
 
-        </div>
       </div>
     </div>
     );
