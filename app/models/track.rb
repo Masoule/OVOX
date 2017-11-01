@@ -1,5 +1,6 @@
 class Track < ApplicationRecord
   validates :title, :owner_id, presence: true
+  validates :likers, uniqueness: true
 
   has_attached_file :image
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
@@ -10,6 +11,14 @@ class Track < ApplicationRecord
   belongs_to :owner,
   foreign_key: :owner_id,
   class_name: 'User'
+
+  has_many :comments, dependent: :destroy,
+  has_many :commenters, through: :comments
+
+  has_many :likes, dependent: :destroy,
+  has_many :likers, through: :likes
+
+
 
   after_initialize :ensure_image
   after_initialize :ensure_artist
