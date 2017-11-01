@@ -12,13 +12,11 @@ class Track < ApplicationRecord
   foreign_key: :owner_id,
   class_name: 'User'
 
-  has_many :comments, dependent: :destroy,
+  has_many :comments, dependent: :destroy
   has_many :commenters, through: :comments
 
-  has_many :likes, dependent: :destroy,
+  has_many :likes, dependent: :destroy
   has_many :likers, through: :likes
-
-
 
   after_initialize :ensure_image
   after_initialize :ensure_artist

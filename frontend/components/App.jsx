@@ -25,13 +25,11 @@ const App = () => (
       <Switch>
         <AuthRoute path="/login" component={SessionFormContainer} />
         <AuthRoute path="/signup" component={SessionFormContainer} />
-        <Route exact path="/stream" component={TracksIndexContainer} />
         <Route exact path="/upload" component={TrackFormContainer} />
-
-        <Route exact path="/:userId/:trackId" component={TrackShowContainer} />
-
-        <Route exact path="/:userId" component={UserShowContainer} />
         <Route exact path="/:userId/:trackId/edit" component={TrackFormContainer} />
+        <Route exact path="/:userId/:trackId" component={TrackShowContainer} />
+        <Route exact path="/:userId" component={UserShowContainer} />
+        <Route exact path="/stream" component={TracksIndexContainer} />
         <AuthRoute path="/" component={TracksIndexGeneralContainer} />
       </Switch>
 
