@@ -21,7 +21,7 @@ class TrackIndex extends React.Component {
                 <TrackIndexItem
                   key={track.id}
                   currentUser={this.props.currentUser}
-                  track={track} />
+                  track={track}/>
               ))
             }
           </ul>

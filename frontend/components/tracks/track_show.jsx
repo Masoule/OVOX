@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import Header from '../nav/header_container'
-// import TrackShowItem from './track_show_item';
+import Header from '../nav/header_container';
+import CommentFormContainer from '../tracks/comment_form_container';
+import CommentIndexItem from './comment_index_item'
 
 class TrackShow extends React.Component {
 
@@ -62,9 +63,6 @@ class TrackShow extends React.Component {
 
             </div>
 
-            <div className='track-show-comment-form'>
-              commentform
-            </div>
 
             <div className='track-show-thumb-box'>
               <img className="track-show-thumb"
@@ -74,14 +72,32 @@ class TrackShow extends React.Component {
           </div>
 
           <div className="track-comments">
-            <div className='track-owner'>
-              owner
 
+            <div className='track-show-comment-form'>
+              <CommentFormContainer
+                trackId={track.id}/>
             </div>
 
             <div className='comment-index'>
-              comment
+
+              <div className='track-owner'>
+                <div className='artist-avatar-box'>
+                  <img className="artist-avatar"
+                    src={track.imageUrl}></img>
+                </div>
+                <div>
+                  {track.artist_name}
+                </div>
+              </div>
+              <div className='comments'>
+                <div className='comments-title'>
+                  Comments
+                </div>
+                {this.comments()}
+              </div>
+
             </div>
+
 
           </div>
         </div>
@@ -90,7 +106,20 @@ class TrackShow extends React.Component {
   }
 
   comments (){
-
+    let track=this.props.track
+    if (track.comments) {
+      return (
+          <ul className='comments'>
+            {
+              track.comments.map( comment => (
+                <CommentIndexItem
+                  key={comment.id}
+                  comment={ comment } />
+              ))
+            }
+          </ul>
+      )
+    }
   }
 
   render (){

@@ -17,14 +17,14 @@ class UserShow extends React.Component {
     if (user.country === '') {
       textClass = 'none';
     }
-    // debugger
+
     return (
       <div className='page'>
         <Header
           currentuser={currentUser}
           user={user}
           />
-        <div className='main-show' style={{height:window.innerHeight-94}}>
+        <div className='main-show'>
 
           <div className='profile-header'>
 

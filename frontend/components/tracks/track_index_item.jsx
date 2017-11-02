@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PlayButton from '../player/play_button'
-import CommentForm from '../tracks/comment_form'
+import CommentFormContainer from '../tracks/comment_form_container'
 // import {  receiveCurrentTrack, playing, receivePlayStatus } from '../../actions/player_actions'
 
-const TrackIndexItem = ({ track, router, history, currentUser }) => {
+const TrackIndexItem = ({ track, router, history, currentUser}) => {
   const footerClass = currentUser ? 'userFooter' : 'footer'
   const commentFormClass = currentUser ? 'comment-form' : 'no-comment-form'
   const editable = (currentUser && currentUser.id === track.owner_id) ? true : false
@@ -50,8 +50,8 @@ const TrackIndexItem = ({ track, router, history, currentUser }) => {
           </div>
 
           <div className={commentFormClass}>
-            <CommentForm
-              track={track}/>
+            <CommentFormContainer
+              trackId={track.id}/>
           </div>
 
           <div className={footerClass}>

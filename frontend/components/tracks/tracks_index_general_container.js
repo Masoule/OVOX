@@ -2,6 +2,7 @@ import TrackIndexGeneral from './track_index_general';
 import { connect } from 'react-redux';
 import {fetchTracks , fetchTrack, createTrack, receiveTrackErrors, clearTrackErrors} from '../../actions/track_actions';
 
+
 const mapStateToProps = (state, ownProps) => {
   return {
     errors: state.errors.tracks,

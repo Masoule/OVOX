@@ -16,15 +16,12 @@ export const fetchComment = (commentId) => {
   );
 };
 
-export const createComment = (formData) => {
+export const createComment = comment => {
   return (
     $.ajax({
       method: 'post',
-      url: `/api/tracks/${trackId}/comments`,
-      processData: false,
-      contentType: false,
-      data: formData,
-      dataType: 'json',
+      url: `/api/tracks/${comment.track_id}/comments`,
+      data: {comment} ,
     })
   );
 };

@@ -26,7 +26,7 @@ img {
   padding: 20px;
   padding-bottom: 0px;
   height: inherit;
-  margin: 0 5%;
+  margin: 46px 5%;
 }
 
 .track-index {
@@ -53,17 +53,17 @@ img {
 }
 
 .track-thumb {
-    opacity: 1;
-    display: block;
-    max-width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-image: linear-gradient(135deg,#846170,#e6846e);
-    background: center center/contain no-repeat;
-    display: block;
-    width: 160px;
-    height: 160px;
-    z-index: 2;
+  opacity: 1;
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-image: linear-gradient(135deg,#846170,#e6846e);
+  background: center center/contain no-repeat;
+  display: block;
+  width: 160px;
+  height: 160px;
+  z-index: 2;
 }
 
 .track-content {
@@ -114,6 +114,7 @@ img {
 }
 
 .track-comment-form {
+  display: block;
   position: relative;
   z-index: 3;
   opacity: 0;
@@ -123,6 +124,7 @@ img {
   background: #f2f2f2;
   border: 1px solid #e5e5e5;
   overflow: hidden;
+  margin-bottom: 20px;
   // background-color: #fff6ed;
 }
 

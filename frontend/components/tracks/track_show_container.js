@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchTrack, fetchTracks } from '../../actions/track_actions';
 import { fetchUser } from '../../actions/user_actions';
+// import { createComment, deleteComment } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const userId = ownProps.match.params.userId;
@@ -24,6 +25,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchTrack: (id) => dispatch(fetchTrack(id)),
     fetchTracks: () => dispatch(fetchTracks()),
     fetchUser: (id) => dispatch(fetchUser(id)),
+    createComment: (comment) => dispatch(createComment(comment)),
+    deleteComment: (commentId) => dispatch(deleteComment(commentId)),
   };
 };
 
