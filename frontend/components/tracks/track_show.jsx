@@ -19,36 +19,38 @@ class TrackShow extends React.Component {
         <Header
           currentuser={currentUser}
           />
-        <div className='main'>
-          <div className='track-show-box'>
+        <div className='main-show'>
+          <div className='track-show-header'>
 
             <div className='track-show-content'>
-
-              <div className='track-show-header'>
 
                 <div className='play-show-button'>
 
                 </div>
 
                 <div className='track-show-info'>
+
                   <div className='track-show-artist-box'>
-                    <span className='track-show-artist'>
-                      {track.artist_name}
-                    </span>
+                    <Link
+                      className=''
+                      to={`/${track.owner_id}`}>
+                      <span className='track-show-artist'>
+                        {track.artist_name}
+                      </span>
+                    </Link>
+
                   </div>
 
                   <div className='track-show-title'>
                     <Link
                       className=''
                       to={`/${track.owner_id}/${track.id}`}>
-                      <span className='track-show-title'>
+                      <span className=''>
                         {track.title}
                       </span>
                     </Link>
                   </div>
                 </div>
-
-              </div>
 
             </div>
 
@@ -57,7 +59,7 @@ class TrackShow extends React.Component {
             </div>
 
             <div className='track-show-waveform'>
-              waveform
+
             </div>
 
             <div className='track-show-comment-form'>
@@ -69,7 +71,19 @@ class TrackShow extends React.Component {
                 src={track.imageUrl}></img>
             </div>
 
-          </div>        
+          </div>
+
+          <div className="track-comments">
+            <div className='track-owner'>
+              owner
+
+            </div>
+
+            <div className='comment-index'>
+              comment
+            </div>
+
+          </div>
         </div>
     </div>
     )
@@ -83,7 +97,7 @@ class TrackShow extends React.Component {
     const content = this.props.track ? this.header() : null
 
     return (
-      <div className='track-show'>
+      <div className='page-show'>
         { content }
       </div>
     )

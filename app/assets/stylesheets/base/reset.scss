@@ -18,6 +18,10 @@ span, article, footer, time, small {
   font-family: 'Roboto', sans-serif;
 }
 
+html {
+    height: 100%;
+}
+
 ul {
   list-style: none;
 }
@@ -52,16 +56,20 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+.root {
+  height: inherit;
+}
+
 .page {
   background: #f2f2f2;
-  height: -webkit-fill-available;
+  height: auto;
 }
 
 .main {
   // width: 100%;
-  // height: 100%;
+  background: #f2f2f2;
   padding: 5%;
   padding-top: 0;
   padding-bottom: 0;
-  height: -webkit-fill-available;
+  height: auto;
 }

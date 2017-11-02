@@ -12,6 +12,7 @@ class Player extends React.Component {
   //The audio player was not resonding to the change of state when trying to change the play/pause status in componentWillReceiveProps. This turned out to be due to the fact that while the play function was called on the audioplayer instantaneously, the track metadata was not yet loaded. I fixed this by using the loadedmetadata event (which fires the assigned function when the metadata is loaded) in componentDidMount.
 
   componentDidMount() {
+    console.log(this.props)
     this.audioPlayer.addEventListener("loadedmetadata", () => {
       // console.log('loded meta', this)
       if (this.props.playing) {
@@ -24,6 +25,14 @@ class Player extends React.Component {
     this.audioPlayer.addEventListener("timeupdate", () => {
       // console.log('loded meta', this)
 
+    })
+
+    this.audioPlayer.addEventListener("play", () => {
+      this.props.playerPress(true)
+    })
+
+    this.audioPlayer.addEventListener("pause", () => {
+      this.props.playerPress(false)
     })
   }
 

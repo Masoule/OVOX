@@ -1,5 +1,6 @@
-import { RECEIVE_CURRENT_TRACK, PLAYING, RECEIVE_PLAY_STATUS } from '../actions/player_actions';
+import { RECEIVE_CURRENT_TRACK, PLAYING, RECEIVE_PLAY_STATUS, PLAY_BUTTON_PRESS } from '../actions/player_actions';
 import merge from 'lodash/merge';
+
 
 const defaultState = Object.freeze(
   { currentTrack: null,
@@ -11,9 +12,10 @@ const defaultState = Object.freeze(
 
 const PlayerReducer = (state= defaultState, action) => {
   Object.freeze(state);
-  let newState;
+  const entities = action.entities
   switch (action.type) {
     case RECEIVE_CURRENT_TRACK:
+      let newState = merge({}, state)
       let currentTrack = action.currentTrack
       let playing
       if (currentTrack !== state.currentTrack){
@@ -21,14 +23,17 @@ const PlayerReducer = (state= defaultState, action) => {
       } else {
         playing = !state.playing
       }
-      let newState = merge({}, state)
-      const entities = action.entities
       if (state.currentTrack) {
         entities.tracks[state.currentTrack.id].playing = false
       }
       entities.tracks[currentTrack.id].playing = playing
       newState = Object.assign({}, newState, {playing}, {currentTrack}, {entities});
       return newState;
+    case PLAY_BUTTON_PRESS:
+      newState = merge({}, state)
+      playing = action.play
+      entities.tracks[state.currentTrack.id].playing = playing
+      return Object.assign({}, newState, {playing}, {entities});
     // case PLAYING:
     //   let playing = action.playing;
     //   newState = Object.assign({}, state, { playing });

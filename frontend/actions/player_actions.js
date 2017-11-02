@@ -8,6 +8,7 @@
 export const RECEIVE_CURRENT_TRACK = 'RECEIVE_CURRENT_TRACK';
 export const PLAYING = 'PLAYING';
 export const RECEIVE_PLAY_STATUS = 'RECEIVE_PLAY_STATUS';
+export const PLAY_BUTTON_PRESS = 'PLAY_BUTTON_PRESS';
 
 // export const receiveCurrentTrack = currentTrack => ({
 //   type: RECEIVE_CURRENT_TRACK,
@@ -26,9 +27,19 @@ export const receivePlayStatus = playStatus => ({
 
 export const receiveCurrentTrack = currentTrack => (dispatch, getState) => {
   const entities = getState().entities
+  console.log(getState())
   dispatch({
     type: RECEIVE_CURRENT_TRACK,
     currentTrack,
     entities
-  })  
-}
+  })
+};
+
+export const playerPress = play => (dispatch, getState) => {
+  const entities = getState().entities
+  dispatch({
+    type: PLAY_BUTTON_PRESS,
+    play,
+    entities
+  })
+};

@@ -1,0 +1,103 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(242,242,242,.9);
+  z-index: 10000;
+}
+
+.header {
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.auth-modal {
+  background-color: white;
+  margin-top: 15%;
+  z-index: 10001;
+  width: 45%;
+  padding: 30px;
+  align-items: center;
+  margin-left: 25%;
+  color: #333;
+}
+
+.auth-modal-content {
+  // display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.auth-form {
+}
+
+.form-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-input {
+  // display: flex;
+  position: relative;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 20px;
+}
+
+.form-label {
+
+}
+
+.textfield {
+  display: inline-block;
+  position: relative;
+  width: 98%;
+  z-index: 1;
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 5px 5px;
+  margin-top: 5px;
+  border: 1px solid #ccc
+}
+
+.form-button {
+  position: relative;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.small-link {
+  color: #38d;
+  text-align: center;
+  font-size: 14px;
+}
+
+.small-text {
+  color: #999;
+  text-align: center;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+
+.errors {
+  position: relative;
+  color: #f50;
+  padding: 6px 0 5px;
+  text-align: center;
+}

@@ -22,18 +22,18 @@ class TrackForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const imageUrl = this.state.imageUrl;
-    const trackUrl = this.state.trackUrl;
+    // debugger
+    const image = this.state.image;
+    const track = this.state.track;
     const formData = new FormData();
     if ( this.state.id ) {
       formData.append("track[id]", this.state.id)
     }
-    formData.append('track[owner_id]', this.state.owner.id)
     formData.append("track[title]", this.state.title);
     formData.append("track[genre]", this.state.genre);
     formData.append("track[description]", this.state.description);
-    if (imageUrl) formData.append("track[imageUrl]", imageUrl);
-    if (trackUrl) formData.append("track[trackUrl]", trackUrl);
+    if (image) formData.append("track[image]", image);
+    if (track) formData.append("track[track]", track);
     this.props.processForm(formData).then((res) => this.props.history.push(`/${this.props.currentUser.id}/${res.track.id}`));
   }
 

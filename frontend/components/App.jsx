@@ -19,17 +19,16 @@ const App = () => (
   <div className='page'>
 
     <header className='header'>
-      <AuthRoute path="/" component={Welcome} />
     </header>
+    <AuthRoute path="*/login" component={SessionFormContainer} />
+    <AuthRoute path="*/signup" component={SessionFormContainer} />
 
       <Switch>
-        <AuthRoute path="/login" component={SessionFormContainer} />
-        <AuthRoute path="/signup" component={SessionFormContainer} />
         <Route exact path="/upload" component={TrackFormContainer} />
-        <Route exact path="/:userId/:trackId/edit" component={TrackFormContainer} />
-        <Route exact path="/:userId/:trackId" component={TrackShowContainer} />
-        <Route exact path="/:userId" component={UserShowContainer} />
+        <Route path="/:userId/:trackId/edit" component={TrackFormContainer} />
+        <Route path="/:userId/:trackId" component={TrackShowContainer} />
         <Route exact path="/stream" component={TracksIndexContainer} />
+        <Route exact path="/:userId" component={UserShowContainer} />
         <AuthRoute path="/" component={TracksIndexGeneralContainer} />
       </Switch>
 
@@ -44,6 +43,7 @@ export default App;
 
 
 
+// <AuthRoute path="/" component={Welcome} />
 
 // <section className='main'>
 //

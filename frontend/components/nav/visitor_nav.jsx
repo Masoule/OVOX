@@ -1,34 +1,38 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 
-const VisitorNav = () => {
-
+const VisitorNav = (props) => {
+    // debugger
     return(
-    <div className='small-nav'>
+    <div className='small-nav little-nav'>
       <div className='logo-box-small'>
         <div className='logo'>
           <img className="logo-img"
             src={window.logo}></img>
         </div>
-        <h2 className='logo-text'>
-          OVOX
-        </h2>
+        <Link
+          className=''
+          to={`/`}>
+          <h1 className='logo-text'>
+            OVOX
+          </h1>
+        </Link>
       </div>
 
       <div className='visitor-actions'>
           <div className='login-btn-sm'>
             <Link
-              className='link-btn'
-              to={`/login`}>
+              className='a-login'
+              to={`${props.location.pathname}/login`}>
               Sign in
             </Link>
           </div>
 
           <div className='signup-btn-sm'>
             <Link
-              className='link-btn'
-              to={`/signup`}>
+              className='a-signup'
+              to={`${props.location.pathname}/signup`}>
               Create account
             </Link>
           </div>
@@ -39,4 +43,4 @@ const VisitorNav = () => {
   }
 
 
-export default VisitorNav;
+export default withRouter(VisitorNav);

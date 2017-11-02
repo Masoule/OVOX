@@ -4,24 +4,22 @@ import { withRouter } from 'react-router-dom';
 import { fetchUser, fetchUsers } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const users = Object.keys(state.entities.users).map(id => state.entities.users[id])
   const userId = ownProps.match.params.userId;
-  const user = state.entities.users[userId];
   const currentUser = state.currentUser;
-
-  // debugger
+  const user = state.entities.users.user || null;
+  // const tracks = user !== null ? user.tracks : {} || {}
+ //debugger
   return {
-    userId,
     user,
-    users,
+    userId,
     currentUser,
+    // tracks
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchUser: (id) => dispatch(fetchUser(id)),
-    fetchUsers: () => dispatch(fetchUsers()),
   };
 };
 

@@ -12,7 +12,7 @@ class Header extends React.Component {
     return (
       this.props.currentUser ?
       <UserNav
-        currentUser={this.props.currentUser.user}
+        currentUser={this.props.currentUser}
         logout={this.props.logout}
         />
       :

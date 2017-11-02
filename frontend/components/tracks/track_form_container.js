@@ -26,7 +26,7 @@ const mapStateToProps = (state, ownProps) => {
    if (track.description === null) { track.description = ''} ;
  }
   return {
-    currentUser: state.session.currentUser.user,
+    currentUser: state.session.currentUser,
     formType,
     track,
     errors: state.errors.tracks,

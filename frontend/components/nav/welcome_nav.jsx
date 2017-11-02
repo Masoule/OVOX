@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class WelcomeNav extends React.Component {
 
@@ -10,7 +10,7 @@ class WelcomeNav extends React.Component {
           <img className="logo-img"
             src={window.logo}></img>
         </div>
-        
+
         <h1 className='logo-text'>
           OVOX
         </h1>
@@ -20,6 +20,7 @@ class WelcomeNav extends React.Component {
 
 
   render(){
+    // debugger
     return (
       <div className='general-nav'>
         <div className='session-buttons'>
@@ -27,7 +28,7 @@ class WelcomeNav extends React.Component {
           <div className='button login-btn'>
             <Link
               className='link-btn'
-              to={`/login`}>
+              to={`${this.props.location.pathname}/login`}>
               Sign in
             </Link>
           </div>
@@ -35,7 +36,7 @@ class WelcomeNav extends React.Component {
           <div className='button signup-btn'>
             <Link
               className='link-btn'
-              to={`/signup`}>
+              to={`${this.props.location.pathname}/signup`}>
               Create account
             </Link>
           </div>
@@ -46,4 +47,4 @@ class WelcomeNav extends React.Component {
   }
 }
 
-export default WelcomeNav;
+export default withRouter(WelcomeNav);

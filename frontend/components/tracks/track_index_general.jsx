@@ -1,6 +1,6 @@
 import React from 'react';
 import TrackIndexItem from './track_index_item';
-import Header from '../nav/header_container'
+import WelcomeNav from '../nav/welcome_nav'
 // import TrackFormContainer from './Track_form_container';
 
 class TrackIndexGeneral extends React.Component {
@@ -12,6 +12,8 @@ class TrackIndexGeneral extends React.Component {
   render (){
     return (
       <div>
+        <WelcomeNav />
+
         <div className='track-index-box'>
           <ul className='track-index'>
             {

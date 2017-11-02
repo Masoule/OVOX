@@ -17,7 +17,6 @@ export const fetchTrack = (id) => {
 };
 
 export const createTrack = (formData) => {
-  // debugger
   return (
     $.ajax({
       method: 'post',
@@ -25,7 +24,6 @@ export const createTrack = (formData) => {
       processData: false,
       contentType: false,
       data: formData,
-      dataType: 'json',
     })
   );
 };
@@ -39,7 +37,6 @@ export const updateTrack = (formData) => {
       processData: false,
       contentType: false,
       data: formData,
-      dataType: 'json',
     })
   );
 };

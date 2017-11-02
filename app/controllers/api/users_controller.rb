@@ -1,6 +1,14 @@
 class Api::UsersController < ApplicationController
   protect_from_forgery with: :exception
 
+  def index
+    @users = User.all
+  end
+
+  def show
+    @user = User.find_by(id: params[:id])
+  end
+
   def create
     @user = User.new(user_params)
 
@@ -12,9 +20,6 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def show
-    @track = User.find_by(id: params[:id])
-  end
 
   private
 
