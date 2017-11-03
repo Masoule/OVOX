@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 
 const VisitorNav = (props) => {
-    // debugger
+    // 
     return(
     <div className='small-nav little-nav'>
       <div className='logo-box-small'>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class CommentForm extends React.Component {
 
   constructor(props) {
-    // debugger
+    //
     super(props);
     this.state = { body: "", track_id: this.props.trackId};
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -13,7 +13,7 @@ class CommentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const comment = Object.assign({}, this.state);
-    // debugger
+    //
     this.props.createComment(comment)
   }
 
@@ -31,7 +31,7 @@ class CommentForm extends React.Component {
     if (this.props.currentUser) {
       return (
         <form
-          className='comment-form'
+          className='comment-form-inner'
           onSubmit={this.handleSubmit}>
 
           <div className='comment-form-input'>

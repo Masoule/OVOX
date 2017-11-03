@@ -1,4 +1,5 @@
 import { RECEIVE_COMMENT, RECEIVE_COMMENTS, REMOVE_COMMENT } from '../actions/comment_actions';
+import { RECEIVE_TRACK } from '../actions/track_actions';
 import merge from 'lodash/merge';
 
 const defaultState = Object.freeze({
@@ -7,10 +8,13 @@ const defaultState = Object.freeze({
 
 const CommentReducer = (state= defaultState, action) => {
   Object.freeze(state);
-
+  let comments;
   switch (action.type) {
+    case RECEIVE_TRACK:
+      comments = merge({}, state, action.data.comments );
+      return comments;
     case RECEIVE_COMMENTS:
-      const comments = merge({}, action.comments );
+      comments = merge({}, action.comments );
       return comments;
     case RECEIVE_COMMENT:
       const comment = merge({}, state, { [action.comment.id]: action.comment });

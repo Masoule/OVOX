@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   const currentUser = state.currentUser;
   const user = state.entities.users.user || null;
   // const tracks = user !== null ? user.tracks : {} || {}
- //debugger
+ //
   return {
     user,
     userId,

@@ -1,6 +1,6 @@
 // import React from 'react';
 import { connect } from 'react-redux';
-import { receiveCurrentTrack, playing, receivePlayStatus, playerPress } from '../../actions/player_actions'
+import { receiveCurrentTrack, toggle, playing, receivePlayStatus } from '../../actions/player_actions'
 
 import Player from './player';
 
@@ -14,8 +14,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-      playerPress: (play) => dispatch(playerPress(play)),
-      receiveCurrentTrack: (track) => dispatch(receiveCurrentTrack(track))
+      toggle: () => dispatch(toggle()),
+      receiveCurrentTrack: (track) => dispatch(receiveCurrentTrack(track)),    
     }
 };
 /*

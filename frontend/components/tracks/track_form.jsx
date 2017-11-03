@@ -22,7 +22,7 @@ class TrackForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // debugger
+    // 
     const image = this.state.image;
     const track = this.state.track;
     const formData = new FormData();

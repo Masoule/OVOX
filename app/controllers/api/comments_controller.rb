@@ -1,6 +1,14 @@
 class Api::CommentsController < ApplicationController
   before_action :require_logged_in, only: [:create, :destroy]
 
+  def show
+    @comment = Comment.find(params[:id])
+  end
+
+  def index
+    @comments = Comment.all
+  end
+
   def create
     @comment = current_user.comments.new(comment_params)
     @comment.user_id = current_user.id

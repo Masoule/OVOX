@@ -1,6 +1,6 @@
 import TrackIndex from './track_index';
 import { connect } from 'react-redux';
-import {fetchTracks , fetchTrack, createTrack, receiveTrackErrors, clearTrackErrors} from '../../actions/track_actions';
+import {fetchTracks , fetchTrack, createTrack, deleteTrack, receiveTrackErrors, clearTrackErrors} from '../../actions/track_actions';
 // import { createComment, deleteComment } from '../../actions/comment_actions';
 
 
@@ -19,6 +19,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchTracks: () => dispatch(fetchTracks()),
     fetchTrack: (id) => dispatch(fetchTrack(id)),
     clearErrors: ()=> dispatch(clearTrackErrors()),
+    deleteTrack: (id) => dispatch(deleteTrack(id)),
     createComment: (comment) => dispatch(createComment(comment)),
     deleteComment: (commentId) => dispatch(deleteComment(commentId)),
   };

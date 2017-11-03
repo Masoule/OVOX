@@ -1,18 +1,13 @@
 import React from 'react';
-// import Audio from 'react-audioplayer';
+import PlayButtonContainer from './play_button_container'
 
 class Player extends React.Component {
   constructor(props) {
     super(props);
+    let currentTrack = this.props.currentTrack || null;
     }
-    // let currentTrack = this.props.currentTrack || null;
-
-
-
-  //The audio player was not resonding to the change of state when trying to change the play/pause status in componentWillReceiveProps. This turned out to be due to the fact that while the play function was called on the audioplayer instantaneously, the track metadata was not yet loaded. I fixed this by using the loadedmetadata event (which fires the assigned function when the metadata is loaded) in componentDidMount.
 
   componentDidMount() {
-    console.log(this.props)
     this.audioPlayer.addEventListener("loadedmetadata", () => {
       // console.log('loded meta', this)
       if (this.props.playing) {
@@ -27,16 +22,27 @@ class Player extends React.Component {
 
     })
 
-    this.audioPlayer.addEventListener("play", () => {
-      this.props.playerPress(true)
-    })
 
-    this.audioPlayer.addEventListener("pause", () => {
-      this.props.playerPress(false)
-    })
+    // currentTrack.addEventListener("timeupdate", timeUpdate, false);
+    //
+    // timeUpdate() {
+    // 	let playPercent = 100 * (currentTrack.currentTime / duration);
+    // 	let marginLeft = playPercent + "%";
+    // }
+
+    //
+    // this.audioPlayer.addEventListener("play", (e) => {
+    //
+    //   // this.props.toggle()
+    // })
+    //
+    // this.audioPlayer.addEventListener("pause", () => {
+    //   // this.props.toggle()
+    // })
   }
 
   componentWillReceiveProps(nextProps) {
+    //
     if(this.props.playing !== nextProps.playing) {
       // console.log('now play', nextProps)
       if(nextProps.playing) {
@@ -50,8 +56,8 @@ class Player extends React.Component {
 
   trackInfo () {
     let track = this.props.currentTrack
-    // debugger
-    if (track === null) {
+    //
+    if (!track) {
       return ''
     } else {
       return (
@@ -81,7 +87,7 @@ class Player extends React.Component {
   render() {
     // let source = (this.props.currentTrack) ? this.props.currentTrack.track : '';
     let source = (this.props.currentTrack) ? this.props.currentTrack.trackUrl : ''
-    // debugger
+    //
     return(
       <div className='player'>
         <div className='player-box'>
@@ -90,11 +96,16 @@ class Player extends React.Component {
           </div>
           <div className='player-progress'>
             <audio
-              controls="controls"
               src={source}
               ref={(audioPlayer) => { this.audioPlayer = audioPlayer}}
               >
             </audio>
+
+            <div className='play'>
+              <PlayButtonContainer
+                track={this.props.currentTrack}/>
+            </div>
+
           </div>
           <div className='volume'>
 
@@ -109,8 +120,6 @@ class Player extends React.Component {
 }
 
 export default Player;
-
-
 
 
 // <div>

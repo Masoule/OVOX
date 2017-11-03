@@ -17,7 +17,7 @@ const CommentIndexItem = ({ comment, currentUser }) => {
         </div>
         <div className='comment-content'>
           <span className='comment-user'>
-            {comment.user.username} at {comment.time}
+            {comment.user}  at  {comment.time}
           </span>
           <span className='comment-body'>
             {comment.body}

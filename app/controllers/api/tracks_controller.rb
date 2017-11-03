@@ -10,7 +10,7 @@ class Api::TracksController < ApplicationController
   end
 
   def create
-    # debugger
+    # 
     @track = current_user.tracks.new(track_params)
 
     if @track.save
@@ -21,7 +21,7 @@ class Api::TracksController < ApplicationController
   end
 
   def update
-    # debugger
+    # 
   @track = current_user.tracks.find(params[:id])
 
   if @track.update(track_params)

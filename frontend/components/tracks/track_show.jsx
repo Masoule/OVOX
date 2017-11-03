@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Header from '../nav/header_container';
-import CommentFormContainer from '../tracks/comment_form_container';
+import CommentFormContainer from './comment_form_container';
 import CommentIndexItem from './comment_index_item'
+import PlayButtonContainer from '../player/play_button_container'
 
 class TrackShow extends React.Component {
 
   componentDidMount(){
     this.props.fetchTrack(this.props.trackId);
-    this.props.fetchTracks();
   }
 
   header (){
@@ -26,7 +26,10 @@ class TrackShow extends React.Component {
             <div className='track-show-content'>
 
                 <div className='play-show-button'>
-
+                    <PlayButtonContainer
+                      className='play-show-button'
+                      track={track}
+                      />
                 </div>
 
                 <div className='track-show-info'>
@@ -75,7 +78,7 @@ class TrackShow extends React.Component {
 
             <div className='track-show-comment-form'>
               <CommentFormContainer
-                trackId={track.id}/>
+                trackId={this.props.trackId}/>
             </div>
 
             <div className='comment-index'>
@@ -83,7 +86,7 @@ class TrackShow extends React.Component {
               <div className='track-owner'>
                 <div className='artist-avatar-box'>
                   <img className="artist-avatar"
-                    src={track.imageUrl}></img>
+                    src={track.ownerImage}></img>
                 </div>
                 <div>
                   {track.artist_name}
@@ -107,11 +110,12 @@ class TrackShow extends React.Component {
 
   comments (){
     let track=this.props.track
-    if (track.comments) {
+    debugger
+    if (this.props.comments) {
       return (
           <ul className='comments'>
             {
-              track.comments.map( comment => (
+              this.props.comments.map( comment => (
                 <CommentIndexItem
                   key={comment.id}
                   comment={ comment } />

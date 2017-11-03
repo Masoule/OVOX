@@ -11,9 +11,9 @@ export const receiveTracks = tracks => ({
   tracks
 });
 
-export const receiveTrack = track => ({
+export const receiveTrack = data => ({
   type: RECEIVE_TRACK,
-  track
+  data
 });
 
 export const removeTrack = trackId => ({
