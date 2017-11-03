@@ -33,7 +33,7 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
                 <Link
                   className='track-artist'
                   to={`/${track.owner_id}`}>
-                  {track.artist_name}
+                  {track.owner}
                 </Link>
               </div>
 
