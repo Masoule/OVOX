@@ -10,11 +10,12 @@ class UserShow extends React.Component {
   }
 
   header (){
+
     let user=this.props.user
     let currentUser=this.props.currentUser
     let tracks=this.props.user.tracks
     let textClass
-    if (user.country === '') {
+    if (this.props.user.country === '') {
       textClass = 'none';
     }
 
@@ -35,20 +36,20 @@ class UserShow extends React.Component {
 
           <div className='user-show-info'>
             <div className='user-show-title'>
-              {user.username}
+              {this.props.user.username}
               <span className=''>
               </span>
             </div>
             <br></br>
             <div className='user-show-subtitle'>
               <span className=''>
-                {user.first_name}
+                {this.props.user.first_name}
               </span>
             </div>
             <br></br>
             <div className='user-show-subtitle'>
               <span className={textClass}>
-                {user.country}
+                {this.props.user.country}
               </span>
             </div>
 
@@ -60,9 +61,9 @@ class UserShow extends React.Component {
               {
                 tracks.map( track => (
                   <TrackIndexItem
-                    key={track.id}
+                    key={track.track.id}
                     currentUser={currentUser}
-                    track={track} />
+                    track={track.track} />
                 ))
               }
             </ul>
@@ -81,9 +82,9 @@ class UserShow extends React.Component {
           {
             tracks.map( track => (
               <TrackIndexItem
-                key={track.id}
+                key={track.track.id}
                 currentUser={this.props.currentUser}
-                track={track} />
+                track={track.track} />
             ))
           }
         </ul>
