@@ -59,7 +59,7 @@ class TrackShow extends React.Component {
             </div>
 
             <div className='track-show-date'>
-              2 days ago
+
             </div>
 
             <div className='track-show-waveform'>

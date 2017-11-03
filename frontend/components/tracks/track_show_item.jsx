@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 
 const TrackShowItem = ({ track, router, history, currentUser }) => {
+
   return (
       <div className='track-show-box'>
 
