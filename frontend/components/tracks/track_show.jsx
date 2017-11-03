@@ -89,7 +89,7 @@ class TrackShow extends React.Component {
                     src={track.ownerImage}></img>
                 </div>
                 <div>
-                  {track.artist_name}
+                  {track.owner}
                 </div>
               </div>
               <div className='comments-outer'>

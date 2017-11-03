@@ -22,7 +22,6 @@ class TrackForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    //
     const image = this.state.image;
     const track = this.state.track;
     const formData = new FormData();
@@ -36,7 +35,6 @@ class TrackForm extends React.Component {
     if (track) formData.append("track[track]", track);
     this.props.processForm(formData)
       .then((res) => {
-        
         this.props.history.push(`/${this.props.currentUser.id}/${res.data.track.id}`)
       });
   }
