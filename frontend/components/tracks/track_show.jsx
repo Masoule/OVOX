@@ -92,7 +92,7 @@ class TrackShow extends React.Component {
                   {track.artist_name}
                 </div>
               </div>
-              <div className='comments'>
+              <div className='comments-outer'>
                 <div className='comments-title'>
                   Comments
                 </div>
@@ -100,7 +100,6 @@ class TrackShow extends React.Component {
               </div>
 
             </div>
-
 
           </div>
         </div>
@@ -110,7 +109,7 @@ class TrackShow extends React.Component {
 
   comments (){
     let track=this.props.track
-    debugger
+
     if (this.props.comments) {
       return (
           <ul className='comments'>

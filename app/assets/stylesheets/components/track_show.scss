@@ -179,8 +179,8 @@
 }
 
 .comment-form-input {
-  height: 40px;
-  box-sizing: border-box;
+  // height: 40px;
+  // box-sizing: border-box;
   padding: 5px;
   background: #f2f2f2;
   border: 1px solid #e5e5e5;
@@ -189,11 +189,12 @@
 }
 
 .form-avatar {
-  position: absolute;
+  // position: absolute;
   width: 40px;
   height: 40px;
   left: 0;
   display: block;
+  margin-right: 5px;
 }
 
 .comment-textfield {
@@ -219,12 +220,21 @@
 
 .comments {
   display: flex;
+  flex-direction: column-reverse;
+  // background-color: yellow;
+  padding: 5px;
+  padding-top: 0;
+  width: -webkit-fill-available;
+  height: auto;
+}
+.comments-outer {
+  display: flex;
   flex-direction: column;
   // background-color: yellow;
   padding: 5px;
   padding-top: 0;
   width: -webkit-fill-available;
-
+  height: auto;
 }
 
 .comments-title {
@@ -238,6 +248,7 @@
 .track-owner {
   // position: absolute;
   display: block;
+  text-align: center;
   // top: 0;
   // left: 0;
   width: 120px;
@@ -249,6 +260,7 @@
   height: 120px;
   border-radius: 50%;
   overflow: hidden;
+  margin-bottom: 5px;
 }
 
 .artist-avatar {
@@ -260,6 +272,7 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
+  margin-right: 10px;
   overflow: hidden;
   background-image: linear-gradient(135deg,#846170,#e6846e);
 }

@@ -15,6 +15,7 @@ class CommentForm extends React.Component {
     const comment = Object.assign({}, this.state);
     //
     this.props.createComment(comment)
+    .then(()=>{this.setState({body: ''})})
   }
 
   update(field) {
