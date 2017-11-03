@@ -14,7 +14,7 @@ class TrackShow extends React.Component {
   header (){
     let track=this.props.track
     let currentUser=this.props.currentUser
-
+    debugger
     return (
       <div className='page'>
         <Header
@@ -39,7 +39,7 @@ class TrackShow extends React.Component {
                       className=''
                       to={`/${track.owner_id}`}>
                       <span className='track-show-artist'>
-                        {track.artist_name}
+                        {track.owner}
                       </span>
                     </Link>
 
