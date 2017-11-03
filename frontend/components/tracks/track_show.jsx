@@ -14,7 +14,7 @@ class TrackShow extends React.Component {
   header (){
     let track=this.props.track
     let currentUser=this.props.currentUser
-    debugger
+
     return (
       <div className='page'>
         <Header
