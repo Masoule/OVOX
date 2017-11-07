@@ -9,7 +9,6 @@ class Player extends React.Component {
 
   componentDidMount() {
     this.audioPlayer.addEventListener("loadedmetadata", () => {
-      // console.log('loded meta', this)
       if (this.props.playing) {
         this.audioPlayer.play()
       } else {
@@ -18,33 +17,12 @@ class Player extends React.Component {
     })
 
     this.audioPlayer.addEventListener("timeupdate", () => {
-      // console.log('loded meta', this)
-
     })
 
-
-    // currentTrack.addEventListener("timeupdate", timeUpdate, false);
-    //
-    // timeUpdate() {
-    // 	let playPercent = 100 * (currentTrack.currentTime / duration);
-    // 	let marginLeft = playPercent + "%";
-    // }
-
-    //
-    // this.audioPlayer.addEventListener("play", (e) => {
-    //
-    //   // this.props.toggle()
-    // })
-    //
-    // this.audioPlayer.addEventListener("pause", () => {
-    //   // this.props.toggle()
-    // })
   }
 
   componentWillReceiveProps(nextProps) {
-    //
     if(this.props.playing !== nextProps.playing) {
-      // console.log('now play', nextProps)
       if(nextProps.playing) {
         this.audioPlayer.play()
       }
@@ -56,7 +34,6 @@ class Player extends React.Component {
 
   trackInfo () {
     let track = this.props.currentTrack
-    //
     if (!track) {
       return ''
     } else {
@@ -85,9 +62,7 @@ class Player extends React.Component {
   }
 
   render() {
-    // let source = (this.props.currentTrack) ? this.props.currentTrack.track : '';
     let source = (this.props.currentTrack) ? this.props.currentTrack.trackUrl : ''
-    //
     return(
       <div className='player'>
         <div className='player-box'>
@@ -120,19 +95,3 @@ class Player extends React.Component {
 }
 
 export default Player;
-
-
-// <div>
-//   <button onclick={document.getElementById('player').play()}>
-//     Play
-//   </button>
-//   <button onclick={document.getElementById('player').pause()}>
-//     Pause
-//   </button>
-//   <button onclick={document.getElementById('player').volume += 0.1}>
-//     Vol+
-//   </button>
-//   <button onclick={document.getElementById('player').volume -= 0.1}>
-//     Vol-
-//   </button>
-// </div>

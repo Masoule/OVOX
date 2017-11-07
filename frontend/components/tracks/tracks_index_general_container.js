@@ -26,33 +26,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(TrackIndexGeneral);
-
-//
-// const mapStateToProps = (state, ownProps) => {
-//   const indexType = ownProps.match.path === "/" ? "general" : "user";
-//   // const loggedIn = state.session.currentUser ? true : false;
-//   let tracks = {};
-//   if (indexType === 'general') {
-//     tracks = state.entities.tracks
-//   } else if (ownProps.match.path === "/stream") {
-//     let trackIds = state.session.currentUser.tracks;
-//     trackIds.forEach((id) => tracks = merge { tracks, fetchTrack(id) )
-//   }  // else if (ownProps.match.path === "/users/") {}
-//
-//   return {
-//     errors: state.errors.tracks,
-//     currentUser: state.session.currentUser,
-//     tracks,
-//     indexType,
-//   };
-//
-// };
-//
-// const mapDispatchToProps = (dispatch, ownProps) => {
-//   // const action = ownProps.match.path === "/login" ? login : signup;
-//   return {
-//     fetchTracks: (tracks) => dispatch(fetchTracks(tracks)),
-//     fetchTrack: (track) => dispatch(fetchTrack(track)),
-//     clearErrors: ()=> dispatch(clearErrors()),
-//   };
-// };

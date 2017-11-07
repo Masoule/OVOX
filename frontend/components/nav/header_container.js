@@ -22,24 +22,3 @@ export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
 )(Header));
-
-
-//
-// const mapStateToProps = (state, ownProps) => {
-//   // let headerType;
-//   // const path = ownProps.match.path
-//   // if (state.session.currentUser) {
-//   //   headerType = 'user';
-//   // } else if ( !state.session.currentUser) {
-//   //   headerType = 'general';
-//   // } else if ( path === '/:userId' ) {
-//   //   headerType = 'profile';
-//   // } else if (path === '/:userId/:trackId') {
-//   //   headerType = 'track';
-//   // }
-//
-//   return {
-//     // headerType,
-//     currentUser: state.session.currentUser
-//   };
-// };

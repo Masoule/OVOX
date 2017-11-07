@@ -89,7 +89,10 @@ class TrackShow extends React.Component {
                     src={track.ownerImage}></img>
                 </div>
                 <div>
-                  {track.owner}
+                  <Link
+                    to={`/${track.owner_id}`}>
+                    {track.owner}
+                  </Link>
                 </div>
               </div>
               <div className='comments-outer'>
@@ -137,14 +140,3 @@ class TrackShow extends React.Component {
 }
 
 export default TrackShow;
-
-// const content = this.props.track ?
-// <TrackShowItem
-//   track={this.props.track}
-//   currentUser={this.props.currentUser}/> : null
-
-// return (
-//   <div className='track-show'>
-//     { content }
-//   </div>
-// )

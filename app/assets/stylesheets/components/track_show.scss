@@ -17,11 +17,9 @@
   padding-left: 20px;
   display: flex;
   padding: 30px 0px 20px 30px;
-  // padding-right: 550px;
 }
 
 .track-show-thumb-box {
-  // position: relative;
   margin-right: 15px;
   position: absolute;
   top: 20px;
@@ -41,8 +39,6 @@
     background-image: linear-gradient(135deg,#846170,#e6846e);
     background: center center/contain no-repeat;
     display: block;
-    // width: 160px;
-    // height: 160px;
     z-index: 2;
 }
 
@@ -64,15 +60,10 @@
 }
 
 .track-content {
-  // display: flex;
 }
 
 .edit-icon {
-  // position: absolute;
-  // top: 0;
-  // right: 0;
   margin-top: 5px;
-  // margin-right: 50px;
   height: auto;
   width: 18px;
   opacity: 0.6;
@@ -137,8 +128,6 @@
 }
 
 .track-show-waveform {
-  // height: 60px;
-  // width: 100%;
   left: 20px;
   right: 380px;
   position: absolute;
@@ -146,7 +135,6 @@
   margin-bottom: 30px;
   height: 100px;
   z-index: 1;
-  // background-color: #e5e5e5;
   color: white;
 }
 
@@ -159,29 +147,22 @@
   padding-bottom: 0px;
   height: inherit;
   height: -webkit-fill-available;
-  // background-color: red;
 }
 
 .comment-form-inner {
   position: relative;
-  // height: 0;
   background: #f2f2f2;
   border: 1px solid #e5e5e5;
-  // background-color: #fff6ed;
 }
 
 
 .comment-form {
   position: relative;
   margin-top: 0;
-  // height: 0;
   padding: 5px;
-  // background-color: yellow;
 }
 
 .comment-form-input {
-  // height: 40px;
-  // box-sizing: border-box;
   padding: 5px;
   background: #f2f2f2;
   border: 1px solid #e5e5e5;
@@ -190,7 +171,6 @@
 }
 
 .form-avatar {
-  // position: absolute;
   width: 40px;
   height: 40px;
   left: 0;
@@ -216,13 +196,11 @@
   padding-bottom: 0px;
   height: inherit;
   width: auto;
-  // margin: 5%;
 }
 
 .comments {
   display: flex;
   flex-direction: column-reverse;
-  // background-color: yellow;
   padding: 5px;
   padding-top: 0;
   width: -webkit-fill-available;
@@ -231,7 +209,6 @@
 .comments-outer {
   display: flex;
   flex-direction: column;
-  // background-color: yellow;
   padding: 5px;
   padding-top: 0;
   width: -webkit-fill-available;
@@ -247,11 +224,8 @@
 }
 
 .track-owner {
-  // position: absolute;
   display: block;
   text-align: center;
-  // top: 0;
-  // left: 0;
   width: 120px;
 }
 
@@ -262,6 +236,7 @@
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 5px;
+  background-image: linear-gradient(135deg, #846170, #e6846e);
 }
 
 .artist-avatar {
@@ -298,15 +273,6 @@
   display: block;
 }
 
-
-// .track-show-footer {
-//   position: relative;
-//   margin-top: 10px;
-//   min-height: 30px;
-//   box-sizing: border-box;
-//   // background-color: #fff6ed;
-// }
-
 .track-show-comments{
   display: flex;
   padding-right: 30px;
@@ -320,12 +286,10 @@
   padding-bottom: 0px;
   height: inherit;
   width: auto;
-  // margin: 5%;
 }
 
 .comment-item {
   display: flex;
   position: relative;
   padding: 10px 10px 10px 0;
-
 }

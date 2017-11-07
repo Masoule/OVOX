@@ -1,7 +1,6 @@
 class Track < ApplicationRecord
   validates :title, :owner_id, presence: true
-  # validates :likers, uniqueness: true
-
+  
   has_attached_file :image, default_url: "user.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
@@ -18,8 +17,7 @@ class Track < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :likers, through: :likes
 
-  # after_initialize :ensure_image
-  # after_initialize :ensure_artist
+  after_initialize :ensure_artist
 
 
   private

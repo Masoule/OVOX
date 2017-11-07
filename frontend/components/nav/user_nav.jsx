@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-// class UserNav extends React.Component {
-
 const UserNav = ({ router, history, currentUser, logout }) => {
 
     return(
@@ -24,7 +22,7 @@ const UserNav = ({ router, history, currentUser, logout }) => {
         <div className='user-actions'>
           <div className='upload'>
             <Link
-              className=''
+              className='link-hover'
               to={`/upload`}>
               Upload
             </Link>
@@ -36,7 +34,7 @@ const UserNav = ({ router, history, currentUser, logout }) => {
             </div>
 
             <Link
-              className='username'
+              className='username link-hover'
               to={`/stream`}>
               {currentUser.username}
             </Link>

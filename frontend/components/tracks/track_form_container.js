@@ -5,7 +5,6 @@ import { createTrack, fetchTrack, updateTrack, receiveTrackErrors, clearTrackErr
 
 
 const mapStateToProps = (state, ownProps) => {
-  // 
   let track = {
     title: "",
     artist_name: "",
@@ -38,7 +37,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     processForm: (track) => dispatch(processForm(track)),
     fetchTrack: id => dispatch(fetchTrack(id)),
-    // fetchTracks: ()=> dispatch(fetchTracks()),
     receiveTrackErrors: (errors)=> dispatch(receiveTrackErrors(errors)),
     clearTrackErrors: ()=> dispatch(clearTrackErrors()),
   };

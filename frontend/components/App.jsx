@@ -40,11 +40,3 @@ const App = () => (
 );
 
 export default App;
-
-
-
-// <AuthRoute path="/" component={Welcome} />
-
-// <section className='main'>
-//
-// </section>

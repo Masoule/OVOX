@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PlayButtonContainer from '../player/play_button_container'
 import CommentFormContainer from '../tracks/comment_form_container'
-// import {  receiveCurrentTrack, playing, receivePlayStatus } from '../../actions/player_actions'
 
 const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => {
   const footerClass = currentUser ? 'userFooter' : 'footer'
@@ -53,8 +52,6 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
                   </div>
                 </Link>)
                 : '' }
-
-
 
             </div>
 

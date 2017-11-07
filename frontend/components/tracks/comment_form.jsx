@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class CommentForm extends React.Component {
 
   constructor(props) {
-    //
     super(props);
     this.state = { body: "", track_id: this.props.trackId};
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -13,7 +12,6 @@ class CommentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const comment = Object.assign({}, this.state);
-    //
     this.props.createComment(comment)
     .then(()=>{this.setState({body: ''})})
   }
@@ -23,10 +21,6 @@ class CommentForm extends React.Component {
       [field]: e.currentTarget.value
     });
   }
-
-  // componentDidMount(){
-  //   this.props.clearErrors();
-  // }
 
   render () {
     if (this.props.currentUser) {
@@ -55,12 +49,3 @@ class CommentForm extends React.Component {
 }
 
 export default CommentForm;
-
-
-
-
-// <input
-//   className='button'
-//   type="submit"
-//   value={"Submit"}
-//   />

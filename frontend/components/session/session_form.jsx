@@ -17,7 +17,6 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then( () => this.props.history.goBack())
-    // .push('/stream'))
   }
 
   update(field) {

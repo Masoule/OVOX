@@ -20,7 +20,6 @@ class WelcomeNav extends React.Component {
 
 
   render(){
-    // 
     return (
       <div className='general-nav'>
         <div className='session-buttons'>

@@ -30,8 +30,6 @@ img {
 }
 
 .track-index {
-  // background-color: white;
-  // padding: 20px;
   margin-left: 10px;
 }
 
@@ -40,8 +38,6 @@ img {
 }
 
 .track-box {
-  // margin: 20px;
-  // border-radius: 5px;
   display: flex;
   flex-direction: row;
 }
@@ -131,7 +127,6 @@ img {
 .track-waveform {
   height: 60px;
   position: relative;
-  // background-color: #fff6ed;
   width: 100%;
 }
 
@@ -147,7 +142,6 @@ img {
   border: 1px solid #e5e5e5;
   overflow: hidden;
   margin-bottom: 20px;
-  // background-color: #fff6ed;
 }
 
 .track-footer {
@@ -155,5 +149,4 @@ img {
   margin-top: 10px;
   min-height: 30px;
   box-sizing: border-box;
-  // background-color: #fff6ed;
 }

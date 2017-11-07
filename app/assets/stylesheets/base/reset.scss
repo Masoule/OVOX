@@ -66,10 +66,13 @@ input[type="submit"] {
 }
 
 .main {
-  // width: 100%;
   background: #f2f2f2;
   padding: 5%;
   padding-top: 0;
   padding-bottom: 0;
   height: auto;
+}
+
+.link-hover:hover {
+  color: yellow;
 }

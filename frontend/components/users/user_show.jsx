@@ -105,8 +105,3 @@ class UserShow extends React.Component {
 }
 
 export default UserShow;
-
-// <div className='track-show-content'>
-//
-//
-//   </div>
