@@ -1,6 +1,9 @@
 # README
 OVOX, a Soundcloud clone, is a social media application that allows sound producers to upload and publicly share streamable audio tracks. OVOX users can create profiles, continuously play audio tacks and like and comment on tracks.
 
+
+[Live Link](https://ovox.herokuapp.com/#/login) 
+
 ## Features
 
 1.  User authentication
