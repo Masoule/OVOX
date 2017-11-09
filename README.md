@@ -27,7 +27,6 @@ OVOX, a Soundcloud clone, is a social media application that allows sound produc
 * HTML5 Audio
 * React
 * Redux
-* React Transition Group
 * Lodash
 * Node.js
 
