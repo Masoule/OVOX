@@ -34,3 +34,12 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 * Lodash
 * Node.js
 
+
+## Future and in progress:
+
+* Demo login
+* Track Progress tracker
+* Track likes and unlikes
+* Playlists
+* waveforms
+
