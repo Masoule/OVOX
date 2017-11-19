@@ -11,13 +11,13 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 
 1.  User authentication
 
-2. Track CRUD
+2. Track CRUD 
 
 3. Playing Tracks with continuous play
 
 4. Comments
 
-5. User pages
+5. User profile page listing user tracks
 
 
 ## Technologies
@@ -28,9 +28,9 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 * BCrypt for authentication
 * Javascript
 * PostgreSQL
-* Paperclip to store audio tracks and images and post to AWS
-* AWS S3 for storage
-* HTML5 Audio for track actions
+* Paperclip GEM for handling file attachments
+* AWS S3 for storing user generated tracks and images
+* HTML5 Audio for track play/pause actions
 * Lodash
 * Node.js
 
