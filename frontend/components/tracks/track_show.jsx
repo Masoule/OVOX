@@ -14,7 +14,6 @@ class TrackShow extends React.Component {
   header (){
     let track=this.props.track
     let currentUser=this.props.currentUser
-
     return (
       <div className='page'>
         <Header
@@ -111,16 +110,16 @@ class TrackShow extends React.Component {
   }
 
   comments (){
-    let track=this.props.track
-
+    let track = this.props.track
     if (this.props.comments) {
       return (
           <ul className='comments'>
             {
               this.props.comments.map( comment => (
-                <CommentIndexItem
-                  key={comment.id}
-                  comment={ comment } />
+                comment ?
+                  <CommentIndexItem
+                    key={comment.id}
+                    comment={ comment } /> : ""
               ))
             }
           </ul>
@@ -130,7 +129,6 @@ class TrackShow extends React.Component {
 
   render (){
     const content = this.props.track ? this.header() : null
-
     return (
       <div className='page-show'>
         { content }

@@ -20,8 +20,8 @@ const App = () => (
 
     <header className='header'>
     </header>
-    <AuthRoute path="*/login" component={SessionFormContainer} />
-    <AuthRoute path="*/signup" component={SessionFormContainer} />
+    <AuthRoute path="/.*\/login/" component={SessionFormContainer} />
+    <AuthRoute path="/.*\/signup/" component={SessionFormContainer} />
 
       <Switch>
         <Route exact path="/upload" component={TrackFormContainer} />
