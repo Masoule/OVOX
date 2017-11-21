@@ -1,24 +1,45 @@
 # README
+OVOX, a Soundcloud clone, is a social media application that allows sound producers to upload and publicly share streamable audio tracks. OVOX users can create profiles, continuously play audio tacks and like and comment on tracks.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+OVOX is built with Ruby on Rails and a postgresSQL database. The database queries are minimized by utilizing associations to prefetch data in the controller actions. Backend routes respond to asynchronous AJAX requests from the frontend with JSON and Frontend rendering is done through React implementing the flex architecture. 
 
-Things you may want to cover:
+React's virtual DOM handles fast, efficient updates of the DOM. The normalized state in the Redux store allocates slices of state to session, users, tracks, comments, likes, and errors, simplifying relational data management.
 
-* Ruby version
+[Live Link](https://ovox.herokuapp.com) 
 
-* System dependencies
+## Features
 
-* Configuration
+1.  User authentication
 
-* Database creation
+2. Track CRUD 
 
-* Database initialization
+3. Playing Tracks with continuous play
 
-* How to run the test suite
+4. Comments
 
-* Services (job queues, cache servers, search engines, etc.)
+5. User profile page listing user tracks
 
-* Deployment instructions
 
-* ...
+## Technologies
+
+* Ruby on Rails
+* React.js frontend components
+* Redux
+* BCrypt for authentication
+* Javascript
+* PostgreSQL
+* Paperclip GEM for handling file attachments
+* AWS S3 for storing user generated tracks and images
+* HTML5 Audio for track play/pause actions
+* Lodash
+* Node.js
+
+
+## Future and in progress:
+
+* Demo login
+* Track Progress tracker
+* Track likes and unlikes
+* Playlists
+* waveforms
+
