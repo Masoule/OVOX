@@ -73,10 +73,25 @@ img {
   border: 1px solid #ccc
 }
 
+.textfield:hover {
+  border: 1px solid #cecdcc;
+  box-shadow: 1px 1px;
+  opacity: 0.8;
+}
+
 .form-button {
   position: relative;
   margin-top: 30px;
   padding: 10px;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.demo {
+  background-color: #968b7b;
+  margin-top: 0px;
 }
 
 .small-link {

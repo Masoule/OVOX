@@ -1,10 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
-
+import { AuthRoute, ProtectedRoute } from '../util/route_util'
 import HeaderContainer from './nav/header_container';
 import Welcome from './nav/welcome_nav';
-
 import SessionFormContainer from './session/session_form_container';
 
 import TracksIndexGeneralContainer from './tracks/tracks_index_general_container';

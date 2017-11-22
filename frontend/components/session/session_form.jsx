@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.hideModal = this.hideModal.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   handleSubmit(e) {
@@ -23,6 +24,13 @@ class SessionForm extends React.Component {
     return (e) => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  demoLogin() {
+    this.props.login({
+      email: 'Salome',
+      password: '123456'
+    })
   }
 
   componentDidMount(){
@@ -110,6 +118,14 @@ class SessionForm extends React.Component {
                   type="submit"
                   value={this.props.formType}
                   />
+              </div>
+
+              <div className="form-button">
+                <button
+                  className='button demo'
+                  onClick={this.demoLogin}
+                  > DEMO Login
+                </button>
               </div>
 
               <div className='errors'>
