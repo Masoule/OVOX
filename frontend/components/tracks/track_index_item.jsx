@@ -22,7 +22,7 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
           <div className='track-header'>
 
             <div className='play-index-button'>
-              <PlayButtonContainer className='play-index-button'
+              <PlayButtonContainer className='play-button'
                 track={track}
                 />
             </div>

@@ -31,17 +31,21 @@ class PlayButton extends React.Component  {
       playing = false;
     }
 
-    return(
-      <div className='play-button'
+  return(
+      <div className='play-pause'
         onClick={this.handleClick}>
-        { playing ? <img className="play-icon"
-          src={window.pause}></img> : <img className="pause-icon"
-            src={window.play}></img> }
+        { playing ? <i className="fa fa-pause" aria-hidden="true"></i>
+         : <i className="fa fa-play" aria-hidden="true"></i>
+         }
       </div>
     );
 
   }
 }
 
-
 export default PlayButton;
+
+
+// { playing ? <img className="play-icon"
+//   src={window.pause}></img> : <img className="pause-icon"
+//     src={window.play}></img> }

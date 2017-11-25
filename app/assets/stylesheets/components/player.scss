@@ -18,6 +18,7 @@
 }
 
 .player-progress {
+  display: flex;
   width: 632px;
   margin-right: 11px;
   padding: 10px;
@@ -57,10 +58,31 @@
 
 }
 
-.play {
+.player-play-pause {
   height: 30px;
   width: 30px;
+  line-height: 30px;
+  color: inherit;
 }
+
+.play-pause {
+  margin: auto;
+}
+
+
+progress {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #eee;
+  height: 2px;
+  width: 400px;
+  margin-top: 14px;
+}
+
+progress[value] {color:#f50} /* IE10 */
+progress::-webkit-progress-bar-value {background:#f50}
+progress::-webkit-progress-value {background:#f50}
+progress::-moz-progress-bar {background:#f50}
 
 audio {
   height: 100%;

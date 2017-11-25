@@ -5,9 +5,10 @@ class Player extends React.Component {
   constructor(props) {
     super(props);
     let currentTrack = this.props.currentTrack || null;
-    }
+}
 
   componentDidMount() {
+    this.setState({ rendered: true })
     this.audioPlayer.addEventListener("loadedmetadata", () => {
       if (this.props.playing) {
         this.audioPlayer.play()
@@ -16,7 +17,11 @@ class Player extends React.Component {
       }
     })
 
-    this.audioPlayer.addEventListener("timeupdate", () => {
+    // this.audioPlayer.addEventListener("timeupdate", () => {
+    // })
+
+    this.audioPlayer.addEventListener('timeupdate', () => {
+      $('#progressBar').attr("value", this.audioPlayer.currentTime / this.audioPlayer.duration);
     })
 
   }
@@ -61,6 +66,7 @@ class Player extends React.Component {
     }
   }
 
+
   render() {
     let source = (this.props.currentTrack) ? this.props.currentTrack.trackUrl : ''
     return(
@@ -76,12 +82,19 @@ class Player extends React.Component {
               >
             </audio>
 
-            <div className='play'>
+            <div className='player-play-pause'>
               <PlayButtonContainer
                 track={this.props.currentTrack}/>
             </div>
 
+            <progress
+              id="progressBar"
+              value="0"
+              max="1">
+            </progress>
+
           </div>
+
           <div className='volume'>
 
           </div>
