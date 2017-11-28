@@ -11,6 +11,9 @@
   width: 800px;
 }
 
+input:invalid {
+  border: 2px solid red;
+}
 
 .form-title {
   position: relative;

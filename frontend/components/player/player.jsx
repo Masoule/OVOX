@@ -17,9 +17,6 @@ class Player extends React.Component {
       }
     })
 
-    // this.audioPlayer.addEventListener("timeupdate", () => {
-    // })
-
     this.audioPlayer.addEventListener('timeupdate', () => {
       $('#progressBar').attr("value", this.audioPlayer.currentTime / this.audioPlayer.duration);
     })
@@ -67,6 +64,12 @@ class Player extends React.Component {
   }
 
 
+
+  // <script>
+  //   var audio = document.getElementById("myaudio");
+  //   audio.volume = 0.2;
+  // </script>
+
   render() {
     let source = (this.props.currentTrack) ? this.props.currentTrack.trackUrl : ''
     return(
@@ -77,6 +80,7 @@ class Player extends React.Component {
           </div>
           <div className='player-progress'>
             <audio
+              id="audioPlayer"
               src={source}
               ref={(audioPlayer) => { this.audioPlayer = audioPlayer}}
               >

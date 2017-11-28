@@ -22,8 +22,13 @@ class TrackForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const image = this.state.image;
-    const track = this.state.track;
+    const {image, track} = this.state;
+    // const image = this.state.image;
+    // const track = this.state.track.check(x, x, 'Track is required');
+    // const title = this.state.title.check(x, x, 'Title can not be empty');
+    if (!this.validSubmit()) {
+      return;
+    }
     const formData = new FormData();
     if ( this.state.id ) {
       formData.append("track[id]", this.state.id)
@@ -107,7 +112,18 @@ class TrackForm extends React.Component {
     )
   }
 
+  validSubmit() {
+    const { title, genre } = this.state;
+    console.log(this.props.errors)
+    // if (this.props.errors) {this.props.errors.push("Title can't be empty")}
+    return (
+      title.length > 0 &&
+      genre.length > 0 && this.state.track
+    );
+  }
+
   render () {
+    const enabled = this.validSubmit();
     return (
       <div>
         <Header currentUser={this.props.currentUser}/>
@@ -137,6 +153,7 @@ class TrackForm extends React.Component {
                       value={this.state.title}
                       onChange={this.update('title')}
                       placeholder='Title'
+                      required
                       />
                   </label>
                 </div>
@@ -149,6 +166,7 @@ class TrackForm extends React.Component {
                       value={this.state.artist_name}
                       onChange={this.update('artist_name')}
                       placeholder='Artist'
+                      required
                       />
                   </label>
                 </div>
@@ -170,7 +188,6 @@ class TrackForm extends React.Component {
                       <option value="Electronic">Electronic</option>
                       <option value="Folk">Folk</option>
                       <option value="Jazz">Jazz</option>
-                      <option value="Metal">Metal</option>
                       <option value="Metal">Metal</option>
                       <option value="Pop">Pop</option>
                       <option value="Reggae">Reggae</option>
@@ -204,6 +221,7 @@ class TrackForm extends React.Component {
                   </div>
                   <div className='save-button'>
                     <input
+                      disabled={!enabled}
                       className='button'
                       type="submit"
                       value='Save'
