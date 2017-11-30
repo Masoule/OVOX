@@ -22,18 +22,28 @@ class TrackForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const {image, track} = this.state;
-    // const image = this.state.image;
-    // const track = this.state.track.check(x, x, 'Track is required');
-    // const title = this.state.title.check(x, x, 'Title can not be empty');
-    if (!this.validSubmit()) {
+    if (!track.validity.valid) {
+      error.innerHTML = "Don't forget the audio track, darling!";
+      error.className = "error active";
       return;
     }
+    if (!title.validity.valid) {
+      error.innerHTML = "Please enter a title";
+      error.className = "error active";
+      return;
+    }
+    if (!artist_name.validity.valid) {
+      error.innerHTML = "Please enter the artist name";
+      error.className = "error active";
+      return;
+    }
+
     const formData = new FormData();
     if ( this.state.id ) {
       formData.append("track[id]", this.state.id)
     }
     formData.append("track[title]", this.state.title);
+    formData.append("track[artist_name]", this.state.artist_name);
     formData.append("track[genre]", this.state.genre);
     formData.append("track[description]", this.state.description);
     if (image) formData.append("track[image]", image);
@@ -107,23 +117,22 @@ class TrackForm extends React.Component {
             className='upload-track-button'
             type="file"
             accept="audio/*"
-            onChange={this.handleUpload('track')} />
+            onChange={this.handleUpload('track')}
+            required />
         </label>
     )
   }
 
-  validSubmit() {
-    const { title, genre } = this.state;
-    console.log(this.props.errors)
-    // if (this.props.errors) {this.props.errors.push("Title can't be empty")}
-    return (
-      title.length > 0 &&
-      genre.length > 0 && this.state.track
-    );
-  }
+  // validSubmit() {
+  //   const { title, genre } = this.state;
+  //   return (
+  //     title.length > 0 &&
+  //     genre.length > 0 && this.state.track
+  //   );
+  // }
 
   render () {
-    const enabled = this.validSubmit();
+    // const enabled = this.validSubmit();
     return (
       <div>
         <Header currentUser={this.props.currentUser}/>
