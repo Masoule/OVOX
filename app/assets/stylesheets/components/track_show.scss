@@ -165,8 +165,16 @@
   border: 1px solid #e5e5e5;
 }
 
-
 .comment-form {
+  position: relative;
+  margin-top: 0;
+  padding: 5px;
+  font-size: 12px;
+  display: flex;
+  color: #999;
+}
+
+.no-comment-form {
   position: relative;
   margin-top: 0;
   padding: 5px;
