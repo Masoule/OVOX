@@ -79,6 +79,11 @@ progress {
   margin-top: 14px;
 }
 
+.track-time {
+  font-size: 10px;
+  margin: auto 5px;
+}
+
 progress[value] {color:#f50} /* IE10 */
 progress::-webkit-progress-bar-value {background:#f50}
 progress::-webkit-progress-value {background:#f50}

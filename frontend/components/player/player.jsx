@@ -34,6 +34,32 @@ class Player extends React.Component {
     }
   }
 
+  timeConvert (time) {
+    let seconds = Number(time);
+    let hr = Math.floor(seconds / 3600);
+    let min = ("0" + Math.floor(seconds % 3600 / 60)).slice(-2);
+    let sec = ("0" + Math.floor(seconds % 3600 % 60)).slice(-2);
+    return hr > 0 ? `${hr}:${min}:${sec}` : `${min}:${sec}`;
+  }
+
+  trackDuration() {
+    if(this.audioPlayer) {
+      let duration = this.audioPlayer.duration;
+      return this.timeConvert(duration);
+    } else {
+      return "0:00";
+    }
+  }
+
+  trackTime() {
+    if(this.audioPlayer) {
+      let time = this.audioPlayer.currentTime;
+      return this.timeConvert(time);
+    } else {
+      return "0:00";
+    }
+  }
+
   trackInfo () {
     let track = this.props.currentTrack
     if (!track) {
@@ -70,6 +96,7 @@ class Player extends React.Component {
   //   audio.volume = 0.2;
   // </script>
 
+
   render() {
     let source = (this.props.currentTrack) ? this.props.currentTrack.trackUrl : ''
     return(
@@ -90,13 +117,17 @@ class Player extends React.Component {
               <PlayButtonContainer
                 track={this.props.currentTrack}/>
             </div>
-
+            <p className="track-time">
+              {this.trackTime()}
+            </p>
             <progress
               id="progressBar"
               value="0"
               max="1">
             </progress>
-
+            <p className="track-time">
+              {this.trackDuration()}
+            </p>
           </div>
 
           <div className='volume'>
