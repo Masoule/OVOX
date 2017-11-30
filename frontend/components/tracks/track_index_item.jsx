@@ -58,7 +58,7 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
           </div>
 
           <div className='track-waveform'>
-
+            
           </div>
 
             <div className={commentFormClass}>
