@@ -99,6 +99,7 @@ img {
   width: 100%;
   height: 100%;
   text-align: center;
+  cursor: pointer;
 }
 
 .track-info {
@@ -122,6 +123,7 @@ img {
 .track-waveform {
   height: 60px;
   position: relative;
+  margin-top: 30px;
   width: 100%;
   background: image-url('wave.png');
   background-position: center;
@@ -142,7 +144,7 @@ img {
   margin-bottom: 20px;
 }
 
-.track-footer {
+.user-footer {
   position: relative;
   margin-top: 10px;
   min-height: 30px;

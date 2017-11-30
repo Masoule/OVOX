@@ -96,7 +96,7 @@ class TrackShow extends React.Component {
               </div>
               <div className='comments-outer'>
                 <div className='comments-title'>
-                  Comments
+                  {this.props.comments.length} Comments
                 </div>
                 {this.comments()}
               </div>

@@ -4,7 +4,7 @@ import PlayButtonContainer from '../player/play_button_container'
 import CommentFormContainer from '../tracks/comment_form_container'
 
 const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => {
-  const footerClass = currentUser ? 'userFooter' : 'footer'
+  const footerClass = currentUser ? 'user-footer' : 'footer'
   const commentFormClass = currentUser ? 'comment-form' : 'no-comment-form'
   const editable = (currentUser && currentUser.id === track.owner_id) ? true : false
 
@@ -58,7 +58,7 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
           </div>
 
           <div className='track-waveform'>
-            
+
           </div>
 
             <div className={commentFormClass}>
@@ -69,11 +69,12 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
                   <img src={window.comment}></img>
                 </div>
               </Link>
+              {track.commentIds.length}
             </div>
 
             <div className={footerClass}>
 
-              </div>
+            </div>
 
         </div>
       </div>
