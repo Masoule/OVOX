@@ -91,6 +91,10 @@ img {
   text-align: center;
 }
 
+.play-index-button:hover {
+  background-color: #f30;
+}
+
 .play-button {
   position: relative;
   margin-right: 5px;
@@ -100,6 +104,10 @@ img {
   height: 100%;
   text-align: center;
   cursor: pointer;
+}
+
+.play-button:hover {
+  background-color: #f30;
 }
 
 .track-info {
@@ -127,7 +135,9 @@ img {
   width: 100%;
   background: image-url('wave.png');
   background-position: center;
+  background-repeat: repeat-x;
   background-size: contain;
+  opacity: 0.8;
 }
 
 .track-comment-form {

@@ -86,12 +86,16 @@ img {
 }
 
 .button:hover {
-  opacity: 0.8;
+  background-color: #f30;
 }
 
 .demo {
   background-color: #968b7b;
-  margin-top: 0px;
+}
+
+.demo:hover {
+  background-color: #968b7b;
+  opacity: 0.8;
 }
 
 .small-link {

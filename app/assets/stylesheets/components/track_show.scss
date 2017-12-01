@@ -86,6 +86,11 @@
   cursor: pointer;
 }
 
+.play-show-button:hover {
+  background-color: #f30;
+  border-color: #f30;
+}
+
 .track-show-info {
   position: relative;
   margin-left: 5px;
@@ -143,9 +148,11 @@
   color: white;
   background: image-url('wave.png');
   background-position: center;
+  background-repeat: repeat-x;
   background-size: contain;
   width: auto;
   margin-right: 10px;
+  opacity: 0.8;
 }
 
 
@@ -234,6 +241,7 @@
   padding-top: 0;
   width: -webkit-fill-available;
   height: auto;
+  margin-bottom: 50px;
 }
 
 .comments-title {
@@ -305,7 +313,7 @@
   background-color: white;
   padding: 20px;
   padding-bottom: 0px;
-  height: inherit;
+  height: auto;
   width: auto;
 }
 

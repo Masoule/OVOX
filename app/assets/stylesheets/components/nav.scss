@@ -8,6 +8,10 @@
   z-index: 100;
 }
 
+.logo-box-small:hover {
+  background-color: #f30;
+}
+
 .logo {
   width: 69px;
   height: 46px;
@@ -50,14 +54,12 @@
   color: #fff;
   position: relative;
   overflow: hidden;
-  border-top: 4px solid #f50;
   background-color: #666;
   height: 450px;
   margin-bottom: -46px;
   background: linear-gradient(rgba(242,242,242,.2),rgba(242,242,242,.2)), url(http://www.teliostutors.com/wp-content/uploads/2016/12/music-1.jpg);
   background-size: cover;
 }
-
 
 .button {
   display: inline-block;
@@ -102,6 +104,11 @@
   height: 30px;
 }
 
+.signup-btn:hover {
+  background-color: #f30;
+  border-color: #f30;
+}
+
 .login-btn-sm {
   margin-right: 10px;
 }
@@ -127,6 +134,7 @@
   border-color: #666;
   background-color: transparent;
 }
+
 .a-signup {
   background-color: #f50;
   border-color: #f50;
