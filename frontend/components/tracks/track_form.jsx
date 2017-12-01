@@ -21,22 +21,25 @@ class TrackForm extends React.Component {
   }
 
   handleSubmit(e) {
+    let track = this.state.track,
+        image = this.state.image;
+
     e.preventDefault();
-    if (!track.validity.valid) {
-      error.innerHTML = "Don't forget the audio track, darling!";
-      error.className = "error active";
-      return;
-    }
-    if (!title.validity.valid) {
-      error.innerHTML = "Please enter a title";
-      error.className = "error active";
-      return;
-    }
-    if (!artist_name.validity.valid) {
-      error.innerHTML = "Please enter the artist name";
-      error.className = "error active";
-      return;
-    }
+    // if (track && !track.validity.valid) {
+    //   error.innerHTML = "Don't forget the audio track, darling!";
+    //   error.className = "error active";
+    //   return;
+    // }
+    // if (!this.state.title.validity.valid) {
+    //   error.innerHTML = "Please enter a title";
+    //   error.className = "error active";
+    //   return;
+    // }
+    // if (!this.state.artist_name.validity.valid) {
+    //   error.innerHTML = "Please enter the artist name";
+    //   error.className = "error active";
+    //   return;
+    // }
 
     const formData = new FormData();
     if ( this.state.id ) {
@@ -230,7 +233,6 @@ class TrackForm extends React.Component {
                   </div>
                   <div className='save-button'>
                     <input
-                      disabled={!enabled}
                       className='button'
                       type="submit"
                       value='Save'
