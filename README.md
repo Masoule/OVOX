@@ -1,23 +1,27 @@
 # README
 OVOX, a Soundcloud clone, is a social media application that allows sound producers to upload and publicly share streamable audio tracks. OVOX users can create profiles, continuously play audio tacks and like and comment on tracks.
 
-OVOX is built with Ruby on Rails and a postgresSQL database. The database queries are minimized by utilizing associations to prefetch data in the controller actions. Backend routes respond to asynchronous AJAX requests from the frontend with JSON and Frontend rendering is done through React implementing the flex architecture. 
+OVOX is built with Ruby on Rails and a postgresSQL database. The database queries are minimized by utilizing associations to prefetch data in the controller actions. Frontend rendering is done through React implementing the flex architecture.
+
+OVOX has RESTful backend routes which respond to asynchronous requests from the front end with JSON and the frontend routes are imitating the routes in Soundcloud website.
 
 React's virtual DOM handles fast, efficient updates of the DOM. The normalized state in the Redux store allocates slices of state to session, users, tracks, comments, likes, and errors, simplifying relational data management.
 
-[Live Link](https://ovox.herokuapp.com) 
+[Live Link](https://ovox.herokuapp.com)
 
 ## Features
 
-1.  User authentication
+1.  User authentication and demo login
 
-2. Track CRUD 
+2. Playing Tracks with continuous play and progress bar
 
-3. Playing Tracks with continuous play
+3. Logged in users can upload tracks and edit their own tracks
 
-4. Comments
+4. Track show page displaying the track comments
 
-5. User profile page listing user tracks
+5. Logged in users can post comments
+
+6. User profile page listing user tracks
 
 
 ## Technologies
@@ -36,10 +40,8 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 
 
 ## Future and in progress:
-
-* Demo login
-* Track Progress tracker
+* Track and comment delete
 * Track likes and unlikes
 * Playlists
 * waveforms
-
+* search
