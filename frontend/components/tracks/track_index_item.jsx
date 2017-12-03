@@ -34,17 +34,22 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
                   to={`/${track.owner_id}`}>
                   {track.owner}
                 </Link>
-                <div className={track.genre ? "genre" : "no-genre"}>
-                  #{track.genre}
+
+                <div className='track-time'>
+                  {track.time}
                 </div>
               </div>
 
-              <div className='track-title'>
+              <div className='track-info'>
                 <Link
                   className='track-title'
                   to={`/${track.owner_id}/${track.id}`}>
                   {track.title}
                 </Link>
+
+                <div className={track.genre ? "genre" : "no-genre"}>
+                  #{track.genre}
+                </div>
               </div>
 
               { editable ?

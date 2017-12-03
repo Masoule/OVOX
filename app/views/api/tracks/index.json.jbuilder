@@ -7,7 +7,7 @@
     json.owner tr.owner.username
     json.ownerImage tr.owner.image.url
     json.commentIds tr.comment_ids
-    json.time tr.created_at
+    json.time time_ago_in_words(tr.created_at)
 
   end
 end

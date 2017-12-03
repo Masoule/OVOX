@@ -125,9 +125,16 @@ img {
 .track-artist {
   font-size: 12px;
   line-height: 16px;
-  font-weight: 100;
+  font-weight: 300;
   color: #999;
   display: flex
+}
+
+.track-time {
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 16px;
 }
 
 .genre {

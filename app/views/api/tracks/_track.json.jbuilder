@@ -7,7 +7,7 @@ json.track do
   json.trackUrl track.track.url
   json.imageUrl track.image.url
   json.commentIds track.comment_ids
-  json.time track.created_at
+  json.time time_ago_in_words(track.created_at)
 end
 
 json.comments do
