@@ -27,13 +27,16 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
                 />
             </div>
 
-            <div className='track-info'>
-              <div className='track-artist'>
+            <div className='track-detail'>
+              <div className='track-info'>
                 <Link
                   className='track-artist'
                   to={`/${track.owner_id}`}>
                   {track.owner}
                 </Link>
+                <div className={track.genre ? "genre" : "no-genre"}>
+                  #{track.genre}
+                </div>
               </div>
 
               <div className='track-title'>
