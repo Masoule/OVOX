@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import CommentFormContainer from '../tracks/comment_form_container'
 
 const CommentIndexItem = ({ comment, currentUser }) => {
-
   const commentFormClass = currentUser ? 'comment-form' : 'no-comment-form'
+
   return (
     <li className='comment-item'>
         <div className='user-avatar-box'>
@@ -13,18 +13,17 @@ const CommentIndexItem = ({ comment, currentUser }) => {
           </img>
         </div>
         <div className='comment-content'>
-          <span className='comment-user'>
+          <span className='comment-info'>
             <Link className='link-hover'
               to={`/${comment.userId}`}>
               {comment.user}
             </Link>
+            <span className='comment-time'>
+              {comment.time} ago
+            </span>
           </span>
-          <span className='comment-user'>
-              at
-          </span>
-          <span className='comment-user'>
-            {comment.time}
-          </span>
+
+
           <span className='comment-body'>
             {comment.body}
           </span>
