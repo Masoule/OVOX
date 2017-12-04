@@ -45,6 +45,8 @@
 .track-show-content {
   position: relative;
   display: flex;
+  width: -webkit-fill-available;
+  margin-right: 400px;
 }
 
 .icons {
@@ -72,17 +74,16 @@
 
 .play-show-button {
   position: relative;
-  margin-right: 5px;
   background-color: #f50;
   border-radius: 50%;
   border-color: #f50;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  min-width: 60px;
   margin-right: 10px;
   text-align: center;
   color: white;
-  font-size: 22px;
-  line-height: 50px;
+  font-size: 24px;
+  line-height: 60px;
   cursor: pointer;
 }
 
@@ -91,14 +92,22 @@
   border-color: #f30;
 }
 
-.track-show-info {
+.track-show-detail {
   position: relative;
   margin-left: 5px;
+  width: -webkit-fill-available;
 }
 
-.track-show-artist-box {
+.track-show-info {
   position: relative;
   margin-bottom: 7px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.track-show-time {
+  font-size: 16px;
+  color: #fff;
 }
 
 .track-show-artist {
@@ -108,7 +117,10 @@
   background-color: rgba(0,0,0,.8);
   display: inline;
   color: #ccc;
-  font-weight: 100;
+}
+
+.track-show-artist:hover {
+  color: white;
 }
 
 .track-show-title-box {
@@ -135,6 +147,26 @@
   text-align: right;
   color: #fff;
   margin-bottom: 16px;
+}
+
+.show-genre {
+  background-color: #999;
+  border-radius: 50px;
+  padding: 0px 7px;
+  max-width: 120px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 20px;
+  line-height: 20px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 300;
+  margin-top: 13px;
+}
+
+.show-no-genre {
+  display: none;
 }
 
 .track-show-waveform {

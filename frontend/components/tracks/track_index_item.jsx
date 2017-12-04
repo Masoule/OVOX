@@ -52,7 +52,7 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
                 </Link>
 
                 <div className={track.genre ? "genre" : "no-genre"}>
-                  #{track.genre}
+                  # {track.genre}
                 </div>
               </div>
 

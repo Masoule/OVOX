@@ -31,35 +31,36 @@ class TrackShow extends React.Component {
                       />
                 </div>
 
-                <div className='track-show-info'>
-
-                  <div className='track-show-artist-box'>
+                <div className='track-show-detail'>
+                  <div className='track-show-info'>
                     <Link
-                      className=''
+                      className='track-show-artist'
                       to={`/${track.owner_id}`}>
-                      <span className='track-show-artist'>
-                        {track.owner}
-                      </span>
+                      {track.owner}
                     </Link>
+
+                    <div className='track-show-time'>
+                      {track.time} ago
+                    </div>
 
                   </div>
 
-                  <div className='track-show-title'>
+                  <div className='track-show-info'>
                     <Link
-                      className=''
+                      className='track-show-title'
                       to={`/${track.owner_id}/${track.id}`}>
-                      <span className=''>
-                        {track.title}
-                      </span>
+                      {track.title}
                     </Link>
+
+                    <div className={track.genre ? "show-genre" : "show-no-genre"}>
+                      # {track.genre}
+                    </div>
                   </div>
                 </div>
 
             </div>
 
-            <div className='track-show-date'>
 
-            </div>
 
             <div className='track-show-waveform'>
 
