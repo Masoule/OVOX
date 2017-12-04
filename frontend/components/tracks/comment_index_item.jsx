@@ -8,9 +8,13 @@ const CommentIndexItem = ({ comment, currentUser }) => {
   return (
     <li className='comment-item'>
         <div className='user-avatar-box'>
-          <img className="user-avatar"
-            src={comment.image}>
-          </img>
+          <Link
+            className=''
+            to={`/${comment.userId}`}>
+            <img className="user-avatar"
+              src={comment.image}>
+            </img>
+        </Link>
         </div>
         <div className='comment-content'>
           <span className='comment-info'>
