@@ -13,8 +13,12 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
       <div className='track-box'>
 
         <div className='track-thumb-box'>
-          <img className="track-thumb"
-            src={track.imageUrl}></img>
+          <Link
+            className=''
+            to={`/${track.owner_id}/${track.id}`}>
+            <img className="track-thumb"
+              src={track.imageUrl}></img>
+          </Link>
         </div>
 
         <div className='track-content'>
