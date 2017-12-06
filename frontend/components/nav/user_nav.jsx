@@ -5,19 +5,20 @@ const UserNav = ({ router, history, currentUser, logout }) => {
 
     return(
       <div className='small-nav little-nav'>
-        <div className='logo-box-small'>
-          <div className='logo'>
+        <div className='left-nav'>
+          <div className='logo logo-small'>
             <img className="logo-img"
               src={window.logo}></img>
           </div>
+
+        <div className='home'>
           <Link
-            className=''
+            className='link-hover'
             to={`/stream`}>
-            <h1 className='logo-text'>
-              OVOX
-            </h1>
+              Home
           </Link>
         </div>
+      </div>
 
         <div className='user-actions'>
           <div className='upload'>

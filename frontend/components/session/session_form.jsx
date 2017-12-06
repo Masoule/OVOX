@@ -12,6 +12,8 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.hideModal = this.hideModal.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
+    this.username = "Salome".split("");
+    this.password = "123456".split("");
   }
 
   handleSubmit(e) {
@@ -26,11 +28,25 @@ class SessionForm extends React.Component {
     });
   }
 
+  type(user,pass){
+  window.setTimeout(() => {
+    if (user.length !== 0){
+      this.setState({username: this.state.username + user.shift()});
+      this.type(user,pass);
+    } else if (pass.length !== 0) {
+      this.setState({password: this.state.password + pass.shift()});
+      this.type(user,pass);
+    } else {
+      this.props.login({
+        username: "Salome",
+        password: "123456"
+      }).then( () => this.props.history.goBack())
+    }
+  }, 100);
+}
+
   demoLogin() {
-    this.props.login({
-      username: 'Salome',
-      password: '123456'
-    })
+    this.type(this.username, this.password);
   }
 
   componentDidMount(){
@@ -120,18 +136,19 @@ class SessionForm extends React.Component {
                   />
               </div>
 
-              <div className="form-button">
-                <button
-                  className='button demo'
-                  onClick={this.demoLogin}
-                  > DEMO Login
-                </button>
-              </div>
 
               <div className='errors'>
                 {this.renderErrors()}
               </div>
             </form>
+
+            <div className="demo-button">
+              <button
+                className='button demo'
+                onClick={this.demoLogin}
+                > DEMO Login
+              </button>
+            </div>
 
             <div className='small-link'>
               <span className='small-text'>{redirectText}</span>

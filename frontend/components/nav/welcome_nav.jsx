@@ -10,10 +10,13 @@ class WelcomeNav extends React.Component {
           <img className="logo-img"
             src={window.logo}></img>
         </div>
-
-        <h1 className='logo-text'>
-          OVOX
-        </h1>
+        <Link
+          className=''
+          to={`/`}>
+          <h1 className='logo-text'>
+            OVOX
+          </h1>
+        </Link>
       </div>
     )
   }
@@ -22,6 +25,7 @@ class WelcomeNav extends React.Component {
   render(){
     return (
       <div className='general-nav'>
+        {this.logo()}
         <div className='session-buttons'>
 
           <div className='button login-btn'>

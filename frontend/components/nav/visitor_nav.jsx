@@ -6,7 +6,7 @@ const VisitorNav = (props) => {
     return(
     <div className='small-nav little-nav'>
       <div className='logo-box-small'>
-        <div className='logo'>
+        <div className='logo logo-small'>
           <img className="logo-img"
             src={window.logo}></img>
         </div>
@@ -14,7 +14,7 @@ const VisitorNav = (props) => {
           className=''
           to={`/`}>
           <h1 className='logo-text'>
-            OVOX
+
           </h1>
         </Link>
       </div>
