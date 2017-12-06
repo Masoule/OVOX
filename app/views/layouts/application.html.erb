@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
     <script src="https://use.fontawesome.com/c015fc6f4a.js"></script>
-    <link rel="icon" type="image/png" href={window.favicon}>
+    <%= favicon_link_tag 'favicon.ico' %>
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
@@ -22,7 +22,6 @@
       window.user = '<%= image_url('user.jpg')%>'
       window.play = '<%= image_url('play.png')%>'
       window.wave = '<%= image_url('wave.png')%>'
-      window.favicon = '<%= image_url('favicon.png')%>'
     </script>
   </head>
 
