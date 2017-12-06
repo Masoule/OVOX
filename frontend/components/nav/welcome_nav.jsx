@@ -32,7 +32,7 @@ class WelcomeNav extends React.Component {
             </Link>
           </div>
 
-          <div className='button signup-btn'>
+          <div className='button signup-btn-welcome'>
             <Link
               className='link-btn'
               to={`${this.props.location.pathname}/signup`}>

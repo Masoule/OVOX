@@ -30,7 +30,7 @@ const VisitorNav = (props) => {
 
           <div className='signup-btn-sm'>
             <Link
-              className='a-signup'
+              className='button signup-btn'
               to={`${props.location.pathname}/signup`}>
               Create account
             </Link>
