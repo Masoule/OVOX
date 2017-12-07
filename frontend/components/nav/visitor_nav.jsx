@@ -5,17 +5,15 @@ import { Link, withRouter } from 'react-router-dom';
 const VisitorNav = (props) => {
     return(
     <div className='small-nav little-nav'>
-      <div className='logo-box-small'>
+      <div className='logo-box-visitor'>
         <div className='logo logo-small'>
           <img className="logo-img"
             src={window.logo}></img>
         </div>
         <Link
-          className=''
+          className='logo-text'
           to={`/`}>
-          <h1 className='logo-text'>
-
-          </h1>
+            OVOX
         </Link>
       </div>
 

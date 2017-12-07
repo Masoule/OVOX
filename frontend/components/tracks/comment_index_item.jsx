@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import CommentFormContainer from '../tracks/comment_form_container'
 
 const CommentIndexItem = ({ comment, currentUser }) => {
-  const commentFormClass = currentUser ? 'comment-form' : 'no-comment-form'
 
   return (
     <li className='comment-item'>

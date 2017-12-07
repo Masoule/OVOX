@@ -76,7 +76,7 @@ class TrackShow extends React.Component {
 
           <div className="track-comments">
 
-            <div className='track-show-comment-form'>
+            <div className={currentUser ? 'track-show-comment-form' : 'hidden'}>
               <CommentFormContainer
                 trackId={this.props.trackId}/>
             </div>
@@ -95,6 +95,7 @@ class TrackShow extends React.Component {
                   </Link>
                 </div>
               </div>
+
               <div className='comments-outer'>
                 <div className='comments-title'>
                   {this.props.comments.length} Comments

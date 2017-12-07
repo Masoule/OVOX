@@ -25,10 +25,7 @@ class CommentForm extends React.Component {
   render () {
     if (this.props.currentUser) {
       return (
-        <form
-          className='comment-form-inner'
-          onSubmit={this.handleSubmit}>
-
+        <form onSubmit={this.handleSubmit}>
           <div className='comment-form-input'>
             <div className='form-avatar'>
               <img className="artist-avatar"

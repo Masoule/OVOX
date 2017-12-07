@@ -174,19 +174,18 @@
   right: 380px;
   position: absolute;
   bottom: 0;
-  margin-bottom: 30px;
-  height: 100px;
+  margin-bottom: 20px;
+  min-height: 100px;
   z-index: 1;
   color: white;
   background: image-url('wave.png');
   background-position: center;
   background-repeat: repeat-x;
-  background-size: contain;
+  background-size: cover;
   width: auto;
   margin-right: 10px;
   opacity: 0.8;
 }
-
 
 .track-comments {
   position: relative;
@@ -198,10 +197,15 @@
   height: -webkit-fill-available;
 }
 
-.comment-form-inner {
+.track-show-comment-form {
   position: relative;
   background: #f2f2f2;
   border: 1px solid #e5e5e5;
+  height: 40px;
+}
+
+.hidden {
+  display: none;
 }
 
 .comment-form {
@@ -223,9 +227,6 @@
 }
 
 .comment-form-input {
-  padding: 5px;
-  background: #f2f2f2;
-  border: 1px solid #e5e5e5;
   display: flex;
   width: 100%;
 }
@@ -240,14 +241,15 @@
 
 .comment-textfield {
   border-radius: 4px;
-  height: 27px;
+  height: 28px;
+  margin: 5px;
   font-size: 14px;
   width: 100%;
   background: #fff;
   padding: 0 9px;
   outline: none;
-  cursor: pointer;
   border: 1px solid #e5e5e5;
+  cursor: pointer;
 }
 
 .comment-index-box {

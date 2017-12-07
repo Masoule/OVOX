@@ -5,7 +5,6 @@ import CommentFormContainer from '../tracks/comment_form_container'
 
 const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => {
   const footerClass = currentUser ? 'user-footer' : 'footer'
-  const commentFormClass = currentUser ? 'comment-form' : 'no-comment-form'
   const editable = (currentUser && currentUser.id === track.owner_id) ? true : false
 
   return (
@@ -73,7 +72,7 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
 
           </div>
 
-            <div className={commentFormClass}>
+            <div className='comment-form'>
               <Link
                 className='comment-icon'
                 to={`/${track.owner_id}/${track.id}`}>
