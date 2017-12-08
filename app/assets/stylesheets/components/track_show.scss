@@ -232,11 +232,17 @@
 }
 
 .form-avatar {
-  width: 40px;
+  min-width: 40px;
   height: 40px;
   left: 0;
   display: block;
   margin-right: 5px;
+}
+
+.form-avatar-img {
+  min-width: 100%;
+  height: 100%;
+  background-image: linear-gradient(135deg, #846170, #e6846e);
 }
 
 .comment-textfield {

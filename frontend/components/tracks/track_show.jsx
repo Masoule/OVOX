@@ -12,8 +12,8 @@ class TrackShow extends React.Component {
   }
 
   header (){
-    let track=this.props.track
-    let currentUser=this.props.currentUser
+    let track=this.props.track;
+    let currentUser=this.props.currentUser;
     return (
       <div className='page'>
         <Header
@@ -60,8 +60,6 @@ class TrackShow extends React.Component {
 
             </div>
 
-
-
             <div className='track-show-waveform'>
 
             </div>
@@ -76,7 +74,7 @@ class TrackShow extends React.Component {
 
           <div className="track-comments">
 
-            <div className={currentUser ? 'track-show-comment-form' : 'hidden'}>
+            <div className='track-show-comment-form'>
               <CommentFormContainer
                 trackId={this.props.trackId}/>
             </div>

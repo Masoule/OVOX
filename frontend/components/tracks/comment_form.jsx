@@ -28,7 +28,7 @@ class CommentForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className='comment-form-input'>
             <div className='form-avatar'>
-              <img className="artist-avatar"
+              <img className="form-avatar-img"
                 src={this.props.currentUser.imageUrl}></img>
             </div>
             <input
