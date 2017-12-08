@@ -5,28 +5,41 @@ class Player extends React.Component {
   constructor(props) {
     super(props);
     let currentTrack = this.props.currentTrack || null;
-}
+
+    this.timeConvert=this.timeConvert.bind(this)
+    this.trackDuration=this.trackDuration.bind(this)
+    this.trackTime=this.trackTime.bind(this)
+    this.handleVolume=this.handleVolume.bind(this)
+    this.state = {
+      duration: "0:00",
+      trackTime: "0:00",
+      volume: 1,
+    }
+  }
 
   componentDidMount() {
-    this.setState({ rendered: true })
-    this.audioPlayer.addEventListener("loadedmetadata", () => {
+    document.getElementById('duration').innerHTML = this.trackDuration();
+    this.audioPlayer.onloadedmetadata = () => {
       if (this.props.playing) {
         this.audioPlayer.play()
       } else {
         this.audioPlayer.pause()
       }
-    })
+    }
 
     this.audioPlayer.addEventListener('timeupdate', () => {
       $('#progressBar').attr("value", this.audioPlayer.currentTime / this.audioPlayer.duration);
-    })
+    }, 500)
 
+    // this.audioPlayer.addEventListener('timeupdate', () => {
+    //   document.getElementById('time').innerHTML = this.trackTime();
+    // }, 1000)
   }
 
   componentWillReceiveProps(nextProps) {
     if(this.props.playing !== nextProps.playing) {
       if(nextProps.playing) {
-        this.audioPlayer.play()
+        this.audioPlayer.play();
       }
       else {
         this.audioPlayer.pause()
@@ -43,9 +56,10 @@ class Player extends React.Component {
   }
 
   trackDuration() {
-    if(this.audioPlayer) {
-      let duration = this.audioPlayer.duration;
-      return this.timeConvert(duration);
+    if(this.audioPlayer && this.props.currentTrack) {
+      let duration = this.timeConvert(this.audioPlayer.duration);
+      this.setState({ duration});
+      return duration;
     } else {
       return "0:00";
     }
@@ -53,17 +67,23 @@ class Player extends React.Component {
 
   trackTime() {
     if(this.audioPlayer) {
-      let time = this.audioPlayer.currentTime;
-      return this.timeConvert(time);
-    } else {
-      return "0:00";
+      let time = this.timeConvert(this.audioPlayer.currentTime);
+      this.setState({ trackTime:time });
+      return time;
     }
+  }
+
+  seek(e){
+    this.audioPlayer.currentTime = e.target.value;
+    this.setState({ trackTime: e.target.value });
   }
 
   trackInfo () {
     let track = this.props.currentTrack
     if (!track) {
-      return ''
+      return (
+        <div className='track-info-box'></div>
+      )
     } else {
       return (
         <div className='track-info-box'>
@@ -73,7 +93,7 @@ class Player extends React.Component {
           </div>
           <div className='track-content'>
             <div className='track-header'>
-              <div className='track-info'>
+              <div className='player-track-info'>
                 <div className='track-artist'>
                   {track.artist_name}
                 </div>
@@ -89,50 +109,82 @@ class Player extends React.Component {
     }
   }
 
+  handleVolume(e){
+    this.audioPlayer.volume = e.target.value;
+    this.setState( { volume: e.target.value } );
+  }
 
+  volumeIcon() {
+    if (this.state.volume < 0.1) {
+      return <i className="fa fa-volume-off" aria-hidden="true"></i>
+    } else if (this.state.volume > 0.5) {
+      return <i className="fa fa-volume-up" aria-hidden="true"></i>
+    } else {
+      return <i className="fa fa-volume-down" aria-hidden="true"></i>
+    }
+  }
 
-  // <script>
-  //   var audio = document.getElementById("myaudio");
-  //   audio.volume = 0.2;
-  // </script>
-
+  renderVolume() {
+    let volumeIcon = this.volumeIcon();
+    return (
+      <div className="volume">
+        <div className="volume-container">
+          <div className="volume-icon">
+            {volumeIcon}
+          </div>
+          <input
+            id="volume"
+            className="volume-slider"
+            value={this.state.volume}
+            type="range"
+            min="0"
+            max="1"
+            step="0.1"
+            onChange={this.handleVolume}
+            />
+        </div>
+      </div>
+    )
+  }
 
   render() {
-    let source = (this.props.currentTrack) ? this.props.currentTrack.trackUrl : ''
+    let src = (this.props.currentTrack) ? this.props.currentTrack.trackUrl : ''
     return(
       <div className='player'>
         <div className='player-box'>
-          <div className='player-control'>
 
-          </div>
           <div className='player-progress'>
             <audio
               id="audioPlayer"
-              src={source}
+              src={src}
               ref={(audioPlayer) => { this.audioPlayer = audioPlayer}}
-              >
-            </audio>
+              onCanPlayThrough={this.trackDuration}
+              onTimeUpdate={this.trackTime}
+              />
 
             <div className='player-play-pause'>
               <PlayButtonContainer
                 track={this.props.currentTrack}/>
             </div>
-            <p className="track-time">
-              {this.trackTime()}
+            <p id="time"
+              className="player-track-time">
+              {this.state.trackTime}
             </p>
+
             <progress
               id="progressBar"
               value="0"
-              max="1">
+              max="1"
+              onChange={this.seek}>
             </progress>
-            <p className="track-time">
-              {this.trackDuration()}
+
+            <p id='duration'
+              className="player-track-duration">
+              {this.state.duration}
             </p>
           </div>
 
-          <div className='volume'>
-
-          </div>
+          {this.renderVolume()}
 
           {this.trackInfo()}
         </div>

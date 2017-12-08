@@ -4,7 +4,7 @@ import { receiveCurrentTrack, toggle, playing, receivePlayStatus } from '../../a
 import Player from './player';
 
 const mapStateToProps = state => {
-  return{
+  return {
     currentTrack: state.player.currentTrack,
     playing: state.player.playing,
     playStatus: state.player.playStatus
