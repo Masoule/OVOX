@@ -8,6 +8,7 @@ class TrackForm extends React.Component {
     this.state = this.props.track;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
+    this.update = this.update.bind(this);
   }
 
   componentDidMount() {
@@ -25,21 +26,6 @@ class TrackForm extends React.Component {
         image = this.state.image;
 
     e.preventDefault();
-    // if (track && !track.validity.valid) {
-    //   error.innerHTML = "Don't forget the audio track, darling!";
-    //   error.className = "error active";
-    //   return;
-    // }
-    // if (!this.state.title.validity.valid) {
-    //   error.innerHTML = "Please enter a title";
-    //   error.className = "error active";
-    //   return;
-    // }
-    // if (!this.state.artist_name.validity.valid) {
-    //   error.innerHTML = "Please enter the artist name";
-    //   error.className = "error active";
-    //   return;
-    // }
 
     const formData = new FormData();
     if ( this.state.id ) {
@@ -55,6 +41,7 @@ class TrackForm extends React.Component {
       .then((res) => {
         this.props.history.push(`/${this.props.currentUser.id}/${res.data.track.id}`)
       });
+
   }
 
   handleUpload(field){

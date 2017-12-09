@@ -18,6 +18,10 @@ span, article, footer, time, small {
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  height: 100%;
+}
+
 html {
     height: 100%;
 }
@@ -60,9 +64,13 @@ input[type="submit"] {
   height: inherit;
 }
 
+#root {
+  height: inherit;
+}
+
 .page {
   background: #f2f2f2;
-  height: auto;
+  height: inherit;
 }
 
 .main {
@@ -70,7 +78,7 @@ input[type="submit"] {
   padding: 5%;
   padding-top: 0;
   padding-bottom: 0;
-  height: auto;
+  height: inherit;
 }
 
 .link-hover:hover {

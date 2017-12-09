@@ -1,5 +1,6 @@
 class Track < ApplicationRecord
-  validates :title, :owner_id, presence: true
+  validates :owner_id, presence: true
+  validates :title, presence: true, length: { maximum: 100 }
 
   has_attached_file :image
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/

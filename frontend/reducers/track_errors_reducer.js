@@ -8,10 +8,10 @@ const TrackErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_TRACK_ERRORS:
-      return state.concat(action.errors.responseJSON);
+      return action.errors.responseJSON;
     case RECEIVE_TRACKS:
       return [];
-      case RECEIVE_TRACK:
+    case RECEIVE_TRACK:
       return [];
     case REMOVE_TRACK:
       return [];
