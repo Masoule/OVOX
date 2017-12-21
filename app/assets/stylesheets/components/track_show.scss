@@ -64,12 +64,29 @@
 .track-content {
 }
 
-.edit-icon {
+.track-actions {
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
   margin-top: 5px;
+}
+
+.ownTrack-actions {
+  display: flex;
+}
+
+.edit-icon {
+  margin-right: 10px;
   height: auto;
   width: 18px;
   opacity: 0.6;
-  background: image-url('comment.png');
+}
+
+.delete-icon {
+  margin-right: 10px;
+  height: auto;
+  width: 18px;
+  opacity: 0.6;
 }
 
 .play-show-button {

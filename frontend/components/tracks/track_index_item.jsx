@@ -3,9 +3,9 @@ import { Link, withRouter } from 'react-router-dom';
 import PlayButtonContainer from '../player/play_button_container'
 import CommentFormContainer from '../tracks/comment_form_container'
 
-const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => {
-  const footerClass = currentUser ? 'user-footer' : 'footer'
-  const editable = (currentUser && currentUser.id === track.owner_id) ? true : false
+const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack, editable}) => {
+const footerClass = currentUser ? 'user-footer' : 'footer'
+const ownTrack = editable || (currentUser && currentUser.id === track.owner_id) ? true : false
 
   return (
     <li className='track-item'>
@@ -13,10 +13,10 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
 
         <div className='track-thumb-box'>
           <Link
-            className=''
             to={`/${track.owner_id}/${track.id}`}>
             <img className="track-thumb"
-              src={track.imageUrl}></img>
+              src={track.imageUrl}>
+            </img>
           </Link>
         </div>
 
@@ -55,15 +55,6 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
                 </div>
               </div>
 
-              { editable ?
-                (<Link
-                  className='edit-icon' to={`/${track.owner_id}/${track.id}/edit`}>
-                  <div className='edit-icon'>
-                    <img src={window.edit}></img>
-                  </div>
-                </Link>)
-                : '' }
-
             </div>
 
           </div>
@@ -72,6 +63,7 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
 
           </div>
 
+          <div className='track-actions'>
             <div className='comment-form'>
               <Link
                 className='comment-icon'
@@ -82,6 +74,26 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
               </Link>
               {track.commentIds.length}
             </div>
+            { ownTrack ?
+              <div className='ownTrack-actions'>
+                <Link
+                  className='edit-icon' to={`/${track.owner_id}/${track.id}/edit`}>
+                    <img src={window.edit}></img>
+                </Link>
+
+                <div className='delete-icon'>
+                  <img
+                    src={window.delete}
+                    onClick={() => deleteTrack(track.id)}>
+                  </img>
+                </div>
+
+              </div>
+
+              : '' }
+            </div>
+
+
 
             <div className={footerClass}>
 
@@ -93,32 +105,3 @@ const TrackIndexItem = ({ track, router, history, currentUser, deleteTrack}) => 
 };
 
 export default withRouter(TrackIndexItem);
-
-
-// { editable ?
-//   (<div className='edit-icon'>
-//     <img
-//       src={window.delete1}
-//       onClick={() => deletetrack(track.id)}>
-//     </img>
-//   </div>) : '' }
-
-
-
-// <Link to={track.image}>
-//   {track.title}
-// </Link>
-
-
-// <Link to={`/tracks/${track.id}/edit`}>
-//   Edit
-// </Link>
-// <button onClick={() => deleteTrack(track.id)}>Delete</button>
-
-
-
-
-//
-// <Link to={`/tracks/${track.id}`}>
-//   {track.title}
-// </Link>//&nbsp;

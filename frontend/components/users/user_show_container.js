@@ -5,15 +5,13 @@ import { fetchUser, fetchUsers } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const userId = ownProps.match.params.userId;
-  const currentUser = state.currentUser;
+  const currentUser = state.session.currentUser;
   const user = state.entities.users.user || null;
-  // const tracks = user !== null ? user.tracks : {} || {}
 
   return {
     user,
     userId,
     currentUser,
-    // tracks
   };
 };
 

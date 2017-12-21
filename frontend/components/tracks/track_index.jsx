@@ -23,6 +23,7 @@ class TrackIndex extends React.Component {
                   currentUser={this.props.currentUser}
                   track={track}
                   deleteTrack={this.props.deleteTrack}
+                  editable={false}
                   />
               ))
             }

@@ -10,14 +10,11 @@ class UserShow extends React.Component {
   }
 
   header (){
-
-    let user=this.props.user
-    let currentUser=this.props.currentUser
-    let tracks=this.props.user.tracks
-    let textClass
-    if (this.props.user.country === '') {
-      textClass = 'none';
-    }
+    const user=this.props.user
+    const currentUser=this.props.currentUser
+    const tracks= user.tracks
+    const country = user.country
+    const editable = (currentUser && user.id === currentUser.id) ? true : false
 
     return (
       <div className='page'>
@@ -37,22 +34,17 @@ class UserShow extends React.Component {
           <div className='user-show-info'>
             <div className='user-show-title'>
               {this.props.user.username}
-              <span className=''>
-              </span>
             </div>
             <br></br>
             <div className='user-show-subtitle'>
-              <span className=''>
-                {this.props.user.first_name}
-              </span>
+              {this.props.user.first_name}
             </div>
             <br></br>
-            <div className='user-show-subtitle'>
-              <span className={textClass}>
-                {this.props.user.country}
-              </span>
-            </div>
-
+            { country ? (
+              <div className='user-show-subtitle'>
+                { country }
+              </div> ) : ''
+            }
           </div>
         </div>
 
@@ -63,7 +55,8 @@ class UserShow extends React.Component {
                   <TrackIndexItem
                     key={track.track.id}
                     currentUser={currentUser}
-                    track={track.track} />
+                    track={track.track}
+                    editable={editable} />
                 ))
               }
             </ul>
@@ -74,28 +67,8 @@ class UserShow extends React.Component {
     )
   }
 
-  tracks (){
-    let tracks=this.props.user.tracks
-    return (
-      <div className='track-index-box'>
-        <ul className='track-index'>
-          {
-            tracks.map( track => (
-              <TrackIndexItem
-                key={track.track.id}
-                currentUser={this.props.currentUser}
-                track={track.track} />
-            ))
-          }
-        </ul>
-      </div>
-    )
-  }
-
   render (){
     const content = this.props.user === null ? null : this.header()
-    const tracks = this.props.user === null ? null : this.tracks()
-
     return (
       <div className='track-show'>
         { content }

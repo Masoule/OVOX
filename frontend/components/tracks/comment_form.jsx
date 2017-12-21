@@ -37,6 +37,7 @@ class CommentForm extends React.Component {
               value={this.state.body}
               placeholder={"Write a comment"}
               onChange={this.update('body')}
+              required
               />
           </div>
         </form>

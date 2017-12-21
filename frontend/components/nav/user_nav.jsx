@@ -36,7 +36,7 @@ const UserNav = ({ router, history, currentUser, logout }) => {
 
             <Link
               className='username link-hover'
-              to={`/stream`}>
+              to={`/${currentUser.id}`}>
               {currentUser.username}
             </Link>
           </div>
