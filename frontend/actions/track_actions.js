@@ -59,8 +59,11 @@ export const updateTrack = (track) => dispatch => {
 };
 
 export const deleteTrack = (id) => dispatch => {
-  return TrackAPIUtil.deleteTrack(id).then(
-    (id) => (dispatch(removeTrack(id))),
-    errors => (dispatch(receiveTrackErrors(errors)))
+  return TrackAPIUtil.deleteTrack(id)
+    .then(
+      (id) => (dispatch(removeTrack(id))),
+      errors => (dispatch(receiveTrackErrors(errors)))
+    )
+    .then(window.location.reload()
   );
 };

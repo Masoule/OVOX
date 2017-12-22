@@ -93,8 +93,6 @@ const ownTrack = editable || (currentUser && currentUser.id === track.owner_id) 
               : '' }
             </div>
 
-
-
             <div className={footerClass}>
 
             </div>

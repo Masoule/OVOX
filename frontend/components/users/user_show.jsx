@@ -55,6 +55,7 @@ class UserShow extends React.Component {
                   <TrackIndexItem
                     key={track.track.id}
                     currentUser={currentUser}
+                    deleteTrack={this.props.deleteTrack}
                     track={track.track}
                     editable={editable} />
                 ))

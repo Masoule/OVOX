@@ -20,25 +20,27 @@ class Api::TracksController < ApplicationController
   end
 
   def update
-  @track = current_user.tracks.find(params[:id])
+    @track = current_user.tracks.find(params[:id])
 
-  if @track.update(track_params)
-    render 'api/tracks/show'
-  else
-    render json: @track.errors.full_messages, status: 422
+    if @track.update(track_params)
+      render 'api/tracks/show'
+    else
+      render json: @track.errors.full_messages, status: 422
+    end
   end
-end
 
   def destroy
-    @track = currentUser.tracks.find(params[:id])
+    @track = current_user.tracks.find(params[:id])
     @track.destroy
-    render :index
+    render json: ["Unable to delete track"], status: 422
   end
 
   def edit
     @track = Track.find_by(id: params[:id])
   end
 
+  private
+  
   def track_params
     params.require(:track).permit(:title, :artist_name, :genre, :description, :image, :track)
   end
