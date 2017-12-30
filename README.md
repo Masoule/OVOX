@@ -15,7 +15,7 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 
 2. Playing Tracks with continuous play and progress bar
 
-3. Logged in users can upload tracks and edit their own tracks
+3. Logged in users can upload tracks and edit and delete their own tracks
 
 4. Track show page displaying the track comments
 
@@ -39,8 +39,8 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 * Node.js
 
 
-## Future and in progress:
-* Track and comment delete
+## Future and in progress features:
+* Comment delete
 * Track likes and unlikes
 * Playlists
 * waveforms
