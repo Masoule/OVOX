@@ -9,16 +9,17 @@ class Player extends React.Component {
     this.timeConvert=this.timeConvert.bind(this)
     this.trackDuration=this.trackDuration.bind(this)
     this.trackTime=this.trackTime.bind(this)
+    this.seek=this.seek.bind(this)
     this.handleVolume=this.handleVolume.bind(this)
     this.state = {
       duration: "0:00",
       trackTime: "0:00",
+      progress: 0,
       volume: 1,
     }
   }
 
   componentDidMount() {
-    document.getElementById('duration').innerHTML = this.trackDuration();
     this.audioPlayer.onloadedmetadata = () => {
       if (this.props.playing) {
         this.audioPlayer.play()
@@ -28,12 +29,8 @@ class Player extends React.Component {
     }
 
     this.audioPlayer.addEventListener('timeupdate', () => {
-      $('#progressBar').attr("value", this.audioPlayer.currentTime / this.audioPlayer.duration);
+      this.progressBar.setAttribute("value", this.audioPlayer.currentTime / this.audioPlayer.duration);
     }, 500)
-
-    // this.audioPlayer.addEventListener('timeupdate', () => {
-    //   document.getElementById('time').innerHTML = this.trackTime();
-    // }, 1000)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -59,23 +56,25 @@ class Player extends React.Component {
     if(this.audioPlayer && this.props.currentTrack) {
       let duration = this.timeConvert(this.audioPlayer.duration);
       this.setState({ duration});
-      return duration;
-    } else {
-      return "0:00";
     }
   }
 
   trackTime() {
     if(this.audioPlayer) {
-      let time = this.timeConvert(this.audioPlayer.currentTime);
-      this.setState({ trackTime:time });
-      return time;
+      let progress = this.audioPlayer.currentTime/this.audioPlayer.duration;
+      let trackTime = this.timeConvert(this.audioPlayer.currentTime);
+      this.setState({ trackTime, progress });
+      return trackTime;
     }
   }
 
   seek(e){
-    this.audioPlayer.currentTime = e.target.value;
-    this.setState({ trackTime: e.target.value });
+    let progress = e.nativeEvent.offsetX / e.nativeEvent.target.offsetWidth;
+    let trackTime = progress * this.audioPlayer.duration;
+    console.log(trackTime)
+    this.audioPlayer.currentTime = trackTime;
+    trackTime = this.timeConvert(trackTime);
+    this.setState({ trackTime, progress });
   }
 
   trackInfo () {
@@ -160,25 +159,30 @@ class Player extends React.Component {
               ref={(audioPlayer) => { this.audioPlayer = audioPlayer}}
               onCanPlayThrough={this.trackDuration}
               onTimeUpdate={this.trackTime}
-              />
+            />
 
             <div className='player-play-pause'>
               <PlayButtonContainer
                 track={this.props.currentTrack}/>
             </div>
+
             <p id="time"
               className="player-track-time">
               {this.state.trackTime}
             </p>
 
-            <progress
-              id="progressBar"
-              value="0"
-              max="1"
-              onChange={this.seek}>
-            </progress>
+            <div className='progress-slider'
+              onClick={this.seek}>
+              <progress
+                ref={(p) => this.progressBar = p}
+                id="progressBar"
+                value="0"
+                max="1">
+              </progress>
+            </div>
 
             <p id='duration'
+              ref={(p) => this.durationP = p}
               className="player-track-duration">
               {this.state.duration}
             </p>

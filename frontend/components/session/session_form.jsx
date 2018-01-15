@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.hideModal = this.hideModal.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
+    this.type = this.type.bind(this);
     this.username = "Salome".split("");
     this.password = "123456".split("");
   }

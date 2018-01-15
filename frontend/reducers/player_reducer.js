@@ -22,7 +22,6 @@ const PlayerReducer = (state= defaultState, action) => {
       playing = !state.playing
       newState = Object.assign({}, state, {playing})
       return newState;
-      return newState;
     case RECEIVE_PLAY_STATUS:
       let playStatus = action.playStatus;
       newState = Object.assign({}, state, { playStatus });
