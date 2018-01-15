@@ -10,8 +10,8 @@ const mapStateToProps = (state, ownProps) => {
   const user = state.entities.users.user || null;
 
   return {
-    user,
-    userId,
+      user,
+      userId,
     currentUser,
   };
 };

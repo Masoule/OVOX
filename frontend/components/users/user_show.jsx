@@ -20,7 +20,6 @@ class UserShow extends React.Component {
       <div className='page'>
         <Header
           currentuser={currentUser}
-          user={user}
           />
         <div className='main-show'>
 

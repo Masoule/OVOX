@@ -5,11 +5,10 @@ import { withRouter } from 'react-router-dom';
 
   const mapStateToProps = (state, ownProps) => {
     const currentUser = state.session.currentUser;
-    const headerType = currentUser ? 'user' : 'visitor'
+    // const headerType = currentUser ? 'user' : 'visitor'
 
     return {
-      currentUser: state.session.currentUser,
-      headerType
+      currentUser,
     };
   };
 

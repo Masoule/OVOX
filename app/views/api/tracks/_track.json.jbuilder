@@ -3,6 +3,7 @@ json.track do
   json.extract! track, :id, :title, :artist_name, :genre, :description
 
   json.owner track.owner.username
+  json.ownerId track.owner.id
   json.ownerImage track.owner.image.url
   json.trackUrl track.track.url
   json.imageUrl track.image.url

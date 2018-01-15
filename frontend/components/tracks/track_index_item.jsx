@@ -34,7 +34,7 @@ const ownTrack = editable || (currentUser && currentUser.id === track.owner_id) 
               <div className='track-info'>
                 <Link
                   className='track-artist'
-                  to={`/${track.owner_id}`}>
+                  to={`/${track.ownerId}`}>
                   {track.owner}
                 </Link>
 
