@@ -9,6 +9,12 @@ class UserShow extends React.Component {
     this.props.fetchUser(this.props.userId);
   }
 
+  componentWillReceiveProps(newProps){
+    if (newProps.userId !== this.props.userId) {
+      this.props.fetchUser(newProps.userId);
+    }
+  }
+
   header (){
     const user=this.props.user
     const currentUser=this.props.currentUser
