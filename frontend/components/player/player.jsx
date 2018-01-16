@@ -71,7 +71,6 @@ class Player extends React.Component {
   seek(e){
     let progress = e.nativeEvent.offsetX / e.nativeEvent.target.offsetWidth;
     let trackTime = progress * this.audioPlayer.duration;
-    console.log(trackTime)
     this.audioPlayer.currentTime = trackTime;
     trackTime = this.timeConvert(trackTime);
     this.setState({ trackTime, progress });

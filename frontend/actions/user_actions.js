@@ -23,7 +23,6 @@ export const fetchUsers = () => dispatch => {
 };
 
 export const fetchUser = (id) => dispatch => {
-  console.log(id)
   return APIUtil.fetchUser(id).then(
     (user) => (dispatch(receiveUser(user))),
     errors => (dispatch(receiveErrors(errors)))
