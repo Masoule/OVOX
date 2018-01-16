@@ -12,7 +12,8 @@ class TrackIndexItem extends React.Component {
       waveColor: '#555',
       progressColor: 'orange',
       cursorWidth: 0,
-      barWidth: 2
+      barWidth: 2,
+      height: 80
     });
 
     wavesurfer.load(this.props.track.trackUrl);
@@ -76,7 +77,7 @@ class TrackIndexItem extends React.Component {
 
             </div>
 
-            <div id={`waveform-${track.id}`}></div>
+            <div className='track-waveform' id={`waveform-${track.id}`}></div>
 
             <div className='track-actions'>
               <div className='comment-form'>
