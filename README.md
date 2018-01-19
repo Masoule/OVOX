@@ -23,6 +23,9 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 
 6. User profile page listing user tracks
 
+7. Frontend waveforms
+
+
 
 ## Technologies
 
@@ -37,11 +40,12 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 * HTML5 Audio for track play/pause actions
 * Lodash
 * Node.js
+* Babel
+* waveSurfer.js
 
 
 ## Future and in progress features:
 * Comment delete
 * Track likes and unlikes
 * Playlists
-* waveforms
 * search

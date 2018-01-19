@@ -17,7 +17,6 @@ class TrackIndexItem extends React.Component {
     });
 
     wavesurfer.load(this.props.track.trackUrl);
-    console.log(this.props.track.id)
   }
 
   render () {
