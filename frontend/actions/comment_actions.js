@@ -30,30 +30,30 @@ export const clearCommentErrors = errors => ({
   type: CLEAR_COMMENT_ERRORS,
 });
 
-export const fetchComments = () => dispatch => {
-  return CommentAPIUtil.fetchComments().then(
-    (comments) => (dispatch(receiveComments(comments))),
+export const fetchComments = () => dispatch => (
+  CommentAPIUtil.fetchComments().then(
+    comments => (dispatch(receiveComments(comments))),
     errors => (dispatch(receiveCommentErrors(errors)))
-  );
-};
+  )
+);
 
-export const fetchComment = (id) => dispatch => {
-  return CommentAPIUtil.fetchComment(id).then(
-    (comment) => (dispatch(receiveComment(comment))),
+export const fetchComment = id => dispatch => (
+  CommentAPIUtil.fetchComment(id).then(
+    comment => (dispatch(receiveComment(comment))),
     errors => (dispatch(receiveCommentErrors(errors)))
-  );
-};
+  )
+);
 
-export const createComment = (comment) => dispatch => {
-  return CommentAPIUtil.createComment(comment).then(
-    (comment) => (dispatch(receiveComment(comment))),
+export const createComment = comment => dispatch => (
+  CommentAPIUtil.createComment(comment).then(
+    comment => (dispatch(receiveComment(comment))),
     errors => (dispatch(receiveCommentErrors(errors)))
-  );
-};
+  )
+);
 
-export const deleteComment = (id) => dispatch => {
-  return CommentAPIUtil.deleteComment(id).then(
-    (id) => (dispatch(removeComment(id))),
+export const deleteComment = id => dispatch => (
+  CommentAPIUtil.deleteComment(id).then(
+    id => (dispatch(removeComment(id))),
     errors => (dispatch(receiveCommentErrors(errors)))
-  );
-};
+  )
+);

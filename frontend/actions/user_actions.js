@@ -15,19 +15,19 @@ export const receiveUser = user => ({
   user
 });
 
-export const fetchUsers = () => dispatch => {
-  return APIUtil.fetchUsers().then(
+export const fetchUsers = () => dispatch => (
+  APIUtil.fetchUsers().then(
     (users) => (dispatch(receiveUsers(users))),
     errors => (dispatch(receiveErrors(errors)))
-  );
-};
+  )
+);
 
-export const fetchUser = (id) => dispatch => {
-  return APIUtil.fetchUser(id).then(
+export const fetchUser = id => dispatch => (
+  APIUtil.fetchUser(id).then(
     (user) => (dispatch(receiveUser(user))),
     errors => (dispatch(receiveErrors(errors)))
-  );
-};
+  )
+);
 
 export const receiveErrors = errors => ({
   type: RECEIVE_USER_ERRORS,

@@ -30,40 +30,39 @@ export const clearTrackErrors = errors => ({
   type: CLEAR_TRACK_ERRORS,
 });
 
-export const fetchTracks = () => dispatch => {
-  return TrackAPIUtil.fetchTracks().then(
-    (tracks) => (dispatch(receiveTracks(tracks))),
+export const fetchTracks = () => dispatch => (
+  TrackAPIUtil.fetchTracks().then(
+    tracks => (dispatch(receiveTracks(tracks))),
     errors => (dispatch(receiveTrackErrors(errors)))
-  );
-};
+  )
+);
 
-export const fetchTrack = (id) => dispatch => {
-  return TrackAPIUtil.fetchTrack(id).then(
-    (track) => (dispatch(receiveTrack(track))),
+export const fetchTrack = (id) => dispatch => (
+  TrackAPIUtil.fetchTrack(id).then(
+    track => (dispatch(receiveTrack(track))),
     errors => (dispatch(receiveTrackErrors(errors)))
-  );
-};
+  )
+);
 
-export const createTrack = (track) => dispatch => {
-  return TrackAPIUtil.createTrack(track).then(
-    (track) => (dispatch(receiveTrack(track))),
+export const createTrack = track => dispatch => (
+  TrackAPIUtil.createTrack(track).then(
+    track => (dispatch(receiveTrack(track))),
     errors => (dispatch(receiveTrackErrors(errors)))
-  );
-};
+  )
+);
 
-export const updateTrack = (track) => dispatch => {
-  return TrackAPIUtil.updateTrack(track).then(
-    (track) => (dispatch(receiveTrack(track))),
+export const updateTrack = track => dispatch => (
+  TrackAPIUtil.updateTrack(track).then(
+    track => (dispatch(receiveTrack(track))),
     errors => (dispatch(receiveTrackErrors(errors)))
-  );
-};
+  )
+);
 
-export const deleteTrack = (id) => dispatch => {
-  return TrackAPIUtil.deleteTrack(id)
-    .then(
-      (id) => (dispatch(removeTrack(id))),
+export const deleteTrack = id => dispatch => (
+  TrackAPIUtil.deleteTrack(id).then(
+      id => (dispatch(removeTrack(id))),
       errors => (dispatch(receiveTrackErrors(errors)))
     )
     .then(window.location.reload()
-  );
-};
+  )
+);
