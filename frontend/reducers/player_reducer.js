@@ -11,21 +11,17 @@ const defaultState = Object.freeze(
 
 const PlayerReducer = (state= defaultState, action) => {
   Object.freeze(state);
-  let newState;
   let playing;
   switch (action.type) {
     case RECEIVE_CURRENT_TRACK:
       let currentTrack = action.currentTrack
-      newState = Object.assign({}, state, {currentTrack, playing: true})
-      return newState;
+      return Object.assign({}, state, {currentTrack, playing: true})
     case TOGGLE:
       playing = !state.playing
-      newState = Object.assign({}, state, {playing})
-      return newState;
+      return Object.assign({}, state, {playing})
     case RECEIVE_PLAY_STATUS:
       let playStatus = action.playStatus;
-      newState = Object.assign({}, state, { playStatus });
-      return newState;
+      return Object.assign({}, state, { playStatus });
     default:
       return state;
   }

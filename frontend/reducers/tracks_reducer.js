@@ -12,19 +12,16 @@ const TracksReducer = (state = {}, action) => {
   let track;
   switch (action.type) {
     case RECEIVE_TRACKS:
-      const tracks = merge({}, action.tracks );
-      return tracks;
+      return merge({}, action.tracks );
     case RECEIVE_TRACK:
-      track = merge({}, state, { [action.data.track.id]: action.data.track });
-      return track;
+      return merge({}, state, { [action.data.track.id]: action.data.track });
     case RECEIVE_COMMENT:
       track = state[action.comment.trackId]
       track = merge({}, track);
       track.commentIds.push(action.comment.id)
-      let newState = merge({}, state, { [track.id]:track });
-      return newState;
+      return merge({}, state, { [track.id]:track });
     case REMOVE_TRACK:
-      newState = Object.assign({}, state);
+      let newState = Object.assign({}, state);
       delete newState[`${action.trackId}`];
       return newState;
     default:

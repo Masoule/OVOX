@@ -8,17 +8,13 @@ const defaultState = Object.freeze({
 
 const CommentReducer = (state= defaultState, action) => {
   Object.freeze(state);
-  let comments;
   switch (action.type) {
     case RECEIVE_TRACK:
-      comments = merge({}, state, action.data.comments );
-      return comments;
+      return merge({}, state, action.data.comments );
     case RECEIVE_COMMENTS:
-      comments = merge({}, action.comments );
-      return comments;
+      return merge({}, action.comments );
     case RECEIVE_COMMENT:
-      const comment = merge({}, state, { [action.comment.id]: action.comment });
-      return comment;
+      return merge({}, state, { [action.comment.id]: action.comment });
     case REMOVE_COMMENT:
       let newState = Object.assign({}, state);
       delete newState[`${action.commentId}`];
