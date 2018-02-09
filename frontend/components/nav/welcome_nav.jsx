@@ -45,6 +45,22 @@ class WelcomeNav extends React.Component {
           </div>
 
         </div>
+
+        <div className='welcome-marketing'>
+
+          <h2 className='welcome-title'>Connect on OVOX</h2>
+          <p className='welcome-text'>Upload your sounds, discover and stream and connect to an expanding mix of music from sound creators around the world</p>
+
+          <div className='button join'>
+            <Link
+              className='link-join'
+              to={`${this.props.location.pathname}/signup`}>
+              Sign up for free
+            </Link>
+          </div>
+
+        </div>
+
       </div>
     )
   }

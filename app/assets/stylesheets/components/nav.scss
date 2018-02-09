@@ -56,6 +56,47 @@
   margin-right: 15px;
 }
 
+.welcome-marketing {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-title {
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.welcome-text {
+  font-size: 20px;
+  line-height: 30px;
+  max-width: 600px;
+  text-align: center;
+  font-weight: 100;
+  margin: 20px 0;
+}
+
+.join {
+  margin: 0 5px;
+  width: auto;
+  align-content: center;
+  height: 46px;
+  padding: 0 30px 6px;
+}
+
+.link-join {
+  // position: relative;
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 46px;
+  // padding: 5px;
+  height: 100%;
+}
+
 .home {
   color: #ccc;
   width: auto;
@@ -103,7 +144,7 @@
 
 .button {
   display: inline-block;
-  width: 100%;
+  // width: 100%;
   background-color: #f50;
   border-color: #f50;
   color: #fff;
