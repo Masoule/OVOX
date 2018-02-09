@@ -85,6 +85,19 @@ img {
   padding: 10px;
 }
 
+.form-submit-btn {
+  display: inline-block;
+  background-color: #f50;
+  border-color: #f50;
+  color: #fff;
+  font-size: 16px;
+  line-height: 40px;
+  height: 40px;
+  border-radius: 3px;
+  text-align: center;
+  width: 100%;
+}
+
 .demo-button {
   position: relative;
   padding: 10px;
@@ -96,6 +109,14 @@ img {
 
 .demo {
   background-color: #968b7b;
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+  line-height: 40px;
+  height: 40px;
+  border-radius: 3px;
+  text-align: center;
+  width: 100%;
 }
 
 .demo:hover {
