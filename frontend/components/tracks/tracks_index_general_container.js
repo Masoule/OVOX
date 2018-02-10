@@ -1,6 +1,6 @@
 import TrackIndexGeneral from './track_index_general';
 import { connect } from 'react-redux';
-import {fetchTracks , fetchTrack, createTrack, deleteTrack, receiveTrackErrors, clearTrackErrors} from '../../actions/track_actions';
+import {fetchTracks, fetchTrack, createTrack, deleteTrack, receiveTrackErrors, clearTrackErrors} from '../../actions/track_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
