@@ -1,5 +1,5 @@
 import React from 'react';
-import TrackIndexItem from './track_index_item';
+import TrackThumbnailItem from './track_thumbnail_item';
 import WelcomeNav from '../nav/welcome_nav'
 
 class TrackIndexGeneral extends React.Component {
@@ -14,10 +14,10 @@ class TrackIndexGeneral extends React.Component {
         <WelcomeNav />
 
         <div className='track-index-box'>
-          <ul className='track-index'>
+          <ul className='track-thumb-index'>
             {
               this.props.tracks.map( track => (
-                <TrackIndexItem
+                <TrackThumbnailItem
                   key={track.id}
                   currentUser={this.props.currentUser}
                   track={track} />

@@ -8,8 +8,8 @@ class TrackThumbnailItem extends React.Component {
     const { track, router, history } = this.props
 
     return (
-      <li className='track-item'>
-        <div className='track-box'>
+      <li className='track-thumb-item'>
+        <div className='track-th-box'>
 
           <div className='track-thumb-box'>
             <Link
@@ -18,49 +18,25 @@ class TrackThumbnailItem extends React.Component {
                 src={track.imageUrl}>
               </img>
             </Link>
+            <div className='play-thumb-button'>
+              <PlayButtonContainer className='play-button'
+                track={track}
+                />
+            </div>
           </div>
 
           <div className='track-content'>
+                <Link
+                  className='track-artist'
+                  to={`/${track.ownerId}`}>
+                  {track.owner}
+                </Link>
 
-            <div className='track-header'>
-
-              <div className='play-index-button'>
-                <PlayButtonContainer className='play-button'
-                  track={track}
-                  />
-              </div>
-
-              <div className='track-detail'>
-                <div className='track-info'>
-                  <Link
-                    className='track-artist'
-                    to={`/${track.ownerId}`}>
-                    {track.owner}
-                  </Link>
-
-                  <div className='track-time'>
-                    {track.time}
-                  </div>
-                </div>
-
-                <div className='track-info'>
-                  <Link
-                    className='track-title'
-                    to={`/${track.owner_id}/${track.id}`}>
-                    {track.title}
-                  </Link>
-
-                  <div className={track.genre ? "genre" : "no-genre"}>
-                    # {track.genre}
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div className='track-waveform' id={`waveform-${track.id}`}></div>
-
+                <Link
+                  className='track-title'
+                  to={`/${track.owner_id}/${track.id}`}>
+                  {track.title}
+                </Link>
           </div>
         </div>
       </li>);

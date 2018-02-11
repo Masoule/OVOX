@@ -33,6 +33,22 @@ img {
   margin-left: 10px;
 }
 
+.track-thumb-index {
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.track-thumb-item {
+  padding: 10px;
+  // width: 16.666%;
+  width: 154px;
+  height: auto;
+  text-align: -webkit-match-parent;
+}
+
 .track-item {
   margin-bottom: 36px;
 }
@@ -40,6 +56,11 @@ img {
 .track-box {
   display: flex;
   flex-direction: row;
+}
+
+.track-th-box {
+  display: flex;
+  flex-direction: column;
 }
 
 .track-thumb-box {
@@ -84,6 +105,20 @@ img {
   font-size: 20px;
   line-height: 36px;
   position: relative;
+  background-color: #f50;
+  border-radius: 50%;
+  min-width: 36px;
+  height: 36px;
+  text-align: center;
+}
+
+.play-thumb-button {
+  color: white;
+  font-size: 20px;
+  line-height: 36px;
+  position: absolute;
+  top: 62px;
+  left: 62px;
   background-color: #f50;
   border-radius: 50%;
   min-width: 36px;
