@@ -25,18 +25,18 @@ class TrackThumbnailItem extends React.Component {
             </div>
           </div>
 
-          <div className='track-content'>
-                <Link
-                  className='track-artist'
-                  to={`/${track.ownerId}`}>
-                  {track.owner}
-                </Link>
+          <div className='track-thumb-content'>
+              <Link
+                className='track-artist'
+                to={`/${track.ownerId}`}>
+                {track.owner}
+              </Link>
 
-                <Link
-                  className='track-title'
-                  to={`/${track.owner_id}/${track.id}`}>
-                  {track.title}
-                </Link>
+              <Link
+                className='track-title'
+                to={`/${track.owner_id}/${track.id}`}>
+                {track.title}
+              </Link>
           </div>
         </div>
       </li>);
