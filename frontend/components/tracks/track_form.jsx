@@ -220,7 +220,7 @@ class TrackForm extends React.Component {
                   </div>
                   <div className='save-button'>
                     <input
-                      className='button'
+                      className='button ul-submit'
                       type="submit"
                       value='Save'
                       />
