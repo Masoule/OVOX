@@ -10,7 +10,7 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 [Live Link](https://ovox.herokuapp.com)
 
 
-![front](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/front.png){width="60%"}
+![front](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/front.png)
 
 ## Features
 
@@ -20,15 +20,28 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 
 2. Playing Tracks with continuous play and progress bar
 
-3. Logged in users can upload tracks and edit and delete their own tracks
+![index](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/index.png)
+
+3. Logged in users can upload/Edit tracks
+
+![modal](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/upload.png)
+
+4. Logged in users can edit and delete their own tracks
 
 4. Track show page displaying the track comments
 
+![track-show](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/track-show.png)
+
 5. Logged in users can post comments
+
+![comments](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/modal.png)
 
 6. User profile page listing user tracks
 
+![user](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/user.png)
+
 7. Frontend waveforms
+
 
 
 
