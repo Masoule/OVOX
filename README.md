@@ -9,9 +9,14 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 
 [Live Link](https://ovox.herokuapp.com)
 
+
+![front](OVOX/app/assets/images/ovox/front.png)
+
 ## Features
 
 1.  User authentication and demo login
+
+![front](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/modal.png)
 
 2. Playing Tracks with continuous play and progress bar
 
