@@ -12,7 +12,7 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 
 <!-- ![front](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/front.png | width=100) -->
 
-<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/front.png" alt="Front page" width="400px">
+<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/front.png" alt="Front page" width="600px" style="text-align:center;">
 
 ## Features
 
