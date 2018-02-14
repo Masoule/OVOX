@@ -9,40 +9,6 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 
 [Live Link](https://ovox.herokuapp.com)
 
-
-<!-- ![front](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/front.png | width=100) -->
-
-<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/front.png" alt="Front page" width="600px" style="margin: 0 auto;">
-
-## Features
-
-1.  User authentication and demo login
-
-<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/modal.png" alt="Authentication Modal" width="600px" style="margin: 0 auto;">
-
-2. Playing Tracks with continuous play and progress bar
-
-<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/index.png" alt="Index" width="600px" style="margin: 0 auto;">
-
-3. Logged in users can upload/Edit tracks
-
-<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/upload.png" alt="upload form" width="600px" style="margin: 0 auto;">
-
-4. Logged in users can edit and delete their own tracks
-
-4. Track show page displaying the track comments
-
-<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/track-show.png" alt="track show page" width="600px" style="margin: 0 auto;">
-
-5. Logged in users can post comments
-
-6. User profile page listing user tracks
-
-<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/user.png" alt="user profile page" width="600px" style="margin: 0 auto;">
-
-7. Frontend waveforms
-
-
 ## Technologies
 
 * Ruby on Rails
@@ -59,9 +25,63 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 * Babel
 * waveSurfer.js
 
+<!-- ![front](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/front.png | width=100) -->
+
+<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/front.png" alt="Front page" width="600px" style="margin: 0 auto;">
+
+## Features
+
+1.  User authentication and demo login
+
+<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/modal.png" alt="Authentication Modal" width="600px" style="margin: 0 auto;">
+
+
+2. Playing Tracks with continuous play and progress bar
+
+<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/index.png" alt="Index" width="600px" style="margin: 0 auto;">
+
+
+3. Logged in users can upload/Edit tracks
+
+<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/upload.png" alt="upload form" width="600px" style="margin: 0 auto;">
+
+4. Logged in users can edit and delete their own tracks
+
+
+5. Track show page displaying the track comments
+
+<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/track-show.png" alt="track show page" width="600px" style="margin: 0 auto;">
+
+
+6. Logged in users can post comments
+
+
+7. User profile page listing user tracks
+
+<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/user.png" alt="user profile page" width="600px" style="margin: 0 auto;">
+
+
+8. Frontend waveforms
+
+```Javascript
+componentDidMount() {
+  const wavesurfer = WaveSurfer.create({
+    container: `#waveform-${this.props.track.id}`,
+    waveColor: '#555',
+    progressColor: 'orange',
+    cursorWidth: 0,
+    barWidth: 2,
+    height: 80
+  });
+
+  wavesurfer.load(this.props.track.trackUrl);
+}
+```
+
+
 
 ## Future and in progress features:
 * Comment delete
 * Track likes and unlikes
 * Playlists
-* search
+* Search

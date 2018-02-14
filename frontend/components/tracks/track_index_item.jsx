@@ -19,6 +19,7 @@ class TrackIndexItem extends React.Component {
     wavesurfer.load(this.props.track.trackUrl);
   }
 
+
   render () {
     const { track, router, history, currentUser, deleteTrack, editable } = this.props
     const footerClass = currentUser ? 'user-footer' : 'footer'
