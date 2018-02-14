@@ -12,39 +12,35 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 
 <!-- ![front](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/front.png | width=100) -->
 
-<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/front.png" alt="Front page" width="600px" style="text-align:center;">
+<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/front.png" alt="Front page" width="600px" style="margin: 0 auto;">
 
 ## Features
 
 1.  User authentication and demo login
 
-![modal](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/modal.png)
+<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/modal.png" alt="Authentication Modal" width="600px" style="margin: 0 auto;">
 
 2. Playing Tracks with continuous play and progress bar
 
-![index](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/index.png)
+<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/index.png" alt="Index" width="600px" style="margin: 0 auto;">
 
 3. Logged in users can upload/Edit tracks
 
-![modal](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/upload.png)
+<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/upload.png" alt="upload form" width="600px" style="margin: 0 auto;">
 
 4. Logged in users can edit and delete their own tracks
 
 4. Track show page displaying the track comments
 
-![track-show](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/track-show.png)
+<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/track-show.png" alt="track show page" width="600px" style="margin: 0 auto;">
 
 5. Logged in users can post comments
 
-![comments](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/modal.png)
-
 6. User profile page listing user tracks
 
-![user](https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/user.png)
+<img src="https://github.com/Masoule/OVOX/blob/master/app/assets/images/ovox/user.png" alt="user profile page" width="600px" style="margin: 0 auto;">
 
 7. Frontend waveforms
-
-
 
 
 ## Technologies
