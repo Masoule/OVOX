@@ -10,9 +10,9 @@ class TrackShow extends React.Component {
 
   componentDidMount(){
     this.props.fetchTrack(this.props.trackId);
-  }
-
-  componentWillReceiveProps(newProps) {
+  // }
+  //
+  // componentWillReceiveProps(newProps) {
     if(this.props.track!==newProps.track) {
       this.wavesurfer = WaveSurfer.create({
          container: this.waveform,

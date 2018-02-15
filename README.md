@@ -63,7 +63,7 @@ React's virtual DOM handles fast, efficient updates of the DOM. The normalized s
 
 8. Frontend waveforms
 
-OVOX uses Wavesurfer librarty to generate frontend waveforms for the tracks. Once the track component is mounted, the Wavesurfer is loaded on the track calling it by the id.
+OVOX uses Wavesurfer library to generate frontend waveforms for the tracks. Once the track component is mounted, the Wavesurfer is loaded on the track calling it by the id.
 
 ```Javascript
 componentDidMount() {
