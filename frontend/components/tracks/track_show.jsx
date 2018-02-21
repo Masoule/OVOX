@@ -9,22 +9,19 @@ import PlayButtonContainer from '../player/play_button_container'
 class TrackShow extends React.Component {
 
   componentDidMount(){
-    this.props.fetchTrack(this.props.trackId);
-  // }
-  //
-  // componentWillReceiveProps(newProps) {
-    if(this.props.track!==newProps.track) {
-      this.wavesurfer = WaveSurfer.create({
-         container: this.waveform,
-         waveColor: '#555',
-         progressColor: 'orange',
-         cursorWidth: 0,
-         barWidth: 2,
-         height: 200
-       });
-      this.wavesurfer.load(newProps.track.trackUrl);
+    this.props.fetchTrack(this.props.trackId)
 
-    }
+    let track = this.props.track || this.props.fetchTrack(this.props.trackId);
+
+    this.wavesurfer = WaveSurfer.create({
+      container: this.waveform,
+      waveColor: '#555',
+      progressColor: 'orange',
+      cursorWidth: 0,
+      barWidth: 2,
+      height: 200
+    });
+    this.wavesurfer.load(track.trackUrl);
   }
 
   comments (){
@@ -49,7 +46,6 @@ class TrackShow extends React.Component {
     let track=this.props.track || {};
     let currentUser=this.props.currentUser;
 
-    //if ( track ) {
     return (
       <div className='page-show'>
         return (
@@ -143,7 +139,7 @@ class TrackShow extends React.Component {
         </div>
         )
       </div>
-    )// } else { return null }
+    )
   }
 }
 
