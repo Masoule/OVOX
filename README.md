@@ -80,7 +80,7 @@ componentDidMount() {
 }
 ```
 
-In order to render a separate waveform for each track on the index page, each track component generates its own waveform id.
+In order to render a separate waveform for every track on index page, each track component generates its own waveform id.
 
 ```Javascript  
 <div className='track-waveform' id={`waveform-${track.id}`}></div>
@@ -89,7 +89,6 @@ In order to render a separate waveform for each track on the index page, each tr
 
 
 ## Future and in progress features:
-* Comment delete
 * Track likes and unlikes
 * Playlists
 * Search
