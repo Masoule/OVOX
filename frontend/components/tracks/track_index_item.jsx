@@ -95,7 +95,7 @@ class TrackIndexItem extends React.Component {
               { ownTrack ?
                 <div className='ownTrack-actions'>
                   <Link
-                    className='edit-icon fa fa-edit' to={`/${track.owner_id}/${track.id}/edit`}>
+                    className='edit-icon fa fa-pencil' to={`/${track.owner_id}/${track.id}/edit`}>
                   </Link>
 
                   <div
