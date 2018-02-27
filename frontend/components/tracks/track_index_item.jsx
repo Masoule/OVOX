@@ -82,28 +82,23 @@ class TrackIndexItem extends React.Component {
             <div className='track-actions'>
               <div className='like-bt fa fa-heart'>
               </div>
+
               <div className='comment-form'>
                 <Link
-                  className='comment-icon'
+                  className='comment-icon fa fa-comment'
                   to={`/${track.owner_id}/${track.id}`}>
-                  <div className='comment-icon'>
-                    <img src={window.comment}></img>
-                  </div>
                 </Link>
                 {track.commentIds.length}
               </div>
               { ownTrack ?
                 <div className='ownTrack-actions'>
                   <Link
-                    className='edit-icon' to={`/${track.owner_id}/${track.id}/edit`}>
-                      <img src={window.edit}></img>
+                    className='edit-icon fa fa-edit' to={`/${track.owner_id}/${track.id}/edit`}>
                   </Link>
 
-                  <div className='delete-icon'>
-                    <img
-                      src={window.delete}
-                      onClick={() => deleteTrack(track.id)}>
-                    </img>
+                  <div
+                    className='delete-icon fa fa-trash'
+                    onClick={() => deleteTrack(track.id)}>
                   </div>
 
                 </div>

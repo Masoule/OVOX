@@ -56,9 +56,10 @@
 
 .comment-icon {
   height: auto;
-  margin-right: 5px;
-  width: 16px;
-  background: image-url('comment.png');
+  margin-right: 2px;
+  width: auto;
+  font-size: 12px;
+  // background: image-url('comment.png');
 }
 
 .track-content {
@@ -66,9 +67,10 @@
 
 .track-actions {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   height: 20px;
   margin-top: 5px;
+  width: auto;
 }
 
 .like-bt {
@@ -85,17 +87,17 @@
 }
 
 .edit-icon {
-  margin-right: 10px;
   height: auto;
   width: 18px;
-  opacity: 0.6;
+  margin-left: 15px;
+  opacity: 0.3;
 }
 
 .delete-icon {
-  margin-right: 10px;
+  margin-left: 15px;
   height: auto;
   width: 18px;
-  opacity: 0.6;
+  opacity: 0.3;
 }
 
 .play-show-button {
@@ -234,10 +236,13 @@
 .comment-form {
   position: relative;
   margin-top: 0;
-  padding: 5px;
-  font-size: 12px;
   display: flex;
-  color: #999;
+  opacity: 0.3;
+  margin-left: 15px;
+}
+
+.comment-form:hover {
+  opacity: 0.8;
 }
 
 .no-comment-form {
