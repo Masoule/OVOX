@@ -71,6 +71,15 @@
   margin-top: 5px;
 }
 
+.like-bt {
+  opacity: 0.3;
+}
+
+.like-bt:hover {
+  opacity: 0.9;
+  color: red;
+}
+
 .ownTrack-actions {
   display: flex;
 }

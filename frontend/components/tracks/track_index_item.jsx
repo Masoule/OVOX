@@ -80,6 +80,8 @@ class TrackIndexItem extends React.Component {
             <div className='track-waveform' id={`waveform-${track.id}`}></div>
 
             <div className='track-actions'>
+              <div className='like-bt fa fa-heart'>
+              </div>
               <div className='comment-form'>
                 <Link
                   className='comment-icon'
