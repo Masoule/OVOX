@@ -56,9 +56,8 @@
 
 .comment-icon {
   height: auto;
-  margin-right: 2px;
+  margin-right: 5px;
   width: auto;
-  font-size: 12px;
   // background: image-url('comment.png');
 }
 
@@ -243,6 +242,11 @@
 
 .comment-form:hover {
   opacity: 0.8;
+}
+
+.comment-count {
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .no-comment-form {

@@ -88,7 +88,9 @@ class TrackIndexItem extends React.Component {
                   className='comment-icon fa fa-comment'
                   to={`/${track.owner_id}/${track.id}`}>
                 </Link>
-                {track.commentIds.length}
+                <p className='comment-count'>
+                  {track.commentIds.length}
+                </p>
               </div>
               { ownTrack ?
                 <div className='ownTrack-actions'>
