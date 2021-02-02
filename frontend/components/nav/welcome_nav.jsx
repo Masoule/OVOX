@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 class WelcomeNav extends React.Component {
 
+
   logo () {
     return (
       <div className='logo-box'>
