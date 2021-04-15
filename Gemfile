@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.6.7"
+ruby "2.7.2"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -36,6 +36,7 @@ gem 'jquery-rails'
 gem 'rails_12factor'
 gem "paperclip", '~> 5.2.0'
 gem 'aws-sdk', '< 3.0'
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f' 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a  console
